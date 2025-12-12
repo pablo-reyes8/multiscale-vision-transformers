@@ -1,0 +1,36 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.cache/
+
+# Environments
+.env
+.venv/
+env/
+venv/
+
+# Packaging / build
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+
+# Notebooks
+.ipynb_checkpoints
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project artifacts
+data/
+checkpoints/
+runs/
+outputs/
+logs/
+
+# Editors
+.vscode/
+.idea/
