@@ -1,5 +1,16 @@
 # Vision Transformers Lab
 
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+![Repo size](https://img.shields.io/github/repo-size/pablo-reyes8/multiscale-vision-transformers)
+![Last commit](https://img.shields.io/github/last-commit/pablo-reyes8/multiscale-vision-transformers)
+![Open issues](https://img.shields.io/github/issues/pablo-reyes8/multiscale-vision-transformers)
+![Contributors](https://img.shields.io/github/contributors/pablo-reyes8/multiscale-vision-transformers)
+![Forks](https://img.shields.io/github/forks/pablo-reyes8/multiscale-vision-transformers?style=social)
+![Stars](https://img.shields.io/github/stars/pablo-reyes8/multiscale-vision-transformers?style=social)
+
+
+
 A curated collection of vision transformer experiments focused on clarity, reproducibility, and extensibility. The roadmap includes a custom Hierarchical ViT (already implemented), plus upcoming Swin Transformer and MaxViT variants for side-by-side benchmarking on CIFAR-100 and related image classification tasks.
 
 ## What’s Here Today
