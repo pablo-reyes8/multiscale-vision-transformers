@@ -62,4 +62,4 @@ Additional suites will be added alongside new model families.
 - Vaswani et al., “Attention is All You Need,” NeurIPS 2017.
 
 ## License
-Unless stated otherwise, the project is distributed under the MIT License (see `LICENSE`). Individual submodules may ship with their own notices if required.
+Unless stated otherwise, the project is distributed under the [MIT License](LICENSE). Individual submodules may ship with their own notices if required.
