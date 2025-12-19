@@ -1,22 +1,16 @@
 # Vision Transformers Lab
 
-[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-![Repo size](https://img.shields.io/github/repo-size/pablo-reyes8/multiscale-vision-transformers)
-![Last commit](https://img.shields.io/github/last-commit/pablo-reyes8/multiscale-vision-transformers)
-![Open issues](https://img.shields.io/github/issues/pablo-reyes8/multiscale-vision-transformers)
-![Contributors](https://img.shields.io/github/contributors/pablo-reyes8/multiscale-vision-transformers)
-![Forks](https://img.shields.io/github/forks/pablo-reyes8/multiscale-vision-transformers?style=social)
-![Stars](https://img.shields.io/github/stars/pablo-reyes8/multiscale-vision-transformers?style=social)
+A focused research sandbox for comparing modern Vision Transformer families under a shared training and evaluation setup. The project emphasizes clarity, reproducibility, and side-by-side analysis on CIFAR-100 and related image classification tasks.
 
-
-
-A curated collection of vision transformer experiments focused on clarity, reproducibility, and extensibility. The roadmap includes a custom Hierarchical ViT (already implemented), plus upcoming Swin Transformer and MaxViT variants for side-by-side benchmarking on CIFAR-100 and related image classification tasks.
+## Research Focus
+- Compare hierarchical inductive biases (pooling vs. windowed attention) under matched training pipelines.
+- Provide a consistent CLI, evaluation suite, and validation utilities across model families.
+- Track design tradeoffs (accuracy, stability, compute profile) with minimal implementation ambiguity.
 
 ## What’s Here Today
-- **HierarchicalViT/**: Hierarchical Vision Transformer with PiT-style pooling, full training CLI, Dockerfile, tests, and documentation.
-- **Notebooks (planned)**: Prototyping and ablations shared across models.
-- **Model families (roadmap)**: Swin Transformer and MaxViT implemented with common data and training utilities.
+- **HierarchicalViT/**: PiT-style pooling hierarchy, full training CLI, Dockerfile, tests, and validation utilities.
+- **SwinViT/**: Shifted window attention with patch merging, training CLI, validation tools, tests, and Dockerfile.
+- **Model families (roadmap)**: MaxViT with unified benchmarking utilities.
 
 ## Getting Started
 1) Create an environment (Python ≥3.10 recommended):
@@ -27,7 +21,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-2) Run the existing Hierarchical ViT pipeline:
+2) Run a model pipeline (example: HierarchicalViT):
 
 ```bash
 cd HierarchicalViT
@@ -35,22 +29,35 @@ python -m scripts.main train --data-dir ./data --epochs 20 --checkpoint-path ./c
 ```
 Add `--evaluate-test` to benchmark on the test split after training. Use `python -m scripts.main eval --checkpoint ...` to evaluate saved weights.
 
+Example for SwinViT:
+```bash
+cd SwinViT
+python -m scripts.main train --data-dir ./data --epochs 20 --checkpoint-path ./checkpoints/best_swinvit.pth
+```
+
 ## Repository Structure
 - `HierarchicalViT/` – Complete hierarchical ViT implementation, tests, and Dockerfile.
-- `SwinTransformer/` (planned) – Shifted window transformer implementation and benchmarks.
+- `SwinViT/` – Shifted window transformer implementation, validation utilities, tests, and Dockerfile.
 - `MaxViT/` (planned) – Blocked local-global attention model with grid/windowed attention.
 - `notebooks/` (planned) – Shared exploratory notebooks and visualizations.
 - `requirements.txt` – Shared dependencies for all model families.
+
+## Model Families: Key Differences
+- **HierarchicalViT**: Uses global attention within each stage and reduces token count via pooling between stages (PiT-style). This emphasizes global context early with explicit spatial downsampling.
+- **SwinViT**: Uses local window attention with shifted windows to enable cross-window interaction, and patch merging to downsample. This favors locality and computational efficiency at higher resolutions.
+- **MaxViT** (planned): Combines local windowed attention and global grid attention within each block to balance locality and global context.
 
 ## Testing
 From the repo root, run the available suite:
 ```bash
 pytest HierarchicalViT/test
 ```
-Additional suites will be added alongside new model families.
+Additional suites:
+```bash
+pytest SwinViT/test
+```
 
 ## Roadmap
-- Implement Swin Transformer training stack (data pipeline parity, CLI, tests).
 - Implement MaxViT with unified benchmarking harness.
 - Add experiment tracking hooks (e.g., optional WandB/MLflow) and logging utilities.
 - Expand evaluation scripts to include FLOPs/params reporting and latency profiling.
@@ -62,4 +69,4 @@ Additional suites will be added alongside new model families.
 - Vaswani et al., “Attention is All You Need,” NeurIPS 2017.
 
 ## License
-Unless stated otherwise, the project is distributed under the [MIT License](LICENSE). Individual submodules may ship with their own notices if required.
+Unless stated otherwise, the project is distributed under the MIT License (see `LICENSE`). Individual submodules may ship with their own notices if required.
