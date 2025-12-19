@@ -1,0 +1,109 @@
+SwinTransformer(
+  (patch_embed): PatchEmbeddingConv(
+    (proj): Conv2d(3, 96, kernel_size=(2, 2), stride=(2, 2))
+    (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+  )
+  (pos_drop): Dropout(p=0.0, inplace=False)
+  (layer1): BasicLayer(
+    (downsample): PatchMerging(
+      (norm): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+      (reduction): Linear(in_features=384, out_features=192, bias=False)
+    )
+    (blocks): ModuleList(
+      (0-1): 2 x SwinTransformerBlock(
+        (norm1): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+        (attn): WindowAttention(
+          (qkv): Linear(in_features=96, out_features=288, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=96, out_features=96, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path1): DropPath()
+        (norm2): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+        (mlp): MLP(
+          (fc1): Linear(in_features=96, out_features=384, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=384, out_features=96, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path2): DropPath()
+      )
+    )
+  )
+  (layer2): BasicLayer(
+    (downsample): PatchMerging(
+      (norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (reduction): Linear(in_features=768, out_features=384, bias=False)
+    )
+    (blocks): ModuleList(
+      (0-1): 2 x SwinTransformerBlock(
+        (norm1): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+        (attn): WindowAttention(
+          (qkv): Linear(in_features=192, out_features=576, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=192, out_features=192, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path1): DropPath()
+        (norm2): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+        (mlp): MLP(
+          (fc1): Linear(in_features=192, out_features=768, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=768, out_features=192, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path2): DropPath()
+      )
+    )
+  )
+  (layer3): BasicLayer(
+    (downsample): PatchMerging(
+      (norm): LayerNorm((1536,), eps=1e-05, elementwise_affine=True)
+      (reduction): Linear(in_features=1536, out_features=768, bias=False)
+    )
+    (blocks): ModuleList(
+      (0-5): 6 x SwinTransformerBlock(
+        (norm1): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+        (attn): WindowAttention(
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path1): DropPath()
+        (norm2): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+        (mlp): MLP(
+          (fc1): Linear(in_features=384, out_features=1536, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=1536, out_features=384, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path2): DropPath()
+      )
+    )
+  )
+  (layer4): BasicLayer(
+    (blocks): ModuleList(
+      (0-1): 2 x SwinTransformerBlock(
+        (norm1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (attn): WindowAttention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path1): DropPath()
+        (norm2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (mlp): MLP(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path2): DropPath()
+      )
+    )
+  )
+  (norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+  (head): Linear(in_features=768, out_features=100, bias=True)
+)
