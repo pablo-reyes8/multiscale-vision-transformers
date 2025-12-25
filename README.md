@@ -2,6 +2,24 @@
 
 A focused research sandbox for comparing modern Vision Transformer families under a shared training, evaluation, and analysis setup. The repo emphasizes clarity, reproducibility, and side-by-side inspection of architectural tradeoffs on CIFAR-100 and related image classification tasks.
 
+## Table of Contents
+- [Vision Transformers Lab](#vision-transformers-lab)
+  - [Highlights](#highlights)
+  - [Subprojects](#subprojects)
+  - [Quickstart](#quickstart)
+  - [Inference and Analysis](#inference-and-analysis)
+  - [Repository Structure](#repository-structure)
+  - [Model Families: Key Differences](#model-families-key-differences)
+  - [Docker](#docker)
+  - [Testing](#testing)
+  - [CIFAR-100 results (single-run snapshot)](#cifar-100-results-single-run-snapshot)
+    - [What these results suggest (research-oriented takeaways)](#what-these-results-suggest-research-oriented-takeaways)
+    - [Next steps to make the comparison benchmark-clean](#next-steps-to-make-the-comparison-benchmark-clean)
+  - [References](#references)
+  - [License](#license)
+
+
+
 ## Highlights
 - Three complete families: HierarchicalViT, SwinViT, and MaxViT.
 - Consistent data pipelines, training loops, and evaluation utilities.
