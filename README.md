@@ -96,7 +96,7 @@ Repository Structure
 ├── HierarchicalViT/        # Hierarchical ViT implementation + tests + Dockerfile
 ├── SwinViT/                # Swin Transformer implementation + validation utilities + tests + Dockerfile
 ├── MaxViT/                 # MaxViT implementation + training/inference CLIs + analysis suite + tests
-├── training_logs/          # Training histories (.txt) for all runs (HViT / Swin / MaxViT)
+├── training logs/          # Training histories (.txt) for all runs (HViT / Swin / MaxViT)
 ├── requirements.txt        # Shared dependency set for the workspace
 └── Dockerfile              # Root container for the whole repository
 ```
