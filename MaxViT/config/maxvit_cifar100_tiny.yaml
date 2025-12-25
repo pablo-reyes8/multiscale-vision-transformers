@@ -1,0 +1,14 @@
+model:
+  name: maxvit
+  variant: cifar100_tiny
+  num_classes: 100
+  in_chans: 3
+  stem_type: A
+  stem_out_ch: 64
+  dims: [64, 128, 256, 512]
+  depths: [2, 2, 3, 2]
+  heads: [2, 4, 8, 16]
+  window_size: 4
+  grid_size: 4
+  drop_path_rate: 0.1
+  downsample_kind: conv
