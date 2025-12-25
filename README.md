@@ -83,11 +83,17 @@ python scripts/infer_maxvit_cli.py --checkpoint experiments/maxvit_tiny/best_mod
 SwinViT and HierarchicalViT include validation helpers accessible through their CLI modules (see each subproject README for details).
 
 ## Repository Structure
-- `HierarchicalViT/` – Hierarchical ViT implementation, tests, and Dockerfile.
-- `SwinViT/` – Shifted window transformer, validation utilities, tests, and Dockerfile.
-- `MaxViT/` – MaxViT model, training + inference CLIs, analysis suite, and tests.
-- `requirements.txt` – Shared dependency set for the workspace.
-- `Dockerfile` – Root container for the whole repo.
+```
+Repository Structure
+├── HierarchicalViT/        # Hierarchical ViT implementation + tests + Dockerfile
+├── SwinViT/                # Swin Transformer implementation + validation utilities + tests + Dockerfile
+├── MaxViT/                 # MaxViT implementation + training/inference CLIs + analysis suite + tests
+├── training_logs/          # Training histories (.txt) for all runs (HViT / Swin / MaxViT)
+├── requirements.txt        # Shared dependency set for the workspace
+└── Dockerfile              # Root container for the whole repository
+```
+
+
 
 ## Model Families: Key Differences
 - **HierarchicalViT**: Global attention per stage, explicit pooling between stages (PiT-style). Emphasizes structured downsampling and stable token reduction.
