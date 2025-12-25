@@ -1,0 +1,382 @@
+
+=== Epoch 1/50 ===
+[Step 100/352] Loss: 4.4450 | Top-1: 3.56% | Top-3: 8.88% | Top-5: 13.65%
+[Step 200/352] Loss: 4.3252 | Top-1: 4.70% | Top-3: 11.61% | Top-5: 17.33%
+[Step 300/352] Loss: 4.2405 | Top-1: 5.53% | Top-3: 13.53% | Top-5: 19.79%
+[Train] Loss: 4.1979 | Top-1: 5.96% | Top-3: 14.44% | Top-5: 21.02%
+[Val]   Loss: 3.9039 | Top-1: 9.44% | Top-3: 21.62% | Top-5: 29.42%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 9.44%)
+
+=== Epoch 2/50 ===
+[Step 100/352] Loss: 3.8753 | Top-1: 10.12% | Top-3: 22.31% | Top-5: 30.81%
+[Step 200/352] Loss: 3.8235 | Top-1: 11.15% | Top-3: 23.95% | Top-5: 32.68%
+[Step 300/352] Loss: 3.7821 | Top-1: 11.62% | Top-3: 24.88% | Top-5: 33.99%
+[Train] Loss: 3.7594 | Top-1: 12.00% | Top-3: 25.54% | Top-5: 34.74%
+[Val]   Loss: 3.6222 | Top-1: 13.84% | Top-3: 29.42% | Top-5: 39.32%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 13.84%)
+
+=== Epoch 3/50 ===
+[Step 100/352] Loss: 3.5500 | Top-1: 15.17% | Top-3: 31.02% | Top-5: 41.02%
+[Step 200/352] Loss: 3.5160 | Top-1: 15.62% | Top-3: 31.48% | Top-5: 41.61%
+[Step 300/352] Loss: 3.4821 | Top-1: 16.20% | Top-3: 32.46% | Top-5: 42.67%
+[Train] Loss: 3.4606 | Top-1: 16.64% | Top-3: 33.08% | Top-5: 43.23%
+[Val]   Loss: 3.3355 | Top-1: 18.82% | Top-3: 36.52% | Top-5: 46.84%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 18.82%)
+
+=== Epoch 4/50 ===
+[Step 100/352] Loss: 3.3221 | Top-1: 19.15% | Top-3: 37.10% | Top-5: 47.23%
+[Step 200/352] Loss: 3.2758 | Top-1: 19.67% | Top-3: 38.16% | Top-5: 48.42%
+[Step 300/352] Loss: 3.2463 | Top-1: 20.29% | Top-3: 38.87% | Top-5: 49.14%
+[Train] Loss: 3.2330 | Top-1: 20.54% | Top-3: 39.14% | Top-5: 49.48%
+[Val]   Loss: 3.1274 | Top-1: 22.80% | Top-3: 41.16% | Top-5: 51.88%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 22.80%)
+
+=== Epoch 5/50 ===
+[Step 100/352] Loss: 3.0922 | Top-1: 22.98% | Top-3: 42.25% | Top-5: 52.98%
+[Step 200/352] Loss: 3.0715 | Top-1: 23.52% | Top-3: 43.05% | Top-5: 53.72%
+[Step 300/352] Loss: 3.0493 | Top-1: 23.96% | Top-3: 43.64% | Top-5: 54.28%
+[Train] Loss: 3.0474 | Top-1: 23.97% | Top-3: 43.68% | Top-5: 54.29%
+[Val]   Loss: 3.0082 | Top-1: 25.22% | Top-3: 44.52% | Top-5: 55.28%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 25.22%)
+
+=== Epoch 6/50 ===
+[Step 100/352] Loss: 2.9454 | Top-1: 25.55% | Top-3: 46.40% | Top-5: 56.61%
+[Step 200/352] Loss: 2.9397 | Top-1: 25.69% | Top-3: 46.16% | Top-5: 56.75%
+[Step 300/352] Loss: 2.9153 | Top-1: 26.16% | Top-3: 46.77% | Top-5: 57.34%
+[Train] Loss: 2.8991 | Top-1: 26.52% | Top-3: 47.23% | Top-5: 57.75%
+[Val]   Loss: 2.8957 | Top-1: 27.26% | Top-3: 47.46% | Top-5: 57.80%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 27.26%)
+
+=== Epoch 7/50 ===
+[Step 100/352] Loss: 2.7738 | Top-1: 28.99% | Top-3: 49.94% | Top-5: 61.03%
+[Step 200/352] Loss: 2.8020 | Top-1: 28.43% | Top-3: 49.49% | Top-5: 60.36%
+[Step 300/352] Loss: 2.7944 | Top-1: 28.75% | Top-3: 49.67% | Top-5: 60.43%
+[Train] Loss: 2.7905 | Top-1: 28.94% | Top-3: 49.83% | Top-5: 60.52%
+[Val]   Loss: 2.7691 | Top-1: 29.80% | Top-3: 50.90% | Top-5: 61.72%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 29.80%)
+
+=== Epoch 8/50 ===
+[Step 100/352] Loss: 2.6943 | Top-1: 30.99% | Top-3: 51.87% | Top-5: 62.70%
+[Step 200/352] Loss: 2.6886 | Top-1: 31.00% | Top-3: 52.14% | Top-5: 62.86%
+[Step 300/352] Loss: 2.6789 | Top-1: 31.20% | Top-3: 52.34% | Top-5: 63.00%
+[Train] Loss: 2.6739 | Top-1: 31.20% | Top-3: 52.42% | Top-5: 63.09%
+[Val]   Loss: 2.6986 | Top-1: 30.72% | Top-3: 52.68% | Top-5: 63.22%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 30.72%)
+
+=== Epoch 9/50 ===
+[Step 100/352] Loss: 2.5820 | Top-1: 32.70% | Top-3: 55.03% | Top-5: 65.70%
+[Step 200/352] Loss: 2.5952 | Top-1: 32.37% | Top-3: 54.76% | Top-5: 65.39%
+[Step 300/352] Loss: 2.5952 | Top-1: 32.55% | Top-3: 54.82% | Top-5: 65.33%
+[Train] Loss: 2.5900 | Top-1: 32.69% | Top-3: 54.88% | Top-5: 65.45%
+[Val]   Loss: 2.6245 | Top-1: 32.64% | Top-3: 53.68% | Top-5: 64.70%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 32.64%)
+
+=== Epoch 10/50 ===
+[Step 100/352] Loss: 2.5031 | Top-1: 35.20% | Top-3: 56.70% | Top-5: 66.94%
+[Step 200/352] Loss: 2.4999 | Top-1: 34.79% | Top-3: 56.91% | Top-5: 67.21%
+[Step 300/352] Loss: 2.4989 | Top-1: 34.73% | Top-3: 57.02% | Top-5: 67.32%
+[Train] Loss: 2.5033 | Top-1: 34.60% | Top-3: 56.90% | Top-5: 67.21%
+[Val]   Loss: 2.5633 | Top-1: 33.92% | Top-3: 55.62% | Top-5: 66.08%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 33.92%)
+
+=== Epoch 11/50 ===
+[Step 100/352] Loss: 2.4335 | Top-1: 36.50% | Top-3: 58.40% | Top-5: 68.52%
+[Step 200/352] Loss: 2.4255 | Top-1: 36.62% | Top-3: 58.55% | Top-5: 68.71%
+[Step 300/352] Loss: 2.4245 | Top-1: 36.65% | Top-3: 58.63% | Top-5: 68.80%
+[Train] Loss: 2.4208 | Top-1: 36.69% | Top-3: 58.69% | Top-5: 68.92%
+[Val]   Loss: 2.5433 | Top-1: 34.72% | Top-3: 55.92% | Top-5: 65.76%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 34.72%)
+
+=== Epoch 12/50 ===
+[Step 100/352] Loss: 2.3388 | Top-1: 38.31% | Top-3: 61.16% | Top-5: 70.82%
+[Step 200/352] Loss: 2.3498 | Top-1: 38.17% | Top-3: 60.59% | Top-5: 70.43%
+[Step 300/352] Loss: 2.3511 | Top-1: 38.02% | Top-3: 60.60% | Top-5: 70.55%
+[Train] Loss: 2.3527 | Top-1: 38.04% | Top-3: 60.56% | Top-5: 70.50%
+[Val]   Loss: 2.4692 | Top-1: 35.32% | Top-3: 57.96% | Top-5: 68.04%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 35.32%)
+
+=== Epoch 13/50 ===
+[Step 100/352] Loss: 2.2840 | Top-1: 38.86% | Top-3: 61.50% | Top-5: 71.51%
+[Step 200/352] Loss: 2.2828 | Top-1: 39.11% | Top-3: 61.71% | Top-5: 71.63%
+[Step 300/352] Loss: 2.2760 | Top-1: 39.23% | Top-3: 62.04% | Top-5: 71.95%
+[Train] Loss: 2.2778 | Top-1: 39.30% | Top-3: 61.97% | Top-5: 71.94%
+[Val]   Loss: 2.3909 | Top-1: 37.46% | Top-3: 59.22% | Top-5: 69.92%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 37.46%)
+
+=== Epoch 14/50 ===
+[Step 100/352] Loss: 2.1736 | Top-1: 41.09% | Top-3: 64.17% | Top-5: 74.30%
+[Step 200/352] Loss: 2.1960 | Top-1: 41.11% | Top-3: 63.66% | Top-5: 73.55%
+[Step 300/352] Loss: 2.2033 | Top-1: 40.90% | Top-3: 63.70% | Top-5: 73.42%
+[Train] Loss: 2.2021 | Top-1: 41.04% | Top-3: 63.70% | Top-5: 73.35%
+[Val]   Loss: 2.3345 | Top-1: 39.48% | Top-3: 61.68% | Top-5: 70.90%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 39.48%)
+
+=== Epoch 15/50 ===
+[Step 100/352] Loss: 2.1243 | Top-1: 42.49% | Top-3: 65.70% | Top-5: 75.57%
+[Step 200/352] Loss: 2.1444 | Top-1: 42.32% | Top-3: 65.28% | Top-5: 74.84%
+[Step 300/352] Loss: 2.1389 | Top-1: 42.52% | Top-3: 65.45% | Top-5: 74.88%
+[Train] Loss: 2.1436 | Top-1: 42.40% | Top-3: 65.30% | Top-5: 74.80%
+[Val]   Loss: 2.2635 | Top-1: 40.76% | Top-3: 62.50% | Top-5: 72.36%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 40.76%)
+
+=== Epoch 16/50 ===
+[Step 100/352] Loss: 2.0767 | Top-1: 43.78% | Top-3: 66.42% | Top-5: 75.88%
+[Step 200/352] Loss: 2.0634 | Top-1: 44.09% | Top-3: 66.79% | Top-5: 76.19%
+[Step 300/352] Loss: 2.0799 | Top-1: 43.62% | Top-3: 66.38% | Top-5: 75.89%
+[Train] Loss: 2.0776 | Top-1: 43.80% | Top-3: 66.38% | Top-5: 75.79%
+[Val]   Loss: 2.2781 | Top-1: 40.32% | Top-3: 62.02% | Top-5: 71.78%
+
+=== Epoch 17/50 ===
+[Step 100/352] Loss: 1.9853 | Top-1: 45.54% | Top-3: 68.55% | Top-5: 77.56%
+[Step 200/352] Loss: 1.9961 | Top-1: 45.52% | Top-3: 68.43% | Top-5: 77.42%
+[Step 300/352] Loss: 2.0184 | Top-1: 45.08% | Top-3: 67.98% | Top-5: 77.09%
+[Train] Loss: 2.0150 | Top-1: 45.12% | Top-3: 68.08% | Top-5: 77.13%
+[Val]   Loss: 2.2741 | Top-1: 40.74% | Top-3: 62.58% | Top-5: 72.40%
+
+=== Epoch 18/50 ===
+[Step 100/352] Loss: 1.9415 | Top-1: 46.71% | Top-3: 69.17% | Top-5: 78.45%
+[Step 200/352] Loss: 1.9589 | Top-1: 46.41% | Top-3: 69.01% | Top-5: 78.19%
+[Step 300/352] Loss: 1.9625 | Top-1: 46.44% | Top-3: 69.00% | Top-5: 78.21%
+[Train] Loss: 1.9600 | Top-1: 46.37% | Top-3: 69.06% | Top-5: 78.28%
+[Val]   Loss: 2.2124 | Top-1: 41.88% | Top-3: 64.34% | Top-5: 74.16%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 41.88%)
+
+=== Epoch 19/50 ===
+[Step 100/352] Loss: 1.8633 | Top-1: 48.25% | Top-3: 71.13% | Top-5: 79.99%
+[Step 200/352] Loss: 1.8723 | Top-1: 48.04% | Top-3: 71.16% | Top-5: 79.80%
+[Step 300/352] Loss: 1.8847 | Top-1: 47.91% | Top-3: 70.75% | Top-5: 79.47%
+[Train] Loss: 1.8849 | Top-1: 47.93% | Top-3: 70.85% | Top-5: 79.55%
+[Val]   Loss: 2.1652 | Top-1: 42.90% | Top-3: 64.98% | Top-5: 74.44%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 42.90%)
+
+=== Epoch 20/50 ===
+[Step 100/352] Loss: 1.7733 | Top-1: 51.03% | Top-3: 73.34% | Top-5: 81.27%
+[Step 200/352] Loss: 1.8038 | Top-1: 50.26% | Top-3: 72.53% | Top-5: 80.71%
+[Step 300/352] Loss: 1.8201 | Top-1: 49.68% | Top-3: 72.19% | Top-5: 80.65%
+[Train] Loss: 1.8221 | Top-1: 49.58% | Top-3: 72.21% | Top-5: 80.62%
+[Val]   Loss: 2.0938 | Top-1: 44.78% | Top-3: 66.78% | Top-5: 75.84%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 44.78%)
+
+=== Epoch 21/50 ===
+[Step 100/352] Loss: 1.7634 | Top-1: 50.80% | Top-3: 73.49% | Top-5: 81.95%
+[Step 200/352] Loss: 1.7724 | Top-1: 51.09% | Top-3: 73.17% | Top-5: 81.52%
+[Step 300/352] Loss: 1.7661 | Top-1: 51.14% | Top-3: 73.43% | Top-5: 81.73%
+[Train] Loss: 1.7676 | Top-1: 51.08% | Top-3: 73.44% | Top-5: 81.71%
+[Val]   Loss: 2.1085 | Top-1: 44.96% | Top-3: 66.74% | Top-5: 75.52%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 44.96%)
+
+=== Epoch 22/50 ===
+[Step 100/352] Loss: 1.6921 | Top-1: 52.92% | Top-3: 74.96% | Top-5: 83.38%
+[Step 200/352] Loss: 1.6999 | Top-1: 52.56% | Top-3: 74.64% | Top-5: 83.11%
+[Step 300/352] Loss: 1.7078 | Top-1: 52.21% | Top-3: 74.68% | Top-5: 83.01%
+[Train] Loss: 1.7125 | Top-1: 52.13% | Top-3: 74.64% | Top-5: 82.90%
+[Val]   Loss: 2.1197 | Top-1: 44.82% | Top-3: 66.26% | Top-5: 76.10%
+
+=== Epoch 23/50 ===
+[Step 100/352] Loss: 1.6257 | Top-1: 54.34% | Top-3: 76.48% | Top-5: 84.12%
+[Step 200/352] Loss: 1.6533 | Top-1: 53.64% | Top-3: 75.70% | Top-5: 83.79%
+[Step 300/352] Loss: 1.6542 | Top-1: 53.57% | Top-3: 75.71% | Top-5: 83.86%
+[Train] Loss: 1.6515 | Top-1: 53.64% | Top-3: 75.73% | Top-5: 83.87%
+[Val]   Loss: 2.0870 | Top-1: 44.66% | Top-3: 67.48% | Top-5: 76.98%
+
+=== Epoch 24/50 ===
+[Step 100/352] Loss: 1.5835 | Top-1: 55.39% | Top-3: 77.05% | Top-5: 84.65%
+[Step 200/352] Loss: 1.6001 | Top-1: 54.70% | Top-3: 76.99% | Top-5: 84.65%
+[Step 300/352] Loss: 1.5995 | Top-1: 54.71% | Top-3: 77.02% | Top-5: 84.67%
+[Train] Loss: 1.6052 | Top-1: 54.60% | Top-3: 76.88% | Top-5: 84.60%
+[Val]   Loss: 2.0350 | Top-1: 46.28% | Top-3: 68.22% | Top-5: 77.44%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 46.28%)
+
+=== Epoch 25/50 ===
+[Step 100/352] Loss: 1.5246 | Top-1: 56.85% | Top-3: 78.55% | Top-5: 86.16%
+[Step 200/352] Loss: 1.5360 | Top-1: 56.58% | Top-3: 78.41% | Top-5: 85.98%
+[Step 300/352] Loss: 1.5425 | Top-1: 56.36% | Top-3: 78.20% | Top-5: 85.83%
+[Train] Loss: 1.5398 | Top-1: 56.32% | Top-3: 78.21% | Top-5: 85.85%
+[Val]   Loss: 2.0290 | Top-1: 46.38% | Top-3: 68.64% | Top-5: 77.50%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 46.38%)
+
+=== Epoch 26/50 ===
+[Step 100/352] Loss: 1.4787 | Top-1: 58.48% | Top-3: 79.49% | Top-5: 86.45%
+[Step 200/352] Loss: 1.4825 | Top-1: 58.10% | Top-3: 79.12% | Top-5: 86.35%
+[Step 300/352] Loss: 1.4883 | Top-1: 57.88% | Top-3: 79.05% | Top-5: 86.35%
+[Train] Loss: 1.4907 | Top-1: 57.77% | Top-3: 79.04% | Top-5: 86.38%
+[Val]   Loss: 2.0468 | Top-1: 46.64% | Top-3: 68.32% | Top-5: 77.48%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 46.64%)
+
+=== Epoch 27/50 ===
+[Step 100/352] Loss: 1.3919 | Top-1: 61.19% | Top-3: 80.91% | Top-5: 87.77%
+[Step 200/352] Loss: 1.4244 | Top-1: 59.88% | Top-3: 80.45% | Top-5: 87.41%
+[Step 300/352] Loss: 1.4354 | Top-1: 59.46% | Top-3: 80.28% | Top-5: 87.26%
+[Train] Loss: 1.4362 | Top-1: 59.42% | Top-3: 80.30% | Top-5: 87.30%
+[Val]   Loss: 1.9655 | Top-1: 48.34% | Top-3: 69.88% | Top-5: 78.82%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 48.34%)
+
+=== Epoch 28/50 ===
+[Step 100/352] Loss: 1.3592 | Top-1: 61.10% | Top-3: 82.07% | Top-5: 88.83%
+[Step 200/352] Loss: 1.3595 | Top-1: 61.02% | Top-3: 81.75% | Top-5: 88.63%
+[Step 300/352] Loss: 1.3723 | Top-1: 60.55% | Top-3: 81.45% | Top-5: 88.39%
+[Train] Loss: 1.3737 | Top-1: 60.56% | Top-3: 81.39% | Top-5: 88.31%
+[Val]   Loss: 2.0226 | Top-1: 47.48% | Top-3: 68.68% | Top-5: 77.84%
+
+=== Epoch 29/50 ===
+[Step 100/352] Loss: 1.3042 | Top-1: 62.70% | Top-3: 83.09% | Top-5: 89.16%
+[Step 200/352] Loss: 1.3095 | Top-1: 62.55% | Top-3: 82.93% | Top-5: 89.00%
+[Step 300/352] Loss: 1.3207 | Top-1: 62.20% | Top-3: 82.80% | Top-5: 88.84%
+[Train] Loss: 1.3306 | Top-1: 61.94% | Top-3: 82.53% | Top-5: 88.70%
+[Val]   Loss: 2.0064 | Top-1: 48.82% | Top-3: 69.30% | Top-5: 77.78%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 48.82%)
+
+=== Epoch 30/50 ===
+[Step 100/352] Loss: 1.2511 | Top-1: 64.24% | Top-3: 84.09% | Top-5: 89.96%
+[Step 200/352] Loss: 1.2613 | Top-1: 63.81% | Top-3: 83.81% | Top-5: 89.92%
+[Step 300/352] Loss: 1.2704 | Top-1: 63.47% | Top-3: 83.58% | Top-5: 89.82%
+[Train] Loss: 1.2689 | Top-1: 63.45% | Top-3: 83.70% | Top-5: 89.89%
+[Val]   Loss: 2.0096 | Top-1: 48.50% | Top-3: 70.00% | Top-5: 78.00%
+
+=== Epoch 31/50 ===
+[Step 100/352] Loss: 1.2162 | Top-1: 64.85% | Top-3: 84.51% | Top-5: 90.60%
+[Step 200/352] Loss: 1.2224 | Top-1: 64.70% | Top-3: 84.42% | Top-5: 90.56%
+[Step 300/352] Loss: 1.2210 | Top-1: 64.52% | Top-3: 84.51% | Top-5: 90.53%
+[Train] Loss: 1.2250 | Top-1: 64.41% | Top-3: 84.43% | Top-5: 90.51%
+[Val]   Loss: 2.0057 | Top-1: 49.04% | Top-3: 69.98% | Top-5: 78.54%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 49.04%)
+
+=== Epoch 32/50 ===
+[Step 100/352] Loss: 1.1578 | Top-1: 66.41% | Top-3: 86.15% | Top-5: 91.51%
+[Step 200/352] Loss: 1.1635 | Top-1: 66.26% | Top-3: 85.57% | Top-5: 91.13%
+[Step 300/352] Loss: 1.1629 | Top-1: 66.37% | Top-3: 85.59% | Top-5: 91.08%
+[Train] Loss: 1.1659 | Top-1: 66.18% | Top-3: 85.53% | Top-5: 91.09%
+[Val]   Loss: 1.9951 | Top-1: 49.56% | Top-3: 70.84% | Top-5: 79.48%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 49.56%)
+
+=== Epoch 33/50 ===
+[Step 100/352] Loss: 1.1051 | Top-1: 68.14% | Top-3: 86.99% | Top-5: 92.09%
+[Step 200/352] Loss: 1.1142 | Top-1: 67.75% | Top-3: 86.90% | Top-5: 92.08%
+[Step 300/352] Loss: 1.1269 | Top-1: 67.45% | Top-3: 86.43% | Top-5: 91.74%
+[Train] Loss: 1.1292 | Top-1: 67.21% | Top-3: 86.42% | Top-5: 91.68%
+[Val]   Loss: 1.9935 | Top-1: 49.22% | Top-3: 71.26% | Top-5: 79.28%
+
+=== Epoch 34/50 ===
+[Step 100/352] Loss: 1.0578 | Top-1: 69.12% | Top-3: 87.68% | Top-5: 92.58%
+[Step 200/352] Loss: 1.0743 | Top-1: 68.70% | Top-3: 87.30% | Top-5: 92.30%
+[Step 300/352] Loss: 1.0745 | Top-1: 68.68% | Top-3: 87.27% | Top-5: 92.26%
+[Train] Loss: 1.0770 | Top-1: 68.51% | Top-3: 87.23% | Top-5: 92.28%
+[Val]   Loss: 1.9862 | Top-1: 49.88% | Top-3: 70.60% | Top-5: 79.36%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 49.88%)
+
+=== Epoch 35/50 ===
+[Step 100/352] Loss: 0.9964 | Top-1: 71.50% | Top-3: 88.60% | Top-5: 92.79%
+[Step 200/352] Loss: 1.0190 | Top-1: 70.71% | Top-3: 88.11% | Top-5: 92.77%
+[Step 300/352] Loss: 1.0268 | Top-1: 70.30% | Top-3: 87.98% | Top-5: 92.73%
+[Train] Loss: 1.0279 | Top-1: 70.31% | Top-3: 87.95% | Top-5: 92.66%
+[Val]   Loss: 2.0107 | Top-1: 50.76% | Top-3: 70.70% | Top-5: 79.64%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 50.76%)
+
+=== Epoch 36/50 ===
+[Step 100/352] Loss: 0.9819 | Top-1: 71.65% | Top-3: 88.81% | Top-5: 93.57%
+[Step 200/352] Loss: 0.9929 | Top-1: 71.21% | Top-3: 88.52% | Top-5: 93.37%
+[Step 300/352] Loss: 0.9952 | Top-1: 71.08% | Top-3: 88.53% | Top-5: 93.29%
+[Train] Loss: 0.9969 | Top-1: 71.00% | Top-3: 88.50% | Top-5: 93.29%
+[Val]   Loss: 2.0097 | Top-1: 50.40% | Top-3: 70.10% | Top-5: 78.80%
+
+=== Epoch 37/50 ===
+[Step 100/352] Loss: 0.9317 | Top-1: 73.02% | Top-3: 89.73% | Top-5: 93.92%
+[Step 200/352] Loss: 0.9396 | Top-1: 72.68% | Top-3: 89.69% | Top-5: 93.93%
+[Step 300/352] Loss: 0.9458 | Top-1: 72.43% | Top-3: 89.62% | Top-5: 93.92%
+[Train] Loss: 0.9497 | Top-1: 72.30% | Top-3: 89.54% | Top-5: 93.89%
+[Val]   Loss: 2.0257 | Top-1: 50.56% | Top-3: 71.22% | Top-5: 79.78%
+
+=== Epoch 38/50 ===
+[Step 100/352] Loss: 0.8914 | Top-1: 74.01% | Top-3: 90.61% | Top-5: 94.65%
+[Step 200/352] Loss: 0.9132 | Top-1: 73.28% | Top-3: 90.10% | Top-5: 94.29%
+[Step 300/352] Loss: 0.9219 | Top-1: 73.02% | Top-3: 89.96% | Top-5: 94.23%
+[Train] Loss: 0.9209 | Top-1: 73.01% | Top-3: 90.00% | Top-5: 94.28%
+[Val]   Loss: 2.0043 | Top-1: 50.74% | Top-3: 71.58% | Top-5: 79.74%
+
+=== Epoch 39/50 ===
+[Step 100/352] Loss: 0.8638 | Top-1: 74.62% | Top-3: 90.99% | Top-5: 94.75%
+[Step 200/352] Loss: 0.8785 | Top-1: 74.11% | Top-3: 90.77% | Top-5: 94.69%
+[Step 300/352] Loss: 0.8782 | Top-1: 74.37% | Top-3: 90.69% | Top-5: 94.62%
+[Train] Loss: 0.8800 | Top-1: 74.26% | Top-3: 90.66% | Top-5: 94.60%
+[Val]   Loss: 2.0308 | Top-1: 50.50% | Top-3: 70.48% | Top-5: 79.32%
+
+=== Epoch 40/50 ===
+[Step 100/352] Loss: 0.8594 | Top-1: 75.36% | Top-3: 90.70% | Top-5: 94.59%
+[Step 200/352] Loss: 0.8494 | Top-1: 75.33% | Top-3: 91.04% | Top-5: 94.86%
+[Step 300/352] Loss: 0.8566 | Top-1: 74.98% | Top-3: 90.96% | Top-5: 94.74%
+[Train] Loss: 0.8576 | Top-1: 75.04% | Top-3: 90.88% | Top-5: 94.68%
+[Val]   Loss: 2.0155 | Top-1: 50.44% | Top-3: 71.46% | Top-5: 79.56%
+
+=== Epoch 41/50 ===
+[Step 100/352] Loss: 0.8504 | Top-1: 75.15% | Top-3: 91.27% | Top-5: 94.72%
+[Step 200/352] Loss: 0.8392 | Top-1: 75.45% | Top-3: 91.23% | Top-5: 94.96%
+[Step 300/352] Loss: 0.8343 | Top-1: 75.64% | Top-3: 91.30% | Top-5: 94.94%
+[Train] Loss: 0.8338 | Top-1: 75.65% | Top-3: 91.30% | Top-5: 94.94%
+[Val]   Loss: 2.0131 | Top-1: 51.12% | Top-3: 71.60% | Top-5: 79.90%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 51.12%)
+
+=== Epoch 42/50 ===
+[Step 100/352] Loss: 0.8001 | Top-1: 77.37% | Top-3: 91.93% | Top-5: 95.08%
+[Step 200/352] Loss: 0.8001 | Top-1: 77.21% | Top-3: 91.91% | Top-5: 95.18%
+[Step 300/352] Loss: 0.8099 | Top-1: 76.77% | Top-3: 91.70% | Top-5: 95.09%
+[Train] Loss: 0.8027 | Top-1: 76.98% | Top-3: 91.82% | Top-5: 95.16%
+[Val]   Loss: 2.0144 | Top-1: 51.16% | Top-3: 70.90% | Top-5: 79.10%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 51.16%)
+
+=== Epoch 43/50 ===
+[Step 100/352] Loss: 0.7931 | Top-1: 77.07% | Top-3: 91.90% | Top-5: 95.13%
+[Step 200/352] Loss: 0.7930 | Top-1: 77.12% | Top-3: 91.94% | Top-5: 95.21%
+[Step 300/352] Loss: 0.7874 | Top-1: 77.18% | Top-3: 91.93% | Top-5: 95.27%
+[Train] Loss: 0.7902 | Top-1: 77.06% | Top-3: 91.91% | Top-5: 95.32%
+[Val]   Loss: 2.0410 | Top-1: 51.50% | Top-3: 71.20% | Top-5: 78.40%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 51.50%)
+
+=== Epoch 44/50 ===
+[Step 100/352] Loss: 0.7545 | Top-1: 77.65% | Top-3: 92.32% | Top-5: 95.75%
+[Step 200/352] Loss: 0.7607 | Top-1: 77.78% | Top-3: 92.27% | Top-5: 95.57%
+[Step 300/352] Loss: 0.7681 | Top-1: 77.81% | Top-3: 92.28% | Top-5: 95.53%
+[Train] Loss: 0.7715 | Top-1: 77.74% | Top-3: 92.28% | Top-5: 95.51%
+[Val]   Loss: 2.0563 | Top-1: 50.78% | Top-3: 71.02% | Top-5: 79.38%
+
+=== Epoch 45/50 ===
+[Step 100/352] Loss: 0.7505 | Top-1: 78.03% | Top-3: 92.42% | Top-5: 95.75%
+[Step 200/352] Loss: 0.7522 | Top-1: 78.19% | Top-3: 92.39% | Top-5: 95.56%
+[Step 300/352] Loss: 0.7626 | Top-1: 77.96% | Top-3: 92.31% | Top-5: 95.46%
+[Train] Loss: 0.7611 | Top-1: 78.02% | Top-3: 92.32% | Top-5: 95.48%
+[Val]   Loss: 2.0551 | Top-1: 50.02% | Top-3: 71.38% | Top-5: 79.40%
+
+=== Epoch 46/50 ===
+[Step 100/352] Loss: 0.7596 | Top-1: 77.90% | Top-3: 92.41% | Top-5: 95.65%
+[Step 200/352] Loss: 0.7628 | Top-1: 77.80% | Top-3: 92.43% | Top-5: 95.66%
+[Step 300/352] Loss: 0.7594 | Top-1: 77.84% | Top-3: 92.38% | Top-5: 95.65%
+[Train] Loss: 0.7557 | Top-1: 77.98% | Top-3: 92.42% | Top-5: 95.67%
+[Val]   Loss: 2.0640 | Top-1: 50.92% | Top-3: 70.32% | Top-5: 79.02%
+
+=== Epoch 47/50 ===
+[Step 100/352] Loss: 0.7581 | Top-1: 77.76% | Top-3: 92.32% | Top-5: 95.68%
+[Step 200/352] Loss: 0.7463 | Top-1: 78.62% | Top-3: 92.56% | Top-5: 95.68%
+[Step 300/352] Loss: 0.7431 | Top-1: 78.66% | Top-3: 92.62% | Top-5: 95.73%
+[Train] Loss: 0.7411 | Top-1: 78.69% | Top-3: 92.64% | Top-5: 95.74%
+[Val]   Loss: 2.0403 | Top-1: 51.36% | Top-3: 71.72% | Top-5: 79.16%
+
+=== Epoch 48/50 ===
+[Step 100/352] Loss: 0.7421 | Top-1: 78.60% | Top-3: 92.85% | Top-5: 95.96%
+[Step 200/352] Loss: 0.7429 | Top-1: 78.48% | Top-3: 92.76% | Top-5: 95.83%
+[Step 300/352] Loss: 0.7398 | Top-1: 78.45% | Top-3: 92.78% | Top-5: 95.83%
+[Train] Loss: 0.7360 | Top-1: 78.63% | Top-3: 92.83% | Top-5: 95.84%
+[Val]   Loss: 2.0470 | Top-1: 51.34% | Top-3: 71.78% | Top-5: 79.18%
+
+=== Epoch 49/50 ===
+[Step 100/352] Loss: 0.7317 | Top-1: 79.19% | Top-3: 92.77% | Top-5: 95.71%
+[Step 200/352] Loss: 0.7196 | Top-1: 79.35% | Top-3: 92.96% | Top-5: 95.94%
+[Step 300/352] Loss: 0.7235 | Top-1: 79.22% | Top-3: 92.91% | Top-5: 95.94%
+[Train] Loss: 0.7270 | Top-1: 79.09% | Top-3: 92.79% | Top-5: 95.86%
+[Val]   Loss: 2.0367 | Top-1: 51.92% | Top-3: 70.96% | Top-5: 78.90%
+Nuevo mejor modelo guardado en best_hvit_cifar100.pth (Val Top-1 = 51.92%)
+
+=== Epoch 50/50 ===
+[Step 100/352] Loss: 0.7330 | Top-1: 79.04% | Top-3: 92.87% | Top-5: 95.95%
+[Step 200/352] Loss: 0.7311 | Top-1: 78.84% | Top-3: 92.81% | Top-5: 95.93%
+[Step 300/352] Loss: 0.7344 | Top-1: 78.77% | Top-3: 92.74% | Top-5: 95.89%
+[Train] Loss: 0.7337 | Top-1: 78.87% | Top-3: 92.73% | Top-5: 95.89%
+[Val]   Loss: 2.0778 | Top-1: 50.92% | Top-3: 69.64% | Top-5: 78.72%

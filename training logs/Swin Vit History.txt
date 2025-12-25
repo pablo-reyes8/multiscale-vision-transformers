@@ -1,0 +1,634 @@
+Entrenando en 2 GPUs
+
+=== Epoch 1/50 ===
+[train step 100/704] loss 4.7562 | top1 1.56% | top3 4.94% | top5 7.67% | 515.4 img/s
+[train step 200/704] loss 4.6285 | top1 2.25% | top3 6.60% | top5 10.07% | 517.1 img/s
+[train step 300/704] loss 4.5704 | top1 2.77% | top3 7.52% | top5 11.53% | 521.2 img/s
+[train step 400/704] loss 4.5192 | top1 3.32% | top3 8.54% | top5 12.98% | 522.4 img/s
+[train step 500/704] loss 4.4740 | top1 3.78% | top3 9.73% | top5 14.53% | 524.9 img/s
+[train step 600/704] loss 4.4432 | top1 4.04% | top3 10.37% | top5 15.40% | 525.4 img/s
+[train step 700/704] loss 4.4105 | top1 4.43% | top3 11.21% | top5 16.59% | 526.9 img/s
+[Train] loss 4.4092 | top1 4.44% | top3 11.24% | top5 16.64%
+[Val]   loss 4.2126 | top1 5.80% | top3 15.36% | top5 22.26%
+ Best saved to best_swin_cifar100.pt (val top1 5.80%)
+Epoch time: 1.51 min
+
+=== Epoch 2/50 ===
+[train step 100/704] loss 4.1963 | top1 6.94% | top3 17.03% | top5 24.22% | 518.2 img/s
+[train step 200/704] loss 4.1798 | top1 7.15% | top3 17.12% | top5 24.76% | 523.0 img/s
+[train step 300/704] loss 4.1642 | top1 7.40% | top3 17.69% | top5 25.45% | 524.1 img/s
+[train step 400/704] loss 4.1565 | top1 7.64% | top3 17.99% | top5 25.76% | 523.3 img/s
+[train step 500/704] loss 4.1453 | top1 7.80% | top3 18.28% | top5 26.09% | 524.5 img/s
+[train step 600/704] loss 4.1318 | top1 8.12% | top3 18.74% | top5 26.55% | 524.3 img/s
+[train step 700/704] loss 4.1178 | top1 8.36% | top3 19.25% | top5 27.10% | 525.2 img/s
+[Train] loss 4.1174 | top1 8.37% | top3 19.26% | top5 27.13%
+[Val]   loss 4.0173 | top1 10.54% | top3 22.68% | top5 30.96%
+ Best saved to best_swin_cifar100.pt (val top1 10.54%)
+Epoch time: 1.52 min
+
+=== Epoch 3/50 ===
+[train step 100/704] loss 4.0039 | top1 9.56% | top3 22.88% | top5 31.89% | 528.6 img/s
+[train step 200/704] loss 3.9907 | top1 10.30% | top3 23.68% | top5 32.48% | 522.3 img/s
+[train step 300/704] loss 3.9840 | top1 10.47% | top3 23.66% | top5 32.34% | 526.2 img/s
+[train step 400/704] loss 3.9744 | top1 10.70% | top3 24.00% | top5 32.79% | 526.6 img/s
+[train step 500/704] loss 3.9573 | top1 11.11% | top3 24.62% | top5 33.54% | 527.6 img/s
+[train step 600/704] loss 3.9462 | top1 11.36% | top3 24.99% | top5 33.96% | 525.7 img/s
+[train step 700/704] loss 3.9315 | top1 11.62% | top3 25.46% | top5 34.55% | 524.7 img/s
+[Train] loss 3.9309 | top1 11.63% | top3 25.48% | top5 34.57%
+[Val]   loss 3.8309 | top1 13.20% | top3 28.54% | top5 38.00%
+ Best saved to best_swin_cifar100.pt (val top1 13.20%)
+Epoch time: 1.52 min
+
+=== Epoch 4/50 ===
+[train step 100/704] loss 3.7899 | top1 15.12% | top3 30.55% | top5 40.47% | 525.5 img/s
+[train step 200/704] loss 3.8019 | top1 14.62% | top3 29.79% | top5 39.45% | 516.2 img/s
+[train step 300/704] loss 3.7991 | top1 14.56% | top3 29.82% | top5 39.52% | 520.4 img/s
+[train step 400/704] loss 3.7789 | top1 14.87% | top3 30.37% | top5 40.23% | 524.1 img/s
+[train step 500/704] loss 3.7667 | top1 15.12% | top3 30.72% | top5 40.53% | 525.1 img/s
+[train step 600/704] loss 3.7549 | top1 15.40% | top3 31.11% | top5 40.92% | 526.3 img/s
+[train step 700/704] loss 3.7478 | top1 15.52% | top3 31.33% | top5 41.19% | 526.3 img/s
+[Train] loss 3.7473 | top1 15.52% | top3 31.35% | top5 41.19%
+[Val]   loss 3.6426 | top1 17.28% | top3 33.56% | top5 44.36%
+ Best saved to best_swin_cifar100.pt (val top1 17.28%)
+Epoch time: 1.52 min
+
+=== Epoch 5/50 ===
+[train step 100/704] loss 3.6542 | top1 16.91% | top3 34.31% | top5 45.06% | 522.6 img/s
+[train step 200/704] loss 3.6445 | top1 17.54% | top3 34.70% | top5 45.16% | 522.1 img/s
+[train step 300/704] loss 3.6353 | top1 17.56% | top3 35.01% | top5 45.34% | 524.2 img/s
+[train step 400/704] loss 3.6259 | top1 17.81% | top3 35.35% | top5 45.66% | 524.5 img/s
+[train step 500/704] loss 3.6143 | top1 18.09% | top3 35.67% | top5 46.07% | 525.4 img/s
+[train step 600/704] loss 3.6017 | top1 18.47% | top3 36.05% | top5 46.42% | 525.8 img/s
+[train step 700/704] loss 3.5963 | top1 18.62% | top3 36.21% | top5 46.53% | 526.2 img/s
+[Train] loss 3.5959 | top1 18.63% | top3 36.22% | top5 46.53%
+[Val]   loss 3.5043 | top1 20.46% | top3 38.72% | top5 49.16%
+ Best saved to best_swin_cifar100.pt (val top1 20.46%)
+Epoch time: 1.52 min
+
+=== Epoch 6/50 ===
+[train step 100/704] loss 3.5072 | top1 21.22% | top3 39.50% | top5 49.89% | 520.1 img/s
+[train step 200/704] loss 3.5108 | top1 21.05% | top3 39.01% | top5 49.46% | 525.6 img/s
+[train step 300/704] loss 3.5063 | top1 21.05% | top3 39.02% | top5 49.60% | 531.1 img/s
+[train step 400/704] loss 3.4971 | top1 21.27% | top3 39.39% | top5 49.91% | 530.5 img/s
+[train step 500/704] loss 3.4937 | top1 21.21% | top3 39.47% | top5 49.99% | 530.7 img/s
+[train step 600/704] loss 3.4925 | top1 21.27% | top3 39.42% | top5 49.92% | 532.1 img/s
+[train step 700/704] loss 3.4868 | top1 21.36% | top3 39.57% | top5 50.14% | 532.0 img/s
+[Train] loss 3.4862 | top1 21.38% | top3 39.60% | top5 50.17%
+[Val]   loss 3.4156 | top1 22.62% | top3 41.50% | top5 52.58%
+ Best saved to best_swin_cifar100.pt (val top1 22.62%)
+Epoch time: 1.50 min
+
+=== Epoch 7/50 ===
+[train step 100/704] loss 3.3929 | top1 23.77% | top3 42.47% | top5 52.91% | 516.1 img/s
+[train step 200/704] loss 3.4032 | top1 23.25% | top3 42.18% | top5 52.45% | 525.5 img/s
+[train step 300/704] loss 3.3979 | top1 23.42% | top3 42.27% | top5 52.62% | 529.1 img/s
+[train step 400/704] loss 3.3985 | top1 23.29% | top3 42.21% | top5 52.66% | 526.2 img/s
+[train step 500/704] loss 3.4059 | top1 23.03% | top3 42.14% | top5 52.65% | 525.8 img/s
+[train step 600/704] loss 3.4075 | top1 22.94% | top3 42.02% | top5 52.63% | 528.0 img/s
+[train step 700/704] loss 3.4034 | top1 23.00% | top3 42.14% | top5 52.76% | 527.3 img/s
+[Train] loss 3.4030 | top1 23.03% | top3 42.15% | top5 52.77%
+[Val]   loss 3.3463 | top1 24.88% | top3 43.16% | top5 54.76%
+ Best saved to best_swin_cifar100.pt (val top1 24.88%)
+Epoch time: 1.51 min
+
+=== Epoch 8/50 ===
+[train step 100/704] loss 3.3349 | top1 23.89% | top3 43.88% | top5 54.80% | 517.4 img/s
+[train step 200/704] loss 3.3425 | top1 24.12% | top3 43.98% | top5 54.73% | 529.1 img/s
+[train step 300/704] loss 3.3425 | top1 24.31% | top3 44.19% | top5 55.10% | 530.8 img/s
+[train step 400/704] loss 3.3310 | top1 24.66% | top3 44.62% | top5 55.48% | 532.6 img/s
+[train step 500/704] loss 3.3275 | top1 24.75% | top3 44.54% | top5 55.41% | 532.2 img/s
+[train step 600/704] loss 3.3281 | top1 24.56% | top3 44.56% | top5 55.35% | 531.4 img/s
+[train step 700/704] loss 3.3239 | top1 24.74% | top3 44.68% | top5 55.42% | 532.2 img/s
+[Train] loss 3.3243 | top1 24.74% | top3 44.67% | top5 55.42%
+[Val]   loss 3.3545 | top1 24.08% | top3 43.76% | top5 54.14%
+Epoch time: 1.49 min
+
+=== Epoch 9/50 ===
+[train step 100/704] loss 3.2903 | top1 25.75% | top3 46.23% | top5 56.50% | 520.1 img/s
+[train step 200/704] loss 3.2767 | top1 26.08% | top3 46.68% | top5 57.05% | 519.4 img/s
+[train step 300/704] loss 3.2814 | top1 25.98% | top3 46.26% | top5 56.80% | 518.9 img/s
+[train step 400/704] loss 3.2811 | top1 26.02% | top3 46.24% | top5 56.81% | 521.4 img/s
+[train step 500/704] loss 3.2805 | top1 26.10% | top3 46.38% | top5 56.86% | 523.6 img/s
+[train step 600/704] loss 3.2784 | top1 26.02% | top3 46.55% | top5 57.03% | 524.2 img/s
+[train step 700/704] loss 3.2741 | top1 26.10% | top3 46.65% | top5 57.18% | 526.1 img/s
+[Train] loss 3.2739 | top1 26.11% | top3 46.66% | top5 57.18%
+[Val]   loss 3.2277 | top1 27.56% | top3 48.26% | top5 58.70%
+ Best saved to best_swin_cifar100.pt (val top1 27.56%)
+Epoch time: 1.51 min
+
+=== Epoch 10/50 ===
+[train step 100/704] loss 3.2001 | top1 27.33% | top3 48.66% | top5 59.36% | 524.2 img/s
+[train step 200/704] loss 3.2194 | top1 27.07% | top3 48.20% | top5 58.62% | 524.6 img/s
+[train step 300/704] loss 3.2152 | top1 27.05% | top3 48.04% | top5 58.71% | 529.0 img/s
+[train step 400/704] loss 3.2151 | top1 27.08% | top3 48.02% | top5 58.75% | 528.6 img/s
+[train step 500/704] loss 3.2137 | top1 27.10% | top3 48.06% | top5 58.79% | 529.7 img/s
+[train step 600/704] loss 3.2079 | top1 27.39% | top3 48.28% | top5 59.01% | 532.2 img/s
+[train step 700/704] loss 3.2095 | top1 27.44% | top3 48.33% | top5 59.02% | 533.3 img/s
+[Train] loss 3.2098 | top1 27.46% | top3 48.32% | top5 59.02%
+[Val]   loss 3.1573 | top1 29.06% | top3 49.46% | top5 60.32%
+ Best saved to best_swin_cifar100.pt (val top1 29.06%)
+Epoch time: 1.50 min
+
+=== Epoch 11/50 ===
+[train step 100/704] loss 3.1616 | top1 28.88% | top3 49.95% | top5 60.14% | 517.5 img/s
+[train step 200/704] loss 3.1567 | top1 28.59% | top3 50.23% | top5 60.58% | 521.3 img/s
+[train step 300/704] loss 3.1641 | top1 28.64% | top3 50.30% | top5 60.66% | 524.9 img/s
+[train step 400/704] loss 3.1580 | top1 28.78% | top3 50.18% | top5 60.64% | 526.9 img/s
+[train step 500/704] loss 3.1579 | top1 28.82% | top3 50.26% | top5 60.65% | 527.8 img/s
+[train step 600/704] loss 3.1579 | top1 28.76% | top3 50.18% | top5 60.64% | 528.9 img/s
+[train step 700/704] loss 3.1565 | top1 28.87% | top3 50.25% | top5 60.68% | 530.4 img/s
+[Train] loss 3.1562 | top1 28.88% | top3 50.28% | top5 60.69%
+[Val]   loss 3.1127 | top1 29.84% | top3 51.20% | top5 61.92%
+ Best saved to best_swin_cifar100.pt (val top1 29.84%)
+Epoch time: 1.51 min
+
+=== Epoch 12/50 ===
+[train step 100/704] loss 3.1006 | top1 30.50% | top3 51.86% | top5 61.41% | 530.8 img/s
+[train step 200/704] loss 3.0896 | top1 30.81% | top3 51.88% | top5 61.79% | 536.8 img/s
+[train step 300/704] loss 3.0994 | top1 30.26% | top3 51.61% | top5 61.56% | 531.7 img/s
+[train step 400/704] loss 3.0995 | top1 30.35% | top3 51.68% | top5 61.71% | 531.2 img/s
+[train step 500/704] loss 3.1024 | top1 30.35% | top3 51.52% | top5 61.68% | 531.6 img/s
+[train step 600/704] loss 3.1034 | top1 30.38% | top3 51.54% | top5 61.78% | 531.8 img/s
+[train step 700/704] loss 3.1050 | top1 30.34% | top3 51.47% | top5 61.81% | 532.4 img/s
+[Train] loss 3.1049 | top1 30.36% | top3 51.48% | top5 61.83%
+[Val]   loss 3.1252 | top1 30.38% | top3 51.06% | top5 61.40%
+ Best saved to best_swin_cifar100.pt (val top1 30.38%)
+Epoch time: 1.50 min
+
+=== Epoch 13/50 ===
+[train step 100/704] loss 3.0555 | top1 31.58% | top3 52.75% | top5 63.23% | 513.0 img/s
+[train step 200/704] loss 3.0650 | top1 31.75% | top3 52.40% | top5 62.90% | 522.6 img/s
+[train step 300/704] loss 3.0551 | top1 31.78% | top3 52.76% | top5 63.19% | 526.4 img/s
+[train step 400/704] loss 3.0631 | top1 31.39% | top3 52.50% | top5 62.98% | 527.4 img/s
+[train step 500/704] loss 3.0660 | top1 31.21% | top3 52.53% | top5 63.00% | 528.2 img/s
+[train step 600/704] loss 3.0641 | top1 31.37% | top3 52.68% | top5 63.19% | 530.8 img/s
+[train step 700/704] loss 3.0612 | top1 31.55% | top3 52.82% | top5 63.24% | 531.6 img/s
+[Train] loss 3.0616 | top1 31.53% | top3 52.80% | top5 63.24%
+[Val]   loss 3.0624 | top1 31.70% | top3 52.26% | top5 62.12%
+ Best saved to best_swin_cifar100.pt (val top1 31.70%)
+Epoch time: 1.50 min
+
+=== Epoch 14/50 ===
+[train step 100/704] loss 3.0116 | top1 32.86% | top3 54.56% | top5 64.58% | 526.1 img/s
+[train step 200/704] loss 3.0205 | top1 32.43% | top3 54.18% | top5 64.38% | 530.1 img/s
+[train step 300/704] loss 3.0145 | top1 32.61% | top3 54.32% | top5 64.46% | 530.8 img/s
+[train step 400/704] loss 3.0164 | top1 32.81% | top3 54.38% | top5 64.37% | 532.0 img/s
+[train step 500/704] loss 3.0152 | top1 32.91% | top3 54.35% | top5 64.47% | 529.4 img/s
+[train step 600/704] loss 3.0135 | top1 33.01% | top3 54.42% | top5 64.48% | 529.8 img/s
+[train step 700/704] loss 3.0152 | top1 33.03% | top3 54.37% | top5 64.39% | 530.6 img/s
+[Train] loss 3.0157 | top1 33.03% | top3 54.36% | top5 64.38%
+[Val]   loss 3.0028 | top1 33.22% | top3 54.28% | top5 64.34%
+ Best saved to best_swin_cifar100.pt (val top1 33.22%)
+Epoch time: 1.50 min
+
+=== Epoch 15/50 ===
+[train step 100/704] loss 2.9415 | top1 34.42% | top3 56.23% | top5 66.70% | 513.6 img/s
+[train step 200/704] loss 2.9517 | top1 34.07% | top3 55.87% | top5 66.20% | 517.9 img/s
+[train step 300/704] loss 2.9535 | top1 34.05% | top3 56.07% | top5 66.30% | 524.6 img/s
+[train step 400/704] loss 2.9555 | top1 34.14% | top3 55.92% | top5 66.12% | 528.6 img/s
+[train step 500/704] loss 2.9610 | top1 34.04% | top3 55.70% | top5 65.90% | 530.5 img/s
+[train step 600/704] loss 2.9627 | top1 34.07% | top3 55.66% | top5 65.82% | 529.6 img/s
+[train step 700/704] loss 2.9626 | top1 34.05% | top3 55.63% | top5 65.87% | 530.8 img/s
+[Train] loss 2.9623 | top1 34.04% | top3 55.66% | top5 65.89%
+[Val]   loss 2.9540 | top1 33.80% | top3 56.28% | top5 66.14%
+ Best saved to best_swin_cifar100.pt (val top1 33.80%)
+Epoch time: 1.50 min
+
+=== Epoch 16/50 ===
+[train step 100/704] loss 2.8925 | top1 35.62% | top3 57.75% | top5 67.34% | 513.9 img/s
+[train step 200/704] loss 2.9110 | top1 35.20% | top3 57.52% | top5 67.17% | 529.4 img/s
+[train step 300/704] loss 2.9161 | top1 34.96% | top3 57.27% | top5 67.07% | 531.9 img/s
+[train step 400/704] loss 2.9155 | top1 35.05% | top3 57.38% | top5 67.09% | 534.2 img/s
+[train step 500/704] loss 2.9139 | top1 35.12% | top3 57.36% | top5 67.13% | 533.2 img/s
+[train step 600/704] loss 2.9151 | top1 35.15% | top3 57.27% | top5 67.16% | 531.5 img/s
+[train step 700/704] loss 2.9157 | top1 35.12% | top3 57.17% | top5 67.19% | 531.8 img/s
+[Train] loss 2.9160 | top1 35.10% | top3 57.15% | top5 67.17%
+[Val]   loss 2.9370 | top1 34.78% | top3 56.26% | top5 66.16%
+ Best saved to best_swin_cifar100.pt (val top1 34.78%)
+Epoch time: 1.50 min
+
+=== Epoch 17/50 ===
+[train step 100/704] loss 2.8382 | top1 37.03% | top3 59.34% | top5 69.56% | 519.4 img/s
+[train step 200/704] loss 2.8619 | top1 36.81% | top3 58.70% | top5 68.63% | 526.0 img/s
+[train step 300/704] loss 2.8718 | top1 36.60% | top3 58.40% | top5 68.41% | 530.3 img/s
+[train step 400/704] loss 2.8754 | top1 36.39% | top3 58.05% | top5 68.20% | 529.2 img/s
+[train step 500/704] loss 2.8772 | top1 36.43% | top3 57.93% | top5 68.20% | 528.4 img/s
+[train step 600/704] loss 2.8804 | top1 36.33% | top3 57.89% | top5 68.11% | 527.9 img/s
+[train step 700/704] loss 2.8792 | top1 36.32% | top3 57.98% | top5 68.14% | 527.6 img/s
+[Train] loss 2.8793 | top1 36.32% | top3 57.98% | top5 68.12%
+[Val]   loss 2.8672 | top1 35.90% | top3 58.64% | top5 68.30%
+ Best saved to best_swin_cifar100.pt (val top1 35.90%)
+Epoch time: 1.51 min
+
+=== Epoch 18/50 ===
+[train step 100/704] loss 2.8349 | top1 37.42% | top3 59.48% | top5 69.75% | 527.2 img/s
+[train step 200/704] loss 2.8294 | top1 37.50% | top3 59.60% | top5 69.61% | 531.7 img/s
+[train step 300/704] loss 2.8296 | top1 37.21% | top3 59.44% | top5 69.46% | 534.1 img/s
+[train step 400/704] loss 2.8249 | top1 37.39% | top3 59.69% | top5 69.62% | 530.1 img/s
+[train step 500/704] loss 2.8243 | top1 37.48% | top3 59.77% | top5 69.61% | 530.8 img/s
+[train step 600/704] loss 2.8333 | top1 37.40% | top3 59.46% | top5 69.28% | 531.3 img/s
+[train step 700/704] loss 2.8350 | top1 37.33% | top3 59.36% | top5 69.25% | 531.1 img/s
+[Train] loss 2.8351 | top1 37.34% | top3 59.36% | top5 69.23%
+[Val]   loss 2.8289 | top1 37.10% | top3 60.00% | top5 69.90%
+ Best saved to best_swin_cifar100.pt (val top1 37.10%)
+Epoch time: 1.50 min
+
+=== Epoch 19/50 ===
+[train step 100/704] loss 2.7906 | top1 38.25% | top3 60.70% | top5 70.36% | 520.4 img/s
+[train step 200/704] loss 2.7946 | top1 38.07% | top3 60.09% | top5 70.13% | 525.5 img/s
+[train step 300/704] loss 2.7943 | top1 38.11% | top3 60.24% | top5 70.33% | 531.7 img/s
+[train step 400/704] loss 2.7842 | top1 38.46% | top3 60.70% | top5 70.56% | 531.7 img/s
+[train step 500/704] loss 2.7898 | top1 38.38% | top3 60.56% | top5 70.40% | 533.6 img/s
+[train step 600/704] loss 2.7933 | top1 38.30% | top3 60.55% | top5 70.40% | 534.0 img/s
+[train step 700/704] loss 2.7952 | top1 38.38% | top3 60.53% | top5 70.28% | 535.0 img/s
+[Train] loss 2.7945 | top1 38.40% | top3 60.56% | top5 70.29%
+[Val]   loss 2.8042 | top1 38.52% | top3 60.22% | top5 70.62%
+ Best saved to best_swin_cifar100.pt (val top1 38.52%)
+Epoch time: 1.49 min
+
+=== Epoch 20/50 ===
+[train step 100/704] loss 2.7546 | top1 39.05% | top3 62.42% | top5 71.64% | 525.2 img/s
+[train step 200/704] loss 2.7559 | top1 39.12% | top3 62.09% | top5 71.61% | 530.2 img/s
+[train step 300/704] loss 2.7550 | top1 39.14% | top3 62.02% | top5 71.47% | 528.3 img/s
+[train step 400/704] loss 2.7521 | top1 39.35% | top3 62.00% | top5 71.64% | 529.3 img/s
+[train step 500/704] loss 2.7509 | top1 39.27% | top3 61.88% | top5 71.68% | 531.9 img/s
+[train step 600/704] loss 2.7547 | top1 39.27% | top3 61.67% | top5 71.52% | 532.6 img/s
+[train step 700/704] loss 2.7588 | top1 39.15% | top3 61.56% | top5 71.45% | 532.0 img/s
+[Train] loss 2.7590 | top1 39.16% | top3 61.55% | top5 71.46%
+[Val]   loss 2.8058 | top1 37.52% | top3 59.92% | top5 69.76%
+Epoch time: 1.49 min
+
+=== Epoch 21/50 ===
+[train step 100/704] loss 2.6995 | top1 41.22% | top3 63.66% | top5 72.95% | 531.2 img/s
+[train step 200/704] loss 2.7059 | top1 40.88% | top3 63.33% | top5 72.79% | 523.5 img/s
+[train step 300/704] loss 2.6984 | top1 41.06% | top3 63.48% | top5 72.82% | 527.2 img/s
+[train step 400/704] loss 2.6973 | top1 41.07% | top3 63.27% | top5 72.87% | 526.7 img/s
+[train step 500/704] loss 2.7077 | top1 40.73% | top3 63.00% | top5 72.65% | 526.5 img/s
+[train step 600/704] loss 2.7104 | top1 40.55% | top3 62.90% | top5 72.56% | 528.9 img/s
+[train step 700/704] loss 2.7133 | top1 40.50% | top3 62.77% | top5 72.38% | 529.5 img/s
+[Train] loss 2.7133 | top1 40.51% | top3 62.77% | top5 72.39%
+[Val]   loss 2.8143 | top1 38.04% | top3 59.94% | top5 69.66%
+Epoch time: 1.49 min
+
+=== Epoch 22/50 ===
+[train step 100/704] loss 2.6901 | top1 40.52% | top3 63.73% | top5 72.94% | 510.6 img/s
+[train step 200/704] loss 2.6775 | top1 41.15% | top3 63.90% | top5 73.29% | 523.4 img/s
+[train step 300/704] loss 2.6742 | top1 41.40% | top3 64.04% | top5 73.38% | 530.1 img/s
+[train step 400/704] loss 2.6705 | top1 41.64% | top3 64.00% | top5 73.47% | 531.7 img/s
+[train step 500/704] loss 2.6734 | top1 41.57% | top3 63.90% | top5 73.38% | 531.8 img/s
+[train step 600/704] loss 2.6679 | top1 41.77% | top3 64.04% | top5 73.47% | 531.7 img/s
+[train step 700/704] loss 2.6708 | top1 41.70% | top3 63.96% | top5 73.37% | 531.1 img/s
+[Train] loss 2.6710 | top1 41.68% | top3 63.95% | top5 73.37%
+[Val]   loss 2.7633 | top1 39.74% | top3 60.70% | top5 70.80%
+ Best saved to best_swin_cifar100.pt (val top1 39.74%)
+Epoch time: 1.50 min
+
+=== Epoch 23/50 ===
+[train step 100/704] loss 2.6020 | top1 43.62% | top3 65.78% | top5 75.05% | 516.1 img/s
+[train step 200/704] loss 2.6156 | top1 43.24% | top3 65.61% | top5 74.91% | 531.4 img/s
+[train step 300/704] loss 2.6249 | top1 42.97% | top3 65.23% | top5 74.62% | 528.1 img/s
+[train step 400/704] loss 2.6354 | top1 42.65% | top3 64.94% | top5 74.34% | 529.4 img/s
+[train step 500/704] loss 2.6341 | top1 42.74% | top3 65.00% | top5 74.23% | 528.6 img/s
+[train step 600/704] loss 2.6353 | top1 42.71% | top3 64.93% | top5 74.31% | 529.5 img/s
+[train step 700/704] loss 2.6325 | top1 42.83% | top3 65.04% | top5 74.37% | 530.4 img/s
+[Train] loss 2.6315 | top1 42.87% | top3 65.07% | top5 74.39%
+[Val]   loss 2.7318 | top1 41.22% | top3 62.20% | top5 71.72%
+ Best saved to best_swin_cifar100.pt (val top1 41.22%)
+Epoch time: 1.50 min
+
+=== Epoch 24/50 ===
+[train step 100/704] loss 2.5769 | top1 44.33% | top3 67.06% | top5 76.22% | 513.1 img/s
+[train step 200/704] loss 2.5844 | top1 43.84% | top3 66.66% | top5 75.86% | 524.8 img/s
+[train step 300/704] loss 2.5865 | top1 43.86% | top3 66.35% | top5 75.68% | 527.8 img/s
+[train step 400/704] loss 2.5892 | top1 43.78% | top3 66.18% | top5 75.47% | 529.2 img/s
+[train step 500/704] loss 2.5941 | top1 43.61% | top3 66.23% | top5 75.30% | 528.9 img/s
+[train step 600/704] loss 2.5932 | top1 43.64% | top3 66.22% | top5 75.36% | 528.7 img/s
+[train step 700/704] loss 2.5932 | top1 43.60% | top3 66.29% | top5 75.39% | 529.2 img/s
+[Train] loss 2.5935 | top1 43.58% | top3 66.27% | top5 75.38%
+[Val]   loss 2.6812 | top1 41.70% | top3 63.98% | top5 73.88%
+ Best saved to best_swin_cifar100.pt (val top1 41.70%)
+Epoch time: 1.51 min
+
+=== Epoch 25/50 ===
+[train step 100/704] loss 2.5337 | top1 44.58% | top3 68.23% | top5 77.34% | 516.1 img/s
+[train step 200/704] loss 2.5484 | top1 44.62% | top3 67.53% | top5 76.79% | 523.5 img/s
+[train step 300/704] loss 2.5532 | top1 44.56% | top3 67.18% | top5 76.41% | 526.6 img/s
+[train step 400/704] loss 2.5592 | top1 44.49% | top3 67.12% | top5 76.33% | 524.2 img/s
+[train step 500/704] loss 2.5561 | top1 44.73% | top3 67.23% | top5 76.35% | 525.3 img/s
+[train step 600/704] loss 2.5563 | top1 44.71% | top3 67.27% | top5 76.40% | 523.9 img/s
+[train step 700/704] loss 2.5601 | top1 44.62% | top3 67.15% | top5 76.29% | 525.4 img/s
+[Train] loss 2.5606 | top1 44.60% | top3 67.15% | top5 76.28%
+[Val]   loss 2.6506 | top1 43.04% | top3 64.32% | top5 74.32%
+ Best saved to best_swin_cifar100.pt (val top1 43.04%)
+Epoch time: 1.52 min
+
+=== Epoch 26/50 ===
+[train step 100/704] loss 2.5076 | top1 45.75% | top3 68.91% | top5 77.98% | 516.9 img/s
+[train step 200/704] loss 2.5039 | top1 46.13% | top3 68.89% | top5 77.64% | 527.0 img/s
+[train step 300/704] loss 2.5110 | top1 45.78% | top3 68.54% | top5 77.52% | 528.0 img/s
+[train step 400/704] loss 2.5077 | top1 45.98% | top3 68.71% | top5 77.54% | 531.1 img/s
+[train step 500/704] loss 2.5134 | top1 45.89% | top3 68.59% | top5 77.45% | 533.2 img/s
+[train step 600/704] loss 2.5144 | top1 45.81% | top3 68.55% | top5 77.45% | 532.5 img/s
+[train step 700/704] loss 2.5155 | top1 45.95% | top3 68.46% | top5 77.32% | 531.3 img/s
+[Train] loss 2.5156 | top1 45.95% | top3 68.46% | top5 77.34%
+[Val]   loss 2.6219 | top1 43.80% | top3 65.92% | top5 75.32%
+ Best saved to best_swin_cifar100.pt (val top1 43.80%)
+Epoch time: 1.50 min
+
+=== Epoch 27/50 ===
+[train step 100/704] loss 2.4609 | top1 47.22% | top3 69.89% | top5 78.78% | 520.5 img/s
+[train step 200/704] loss 2.4596 | top1 47.62% | top3 70.09% | top5 78.78% | 525.2 img/s
+[train step 300/704] loss 2.4599 | top1 47.67% | top3 69.95% | top5 78.78% | 528.7 img/s
+[train step 400/704] loss 2.4685 | top1 47.39% | top3 69.80% | top5 78.59% | 529.2 img/s
+[train step 500/704] loss 2.4685 | top1 47.41% | top3 69.87% | top5 78.61% | 528.4 img/s
+[train step 600/704] loss 2.4722 | top1 47.36% | top3 69.75% | top5 78.47% | 529.9 img/s
+[train step 700/704] loss 2.4735 | top1 47.35% | top3 69.75% | top5 78.41% | 530.0 img/s
+[Train] loss 2.4735 | top1 47.37% | top3 69.76% | top5 78.40%
+[Val]   loss 2.6361 | top1 43.58% | top3 64.46% | top5 73.90%
+Epoch time: 1.49 min
+
+=== Epoch 28/50 ===
+[train step 100/704] loss 2.4375 | top1 48.66% | top3 70.22% | top5 78.80% | 526.8 img/s
+[train step 200/704] loss 2.4315 | top1 48.79% | top3 70.85% | top5 79.02% | 526.9 img/s
+[train step 300/704] loss 2.4295 | top1 48.80% | top3 70.97% | top5 79.24% | 524.4 img/s
+[train step 400/704] loss 2.4313 | top1 48.68% | top3 70.71% | top5 79.06% | 528.1 img/s
+[train step 500/704] loss 2.4327 | top1 48.49% | top3 70.71% | top5 79.07% | 528.8 img/s
+[train step 600/704] loss 2.4383 | top1 48.31% | top3 70.48% | top5 78.93% | 529.1 img/s
+[train step 700/704] loss 2.4397 | top1 48.37% | top3 70.46% | top5 78.91% | 528.3 img/s
+[Train] loss 2.4394 | top1 48.36% | top3 70.47% | top5 78.93%
+[Val]   loss 2.6125 | top1 43.44% | top3 65.86% | top5 74.58%
+Epoch time: 1.50 min
+
+=== Epoch 29/50 ===
+[train step 100/704] loss 2.3468 | top1 51.52% | top3 72.83% | top5 80.89% | 521.1 img/s
+[train step 200/704] loss 2.3731 | top1 50.65% | top3 72.45% | top5 80.55% | 518.8 img/s
+[train step 300/704] loss 2.3866 | top1 50.23% | top3 72.16% | top5 80.23% | 523.8 img/s
+[train step 400/704] loss 2.3933 | top1 49.80% | top3 71.98% | top5 80.18% | 528.7 img/s
+[train step 500/704] loss 2.3927 | top1 49.76% | top3 71.97% | top5 80.17% | 528.7 img/s
+[train step 600/704] loss 2.3905 | top1 49.81% | top3 71.94% | top5 80.21% | 528.5 img/s
+[train step 700/704] loss 2.3903 | top1 49.83% | top3 71.84% | top5 80.16% | 528.7 img/s
+[Train] loss 2.3899 | top1 49.84% | top3 71.85% | top5 80.17%
+[Val]   loss 2.5628 | top1 44.78% | top3 67.46% | top5 76.44%
+ Best saved to best_swin_cifar100.pt (val top1 44.78%)
+Epoch time: 1.51 min
+
+=== Epoch 30/50 ===
+[train step 100/704] loss 2.3535 | top1 50.59% | top3 73.19% | top5 81.70% | 518.1 img/s
+[train step 200/704] loss 2.3495 | top1 50.64% | top3 73.15% | top5 81.72% | 524.3 img/s
+[train step 300/704] loss 2.3568 | top1 50.41% | top3 72.80% | top5 81.12% | 529.5 img/s
+[train step 400/704] loss 2.3575 | top1 50.45% | top3 72.73% | top5 81.15% | 531.7 img/s
+[train step 500/704] loss 2.3568 | top1 50.59% | top3 72.75% | top5 81.16% | 532.5 img/s
+[train step 600/704] loss 2.3579 | top1 50.58% | top3 72.70% | top5 81.12% | 533.7 img/s
+[train step 700/704] loss 2.3582 | top1 50.56% | top3 72.68% | top5 81.18% | 534.6 img/s
+[Train] loss 2.3579 | top1 50.55% | top3 72.70% | top5 81.18%
+[Val]   loss 2.5821 | top1 45.30% | top3 66.64% | top5 75.82%
+ Best saved to best_swin_cifar100.pt (val top1 45.30%)
+Epoch time: 1.49 min
+
+=== Epoch 31/50 ===
+[train step 100/704] loss 2.2971 | top1 52.39% | top3 74.62% | top5 82.56% | 533.6 img/s
+[train step 200/704] loss 2.3064 | top1 52.21% | top3 74.23% | top5 82.23% | 531.2 img/s
+[train step 300/704] loss 2.3074 | top1 52.36% | top3 74.12% | top5 82.21% | 532.7 img/s
+[train step 400/704] loss 2.3141 | top1 52.14% | top3 73.94% | top5 82.06% | 534.0 img/s
+[train step 500/704] loss 2.3214 | top1 51.89% | top3 73.68% | top5 81.85% | 535.6 img/s
+[train step 600/704] loss 2.3230 | top1 51.80% | top3 73.70% | top5 81.85% | 536.7 img/s
+[train step 700/704] loss 2.3257 | top1 51.61% | top3 73.71% | top5 81.85% | 537.9 img/s
+[Train] loss 2.3259 | top1 51.60% | top3 73.70% | top5 81.84%
+[Val]   loss 2.5471 | top1 46.06% | top3 67.36% | top5 76.32%
+ Best saved to best_swin_cifar100.pt (val top1 46.06%)
+Epoch time: 1.49 min
+
+=== Epoch 32/50 ===
+[train step 100/704] loss 2.2598 | top1 53.55% | top3 75.41% | top5 83.42% | 527.0 img/s
+[train step 200/704] loss 2.2774 | top1 53.22% | top3 75.33% | top5 83.05% | 531.1 img/s
+[train step 300/704] loss 2.2836 | top1 52.91% | top3 74.84% | top5 82.79% | 533.9 img/s
+[train step 400/704] loss 2.2857 | top1 52.76% | top3 74.55% | top5 82.62% | 535.2 img/s
+[train step 500/704] loss 2.2865 | top1 52.84% | top3 74.58% | top5 82.68% | 537.9 img/s
+[train step 600/704] loss 2.2857 | top1 52.85% | top3 74.57% | top5 82.61% | 538.1 img/s
+[train step 700/704] loss 2.2912 | top1 52.58% | top3 74.45% | top5 82.55% | 537.0 img/s
+[Train] loss 2.2914 | top1 52.58% | top3 74.44% | top5 82.56%
+[Val]   loss 2.5226 | top1 47.16% | top3 67.34% | top5 76.32%
+ Best saved to best_swin_cifar100.pt (val top1 47.16%)
+Epoch time: 1.48 min
+
+=== Epoch 33/50 ===
+[train step 100/704] loss 2.2529 | top1 53.42% | top3 75.78% | top5 83.47% | 529.2 img/s
+[train step 200/704] loss 2.2374 | top1 54.10% | top3 76.09% | top5 83.84% | 527.6 img/s
+[train step 300/704] loss 2.2410 | top1 53.99% | top3 75.84% | top5 83.72% | 531.2 img/s
+[train step 400/704] loss 2.2435 | top1 54.01% | top3 75.78% | top5 83.65% | 533.0 img/s
+[train step 500/704] loss 2.2453 | top1 53.90% | top3 75.80% | top5 83.62% | 534.0 img/s
+[train step 600/704] loss 2.2492 | top1 53.75% | top3 75.75% | top5 83.60% | 533.8 img/s
+[train step 700/704] loss 2.2552 | top1 53.62% | top3 75.56% | top5 83.40% | 533.8 img/s
+[Train] loss 2.2557 | top1 53.61% | top3 75.55% | top5 83.40%
+[Val]   loss 2.5082 | top1 47.50% | top3 68.98% | top5 77.44%
+ Best saved to best_swin_cifar100.pt (val top1 47.50%)
+Epoch time: 1.50 min
+
+=== Epoch 34/50 ===
+[train step 100/704] loss 2.2238 | top1 54.70% | top3 76.22% | top5 84.00% | 530.3 img/s
+[train step 200/704] loss 2.2125 | top1 54.93% | top3 76.39% | top5 84.13% | 533.9 img/s
+[train step 300/704] loss 2.2120 | top1 55.02% | top3 76.51% | top5 84.19% | 534.6 img/s
+[train step 400/704] loss 2.2155 | top1 55.09% | top3 76.47% | top5 84.07% | 535.7 img/s
+[train step 500/704] loss 2.2163 | top1 55.02% | top3 76.47% | top5 84.06% | 536.4 img/s
+[train step 600/704] loss 2.2176 | top1 55.01% | top3 76.48% | top5 84.11% | 536.4 img/s
+[train step 700/704] loss 2.2194 | top1 54.96% | top3 76.37% | top5 84.02% | 537.6 img/s
+[Train] loss 2.2198 | top1 54.93% | top3 76.36% | top5 84.00%
+[Val]   loss 2.4702 | top1 48.44% | top3 70.16% | top5 78.64%
+ Best saved to best_swin_cifar100.pt (val top1 48.44%)
+Epoch time: 1.48 min
+
+=== Epoch 35/50 ===
+[train step 100/704] loss 2.1742 | top1 56.23% | top3 77.89% | top5 85.12% | 527.4 img/s
+[train step 200/704] loss 2.1697 | top1 56.49% | top3 77.76% | top5 85.10% | 528.0 img/s
+[train step 300/704] loss 2.1784 | top1 56.19% | top3 77.59% | top5 84.97% | 525.7 img/s
+[train step 400/704] loss 2.1804 | top1 55.99% | top3 77.30% | top5 84.90% | 527.2 img/s
+[train step 500/704] loss 2.1843 | top1 55.86% | top3 77.15% | top5 84.79% | 529.7 img/s
+[train step 600/704] loss 2.1870 | top1 55.80% | top3 77.15% | top5 84.75% | 531.0 img/s
+[train step 700/704] loss 2.1905 | top1 55.76% | top3 77.08% | top5 84.62% | 530.6 img/s
+[Train] loss 2.1906 | top1 55.76% | top3 77.08% | top5 84.63%
+[Val]   loss 2.4740 | top1 48.70% | top3 69.74% | top5 78.02%
+ Best saved to best_swin_cifar100.pt (val top1 48.70%)
+Epoch time: 1.50 min
+
+=== Epoch 36/50 ===
+[train step 100/704] loss 2.1326 | top1 57.19% | top3 78.94% | top5 86.11% | 515.6 img/s
+[train step 200/704] loss 2.1357 | top1 57.27% | top3 78.61% | top5 85.95% | 520.9 img/s
+[train step 300/704] loss 2.1458 | top1 57.03% | top3 78.39% | top5 85.64% | 526.4 img/s
+[train step 400/704] loss 2.1532 | top1 56.93% | top3 78.21% | top5 85.44% | 527.9 img/s
+[train step 500/704] loss 2.1483 | top1 57.06% | top3 78.27% | top5 85.50% | 529.1 img/s
+[train step 600/704] loss 2.1483 | top1 57.14% | top3 78.23% | top5 85.51% | 529.4 img/s
+[train step 700/704] loss 2.1526 | top1 56.96% | top3 78.12% | top5 85.44% | 530.5 img/s
+[Train] loss 2.1528 | top1 56.95% | top3 78.11% | top5 85.44%
+[Val]   loss 2.4879 | top1 48.38% | top3 69.36% | top5 78.58%
+Epoch time: 1.49 min
+
+=== Epoch 37/50 ===
+[train step 100/704] loss 2.1212 | top1 58.14% | top3 78.91% | top5 85.70% | 523.1 img/s
+[train step 200/704] loss 2.1226 | top1 57.84% | top3 78.90% | top5 86.02% | 531.8 img/s
+[train step 300/704] loss 2.1226 | top1 57.85% | top3 78.96% | top5 86.05% | 534.3 img/s
+[train step 400/704] loss 2.1220 | top1 57.86% | top3 79.05% | top5 86.08% | 535.0 img/s
+[train step 500/704] loss 2.1182 | top1 58.04% | top3 79.06% | top5 86.18% | 537.0 img/s
+[train step 600/704] loss 2.1203 | top1 58.08% | top3 79.05% | top5 86.06% | 536.7 img/s
+[train step 700/704] loss 2.1214 | top1 57.88% | top3 78.97% | top5 86.05% | 536.6 img/s
+[Train] loss 2.1210 | top1 57.88% | top3 78.98% | top5 86.06%
+[Val]   loss 2.4545 | top1 50.22% | top3 70.52% | top5 78.32%
+ Best saved to best_swin_cifar100.pt (val top1 50.22%)
+Epoch time: 1.49 min
+
+=== Epoch 38/50 ===
+[train step 100/704] loss 2.0592 | top1 59.25% | top3 80.64% | top5 87.17% | 538.1 img/s
+[train step 200/704] loss 2.0847 | top1 58.63% | top3 79.95% | top5 86.72% | 541.4 img/s
+[train step 300/704] loss 2.0807 | top1 59.27% | top3 79.96% | top5 86.68% | 538.3 img/s
+[train step 400/704] loss 2.0838 | top1 59.20% | top3 79.91% | top5 86.75% | 537.8 img/s
+[train step 500/704] loss 2.0889 | top1 58.99% | top3 79.70% | top5 86.66% | 536.7 img/s
+[train step 600/704] loss 2.0950 | top1 58.75% | top3 79.51% | top5 86.55% | 537.4 img/s
+[train step 700/704] loss 2.0962 | top1 58.70% | top3 79.46% | top5 86.54% | 537.5 img/s
+[Train] loss 2.0961 | top1 58.71% | top3 79.46% | top5 86.54%
+[Val]   loss 2.4325 | top1 48.72% | top3 70.46% | top5 78.98%
+Epoch time: 1.47 min
+
+=== Epoch 39/50 ===
+[train step 100/704] loss 2.0697 | top1 59.69% | top3 79.81% | top5 86.78% | 517.7 img/s
+[train step 200/704] loss 2.0698 | top1 59.42% | top3 80.40% | top5 87.13% | 530.2 img/s
+[train step 300/704] loss 2.0689 | top1 59.71% | top3 80.28% | top5 87.02% | 528.5 img/s
+[train step 400/704] loss 2.0703 | top1 59.66% | top3 80.35% | top5 87.03% | 529.6 img/s
+[train step 500/704] loss 2.0677 | top1 59.71% | top3 80.41% | top5 87.12% | 529.4 img/s
+[train step 600/704] loss 2.0660 | top1 59.65% | top3 80.41% | top5 87.15% | 530.9 img/s
+[train step 700/704] loss 2.0680 | top1 59.62% | top3 80.33% | top5 87.09% | 530.9 img/s
+[Train] loss 2.0679 | top1 59.63% | top3 80.34% | top5 87.09%
+[Val]   loss 2.4282 | top1 49.96% | top3 71.02% | top5 79.48%
+Epoch time: 1.49 min
+
+=== Epoch 40/50 ===
+[train step 100/704] loss 2.0378 | top1 60.77% | top3 81.03% | top5 87.67% | 524.6 img/s
+[train step 200/704] loss 2.0355 | top1 60.61% | top3 80.88% | top5 87.55% | 528.9 img/s
+[train step 300/704] loss 2.0454 | top1 60.15% | top3 80.58% | top5 87.39% | 530.0 img/s
+[train step 400/704] loss 2.0471 | top1 60.09% | top3 80.72% | top5 87.39% | 532.6 img/s
+[train step 500/704] loss 2.0420 | top1 60.15% | top3 80.90% | top5 87.62% | 533.0 img/s
+[train step 600/704] loss 2.0421 | top1 60.21% | top3 80.85% | top5 87.61% | 533.8 img/s
+[train step 700/704] loss 2.0444 | top1 60.10% | top3 80.86% | top5 87.57% | 532.5 img/s
+[Train] loss 2.0442 | top1 60.11% | top3 80.88% | top5 87.58%
+[Val]   loss 2.4417 | top1 49.66% | top3 70.62% | top5 78.68%
+Epoch time: 1.49 min
+
+=== Epoch 41/50 ===
+[train step 100/704] loss 2.0143 | top1 61.47% | top3 81.45% | top5 88.25% | 515.7 img/s
+[train step 200/704] loss 2.0177 | top1 61.42% | top3 81.64% | top5 88.24% | 533.1 img/s
+[train step 300/704] loss 2.0178 | top1 61.27% | top3 81.52% | top5 88.07% | 535.5 img/s
+[train step 400/704] loss 2.0137 | top1 61.48% | top3 81.61% | top5 88.06% | 537.0 img/s
+[train step 500/704] loss 2.0151 | top1 61.51% | top3 81.49% | top5 88.00% | 538.5 img/s
+[train step 600/704] loss 2.0170 | top1 61.51% | top3 81.55% | top5 88.00% | 539.7 img/s
+[train step 700/704] loss 2.0208 | top1 61.42% | top3 81.44% | top5 87.93% | 540.7 img/s
+[Train] loss 2.0209 | top1 61.42% | top3 81.44% | top5 87.92%
+[Val]   loss 2.4312 | top1 49.98% | top3 71.20% | top5 79.58%
+Epoch time: 1.47 min
+
+=== Epoch 42/50 ===
+[train step 100/704] loss 2.0022 | top1 61.19% | top3 81.44% | top5 88.16% | 529.3 img/s
+[train step 200/704] loss 1.9978 | top1 61.35% | top3 81.79% | top5 88.14% | 529.5 img/s
+[train step 300/704] loss 1.9931 | top1 62.07% | top3 81.99% | top5 88.33% | 531.7 img/s
+[train step 400/704] loss 1.9922 | top1 62.21% | top3 82.07% | top5 88.27% | 534.7 img/s
+[train step 500/704] loss 1.9982 | top1 62.12% | top3 81.90% | top5 88.19% | 537.7 img/s
+[train step 600/704] loss 1.9988 | top1 62.07% | top3 81.90% | top5 88.24% | 538.3 img/s
+[train step 700/704] loss 2.0021 | top1 61.90% | top3 81.81% | top5 88.23% | 537.8 img/s
+[Train] loss 2.0017 | top1 61.92% | top3 81.83% | top5 88.24%
+[Val]   loss 2.4213 | top1 49.40% | top3 71.36% | top5 79.64%
+Epoch time: 1.47 min
+
+=== Epoch 43/50 ===
+[train step 100/704] loss 1.9822 | top1 62.83% | top3 82.02% | top5 88.25% | 521.6 img/s
+[train step 200/704] loss 1.9832 | top1 62.67% | top3 82.34% | top5 88.59% | 530.2 img/s
+[train step 300/704] loss 1.9826 | top1 62.50% | top3 82.33% | top5 88.73% | 531.4 img/s
+[train step 400/704] loss 1.9858 | top1 62.35% | top3 82.13% | top5 88.64% | 532.8 img/s
+[train step 500/704] loss 1.9815 | top1 62.42% | top3 82.38% | top5 88.82% | 534.2 img/s
+[train step 600/704] loss 1.9819 | top1 62.52% | top3 82.36% | top5 88.76% | 535.4 img/s
+[train step 700/704] loss 1.9830 | top1 62.43% | top3 82.42% | top5 88.76% | 536.0 img/s
+[Train] loss 1.9830 | top1 62.42% | top3 82.42% | top5 88.75%
+[Val]   loss 2.4145 | top1 51.04% | top3 71.30% | top5 79.88%
+ Best saved to best_swin_cifar100.pt (val top1 51.04%)
+Epoch time: 1.49 min
+
+=== Epoch 44/50 ===
+[train step 100/704] loss 1.9691 | top1 62.41% | top3 82.42% | top5 89.44% | 525.8 img/s
+[train step 200/704] loss 1.9613 | top1 63.08% | top3 82.70% | top5 89.17% | 531.3 img/s
+[train step 300/704] loss 1.9637 | top1 63.07% | top3 82.79% | top5 89.08% | 534.1 img/s
+[train step 400/704] loss 1.9713 | top1 62.79% | top3 82.51% | top5 88.87% | 531.8 img/s
+[train step 500/704] loss 1.9714 | top1 62.85% | top3 82.67% | top5 88.96% | 532.3 img/s
+[train step 600/704] loss 1.9754 | top1 62.76% | top3 82.62% | top5 88.89% | 533.6 img/s
+[train step 700/704] loss 1.9762 | top1 62.67% | top3 82.59% | top5 88.87% | 534.6 img/s
+[Train] loss 1.9760 | top1 62.68% | top3 82.58% | top5 88.87%
+[Val]   loss 2.4096 | top1 50.46% | top3 72.00% | top5 79.52%
+Epoch time: 1.48 min
+
+=== Epoch 45/50 ===
+[train step 100/704] loss 1.9566 | top1 64.16% | top3 83.28% | top5 88.88% | 539.2 img/s
+[train step 200/704] loss 1.9448 | top1 64.14% | top3 83.54% | top5 89.34% | 542.3 img/s
+[train step 300/704] loss 1.9457 | top1 63.93% | top3 83.51% | top5 89.26% | 538.7 img/s
+[train step 400/704] loss 1.9571 | top1 63.80% | top3 83.19% | top5 89.12% | 539.8 img/s
+[train step 500/704] loss 1.9597 | top1 63.66% | top3 83.01% | top5 89.04% | 537.7 img/s
+[train step 600/704] loss 1.9608 | top1 63.59% | top3 82.87% | top5 89.02% | 537.2 img/s
+[train step 700/704] loss 1.9607 | top1 63.59% | top3 82.88% | top5 89.00% | 538.0 img/s
+[Train] loss 1.9611 | top1 63.56% | top3 82.88% | top5 89.00%
+[Val]   loss 2.4162 | top1 50.02% | top3 71.52% | top5 79.84%
+Epoch time: 1.47 min
+
+=== Epoch 46/50 ===
+[train step 100/704] loss 1.9342 | top1 63.92% | top3 83.66% | top5 89.83% | 527.9 img/s
+[train step 200/704] loss 1.9412 | top1 63.91% | top3 83.29% | top5 89.52% | 535.1 img/s
+[train step 300/704] loss 1.9493 | top1 63.64% | top3 83.22% | top5 89.42% | 533.7 img/s
+[train step 400/704] loss 1.9472 | top1 63.64% | top3 83.30% | top5 89.43% | 534.9 img/s
+[train step 500/704] loss 1.9463 | top1 63.65% | top3 83.31% | top5 89.47% | 534.0 img/s
+[train step 600/704] loss 1.9465 | top1 63.63% | top3 83.34% | top5 89.40% | 534.7 img/s
+[train step 700/704] loss 1.9472 | top1 63.67% | top3 83.34% | top5 89.32% | 537.0 img/s
+[Train] loss 1.9474 | top1 63.66% | top3 83.33% | top5 89.32%
+[Val]   loss 2.3989 | top1 50.34% | top3 72.12% | top5 80.18%
+Epoch time: 1.47 min
+
+=== Epoch 47/50 ===
+[train step 100/704] loss 1.9172 | top1 64.00% | top3 84.36% | top5 90.14% | 516.6 img/s
+[train step 200/704] loss 1.9306 | top1 64.02% | top3 83.66% | top5 89.61% | 527.5 img/s
+[train step 300/704] loss 1.9375 | top1 63.74% | top3 83.48% | top5 89.51% | 528.6 img/s
+[train step 400/704] loss 1.9379 | top1 63.85% | top3 83.51% | top5 89.46% | 531.8 img/s
+[train step 500/704] loss 1.9394 | top1 63.86% | top3 83.54% | top5 89.52% | 534.2 img/s
+[train step 600/704] loss 1.9346 | top1 63.98% | top3 83.68% | top5 89.57% | 535.4 img/s
+[train step 700/704] loss 1.9373 | top1 63.95% | top3 83.62% | top5 89.52% | 536.3 img/s
+[Train] loss 1.9372 | top1 63.95% | top3 83.64% | top5 89.53%
+[Val]   loss 2.4365 | top1 50.24% | top3 71.16% | top5 79.28%
+Epoch time: 1.47 min
+
+=== Epoch 48/50 ===
+[train step 100/704] loss 1.9235 | top1 64.41% | top3 83.75% | top5 89.69% | 527.8 img/s
+[train step 200/704] loss 1.9325 | top1 63.97% | top3 83.48% | top5 89.42% | 525.8 img/s
+[train step 300/704] loss 1.9412 | top1 63.68% | top3 83.30% | top5 89.33% | 530.0 img/s
+[train step 400/704] loss 1.9403 | top1 63.84% | top3 83.23% | top5 89.30% | 531.0 img/s
+[train step 500/704] loss 1.9396 | top1 63.96% | top3 83.36% | top5 89.34% | 531.3 img/s
+[train step 600/704] loss 1.9415 | top1 63.95% | top3 83.29% | top5 89.30% | 532.0 img/s
+[train step 700/704] loss 1.9426 | top1 63.89% | top3 83.26% | top5 89.29% | 532.3 img/s
+[Train] loss 1.9426 | top1 63.89% | top3 83.27% | top5 89.29%
+[Val]   loss 2.4050 | top1 50.84% | top3 71.42% | top5 79.80%
+Epoch time: 1.49 min
+
+=== Epoch 49/50 ===
+[train step 100/704] loss 1.9290 | top1 64.20% | top3 83.53% | top5 89.67% | 519.9 img/s
+[train step 200/704] loss 1.9194 | top1 64.53% | top3 84.01% | top5 89.95% | 525.4 img/s
+[train step 300/704] loss 1.9248 | top1 64.36% | top3 84.06% | top5 89.82% | 530.4 img/s
+[train step 400/704] loss 1.9223 | top1 64.51% | top3 83.97% | top5 89.77% | 532.8 img/s
+[train step 500/704] loss 1.9264 | top1 64.48% | top3 83.83% | top5 89.68% | 534.5 img/s
+[train step 600/704] loss 1.9279 | top1 64.39% | top3 83.75% | top5 89.65% | 535.6 img/s
+[train step 700/704] loss 1.9278 | top1 64.46% | top3 83.75% | top5 89.64% | 537.1 img/s
+[Train] loss 1.9275 | top1 64.46% | top3 83.77% | top5 89.66%
+[Val]   loss 2.4229 | top1 50.78% | top3 71.64% | top5 79.90%
+Epoch time: 1.47 min
+
+=== Epoch 50/50 ===
+[train step 100/704] loss 1.9501 | top1 63.73% | top3 83.59% | top5 89.53% | 528.4 img/s
+[train step 200/704] loss 1.9499 | top1 63.72% | top3 83.58% | top5 89.24% | 529.1 img/s
+[train step 300/704] loss 1.9512 | top1 63.57% | top3 83.37% | top5 89.22% | 531.1 img/s
+[train step 400/704] loss 1.9484 | top1 63.77% | top3 83.31% | top5 89.19% | 532.2 img/s
+[train step 500/704] loss 1.9452 | top1 63.81% | top3 83.34% | top5 89.30% | 533.8 img/s
+[train step 600/704] loss 1.9433 | top1 63.89% | top3 83.35% | top5 89.35% | 535.5 img/s
+[train step 700/704] loss 1.9394 | top1 64.05% | top3 83.39% | top5 89.37% | 537.8 img/s
+[Train] loss 1.9392 | top1 64.07% | top3 83.40% | top5 89.37%
+[Val]   loss 2.3925 | top1 52.34% | top3 73.02% | top5 80.42%
+ Best saved to best_swin_cifar100.pt (val top1 52.34%)
+Epoch time: 1.48 min
