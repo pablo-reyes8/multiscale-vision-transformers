@@ -10,8 +10,11 @@
 ![Forks](https://img.shields.io/github/forks/pablo-reyes8/multiscale-vision-transformers?style=social)
 ![Stars](https://img.shields.io/github/stars/pablo-reyes8/multiscale-vision-transformers?style=social)
 
-
 A focused research sandbox for comparing modern Vision Transformer families under a shared training, evaluation, and analysis setup. The repo emphasizes clarity, reproducibility, and side-by-side inspection of architectural tradeoffs on CIFAR-100 and related image classification tasks.
+> **CIFAR-100 (single-run snapshot)** — Best Val **Top-1**: **MaxViT 66.68%** · **HViT 51.50%** · **Swin 51.04%**  
+> Best Val **Top-5**: **MaxViT 89.92%** · **Swin 79.88%** · **HViT 78.40%**  
+> *(Runs are not strictly apples-to-apples; see the full table + discussion below.)*
+
 
 ## Table of Contents
 - [Vision Transformers Lab](#vision-transformers-lab)
@@ -40,11 +43,16 @@ A focused research sandbox for comparing modern Vision Transformer families unde
 
 
 ## Subprojects
+
+<div align="center">
+  
 | Folder | Model Family | Key Idea | Status |
 | --- | --- | --- | --- |
-| `HierarchicalViT/` | PiT-style hierarchical ViT | Token pooling between stages | Complete |
-| `SwinViT/` | Swin Transformer | Shifted windows + patch merging | Complete |
-| `MaxViT/` | MaxViT | Window + grid attention per block | Complete |
+| [`HierarchicalViT/`](./HierarchicalViT) | PiT-style hierarchical ViT | Token pooling between stages | Complete |
+| [`SwinViT/`](./SwinViT) | Swin Transformer | Shifted windows + patch merging | Complete |
+| [`MaxViT/`](./MaxViT) | MaxViT | Window + grid attention per block | Complete |
+
+</div>
 
 Each subproject has its own `README.md`, `requirements.txt`, scripts, tests, and (where relevant) notebooks and experiments.
 
@@ -123,14 +131,31 @@ pytest MaxViT/tests
 
 ## CIFAR-100 results (single-run snapshot)
 
-The table below reports the **best validation epoch observed** for each model (based on my training logs).  
-⚠️ These runs are **not perfectly apples-to-apples** (different training budgets/recipes and different compute per epoch), so treat this as a *comparative snapshot* rather than a definitive benchmark.
+The table below reports the **best validation epoch observed** for each model (from my training runs).
+
+### Benchmark Protocol (this snapshot)
+These numbers come from **single runs** and are intended as a practical side-by-side snapshot.
+
+- **Dataset**: CIFAR-100 (torchvision), standard train/test.
+- **Input resolution**: 32×32.
+- **Data pipeline**: kept **highly consistent across families** (same CIFAR-100 loaders and preprocessing; HViT and Swin share the same training setup).
+- **Training recipe**:
+  - **HViT & Swin**: trained under the **same recipe** (optimizer/schedule/augmentations kept aligned).
+  - **MaxViT**: I ran additional experiments with **Mixup/CutMix**, so the training recipe is *close* but not identical.
+- **Reproducibility**: raw logs for each run are stored in `training_logs/` (`*.txt`).
+
+> **Interpretation note:** comparisons are strongest between **HViT vs Swin** (matched recipe).  
+> MaxViT numbers are still comparable, but reflect some extra augmentation experiments.
+
+<div align="center">
 
 | Model | Best epoch | Val loss | Top-1 | Top-3 | Top-5 |
 |---|---:|---:|---:|---:|---:|
 | **Hierarchical ViT (HViT)** | 43/50 | 2.0410 | **51.50%** | 71.20% | 78.40% |
 | **Swin Transformer** | 43/50 | 2.4145 | **51.04%** | 71.30% | **79.88%** |
 | **MaxViT** | 17/20 | 1.2132 | **66.68%** | **84.58%** | **89.92%** |
+
+</div>
 
 ### What these results suggest (research-oriented takeaways)
 
