@@ -1,0 +1,12 @@
+model:
+  name: hierarchical_vit
+  img_size: 32
+  patch_size: 4
+  in_chans: 3
+  num_classes: 100
+  embed_dims: [192, 384, 576]
+  depths: [2, 2, 4]
+  num_heads: [3, 6, 9]
+  mlp_ratio: 4.0
+  attn_dropout: 0.0
+  dropout: 0.1
