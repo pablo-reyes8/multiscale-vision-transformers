@@ -1,19 +1,25 @@
 # Vision Transformers Lab
 
-A focused research sandbox for comparing modern Vision Transformer families under a shared training and evaluation setup. The project emphasizes clarity, reproducibility, and side-by-side analysis on CIFAR-100 and related image classification tasks.
+A focused research sandbox for comparing modern Vision Transformer families under a shared training, evaluation, and analysis setup. The repo emphasizes clarity, reproducibility, and side-by-side inspection of architectural tradeoffs on CIFAR-100 and related image classification tasks.
 
-## Research Focus
-- Compare hierarchical inductive biases (pooling vs. windowed attention) under matched training pipelines.
-- Provide a consistent CLI, evaluation suite, and validation utilities across model families.
-- Track design tradeoffs (accuracy, stability, compute profile) with minimal implementation ambiguity.
+## Highlights
+- Three complete families: HierarchicalViT, SwinViT, and MaxViT.
+- Consistent data pipelines, training loops, and evaluation utilities.
+- CLI entrypoints for training, evaluation, and analysis.
+- Model-specific Dockerfiles plus a root Dockerfile for the full workspace.
+- Pytest coverage for core components and critical training utilities.
 
-## What’s Here Today
-- **HierarchicalViT/**: PiT-style pooling hierarchy, full training CLI, Dockerfile, tests, and validation utilities.
-- **SwinViT/**: Shifted window attention with patch merging, training CLI, validation tools, tests, and Dockerfile.
-- **Model families (roadmap)**: MaxViT with unified benchmarking utilities.
+## Subprojects
+| Folder | Model Family | Key Idea | Status |
+| --- | --- | --- | --- |
+| `HierarchicalViT/` | PiT-style hierarchical ViT | Token pooling between stages | Complete |
+| `SwinViT/` | Swin Transformer | Shifted windows + patch merging | Complete |
+| `MaxViT/` | MaxViT | Window + grid attention per block | Complete |
 
-## Getting Started
-1) Create an environment (Python ≥3.10 recommended):
+Each subproject has its own `README.md`, `requirements.txt`, scripts, tests, and (where relevant) notebooks and experiments.
+
+## Quickstart
+1) Create an environment (Python >=3.10 recommended):
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # or .venv\\Scripts\\activate on Windows
@@ -21,49 +27,69 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-2) Run a model pipeline (example: HierarchicalViT):
-
+2) Train a model (examples):
 ```bash
 cd HierarchicalViT
 python -m scripts.main train --data-dir ./data --epochs 20 --checkpoint-path ./checkpoints/best_hvit.pth
 ```
-Add `--evaluate-test` to benchmark on the test split after training. Use `python -m scripts.main eval --checkpoint ...` to evaluate saved weights.
 
-Example for SwinViT:
 ```bash
 cd SwinViT
 python -m scripts.main train --data-dir ./data --epochs 20 --checkpoint-path ./checkpoints/best_swinvit.pth
 ```
 
+```bash
+cd MaxViT
+python scripts/train_maxvit_cli.py --variant tiny --data-dir ./data --epochs 20 --val-split 0.1
+```
+
+## Inference and Analysis
+MaxViT provides a dedicated inference CLI with analysis utilities (confusion matrix, calibration, Grad-CAM, occlusion, prediction grids):
+```bash
+cd MaxViT
+python scripts/infer_maxvit_cli.py --checkpoint experiments/maxvit_tiny/best_model.pt --analysis eval confusion calibration
+```
+
+SwinViT and HierarchicalViT include validation helpers accessible through their CLI modules (see each subproject README for details).
+
 ## Repository Structure
-- `HierarchicalViT/` – Complete hierarchical ViT implementation, tests, and Dockerfile.
-- `SwinViT/` – Shifted window transformer implementation, validation utilities, tests, and Dockerfile.
-- `MaxViT/` (planned) – Blocked local-global attention model with grid/windowed attention.
-- `notebooks/` (planned) – Shared exploratory notebooks and visualizations.
-- `requirements.txt` – Shared dependencies for all model families.
+- `HierarchicalViT/` – Hierarchical ViT implementation, tests, and Dockerfile.
+- `SwinViT/` – Shifted window transformer, validation utilities, tests, and Dockerfile.
+- `MaxViT/` – MaxViT model, training + inference CLIs, analysis suite, and tests.
+- `requirements.txt` – Shared dependency set for the workspace.
+- `Dockerfile` – Root container for the whole repo.
 
 ## Model Families: Key Differences
-- **HierarchicalViT**: Uses global attention within each stage and reduces token count via pooling between stages (PiT-style). This emphasizes global context early with explicit spatial downsampling.
-- **SwinViT**: Uses local window attention with shifted windows to enable cross-window interaction, and patch merging to downsample. This favors locality and computational efficiency at higher resolutions.
-- **MaxViT** (planned): Combines local windowed attention and global grid attention within each block to balance locality and global context.
+- **HierarchicalViT**: Global attention per stage, explicit pooling between stages (PiT-style). Emphasizes structured downsampling and stable token reduction.
+- **SwinViT**: Local attention in windows with shifted windowing for cross-window context; patch merging downsampling. Optimizes for efficiency at higher resolutions.
+- **MaxViT**: Combines local window attention and global grid attention within each block, paired with MBConv-style convolutions. Balances locality and global context in every block.
+
+## Results
+See `MaxViT/README.md` for the current MaxViT training metrics and visualizations. The MaxViT training notebook reports a best validation Top-1 of 66.68% and Top-5 of 89.92% on CIFAR-100 (tiny variant, 20 epochs).
+
+## Docker
+Build the root image:
+```bash
+docker build -t vit-lab .
+```
+
+Or build a subproject directly:
+```bash
+cd MaxViT
+docker build -t maxvit .
+```
 
 ## Testing
-From the repo root, run the available suite:
+From the repo root:
 ```bash
 pytest HierarchicalViT/test
-```
-Additional suites:
-```bash
 pytest SwinViT/test
+pytest MaxViT/tests
 ```
 
-## Roadmap
-- Implement MaxViT with unified benchmarking harness.
-- Add experiment tracking hooks (e.g., optional WandB/MLflow) and logging utilities.
-- Expand evaluation scripts to include FLOPs/params reporting and latency profiling.
 
 ## References
-- Dosovitskiy et al., “An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale,” ICLR 2021 (ViT).
+- Dosovitskiy et al., “An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale,” ICLR 2021.
 - Liu et al., “Swin Transformer: Hierarchical Vision Transformer using Shifted Windows,” ICCV 2021.
 - Tu et al., “MaxViT: Multi-Axis Vision Transformer,” ECCV 2022.
 - Vaswani et al., “Attention is All You Need,” NeurIPS 2017.
