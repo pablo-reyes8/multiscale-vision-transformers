@@ -13,7 +13,8 @@
 A focused research sandbox for comparing modern Vision Transformer families under a shared training, evaluation, and analysis setup. The repo emphasizes clarity, reproducibility, and side-by-side inspection of architectural tradeoffs on CIFAR-100 and related image classification tasks.
 > **CIFAR-100 (single-run snapshot)** — Best Val **Top-1**: **MaxViT 66.68%** · **HViT 51.50%** · **Swin 51.04%**  
 > Best Val **Top-5**: **MaxViT 89.92%** · **Swin 79.88%** · **HViT 78.40%**  
-> *(Runs are not strictly apples-to-apples; see the full table + discussion below.)*
+> *(HViT and Swin use a closely matched recipe; MaxViT includes additional Mixup/CutMix experiments. See the full table + discussion below.)*
+
 
 
 ## Table of Contents
