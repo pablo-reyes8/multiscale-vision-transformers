@@ -27,7 +27,7 @@ A focused research sandbox for comparing modern Vision Transformer families unde
   - [Model Families: Key Differences](#model-families-key-differences)
   - [Docker](#docker)
   - [Testing](#testing)
-  - [CIFAR-100 results (single-run snapshot)](#cifar-100-results-single-run-snapshot)
+  - [CIFAR-100 results](#cifar-100-results)
     - [What these results suggest (research-oriented takeaways)](#what-these-results-suggest-research-oriented-takeaways)
     - [Next steps to make the comparison benchmark-clean](#next-steps-to-make-the-comparison-benchmark-clean)
   - [References](#references)
@@ -130,7 +130,7 @@ pytest SwinViT/test
 pytest MaxViT/tests
 ```
 
-## CIFAR-100 results (single-run snapshot)
+## CIFAR-100 results 
 
 The table below reports the **best validation epoch observed** for each model (from my training runs).
 
