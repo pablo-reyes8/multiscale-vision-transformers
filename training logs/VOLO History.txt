@@ -1,0 +1,641 @@
+=== Epoch 1/130 ===
+[train step 25/88] loss 4.6723 | top1 1.84% | top3 5.27% | top5 8.59% | 232.3 img/s | lr 2.19e-05
+[train step 50/88] loss 4.5742 | top1 2.70% | top3 7.07% | top5 10.90% | 243.0 img/s | lr 4.37e-05
+[train step 75/88] loss 4.5107 | top1 3.36% | top3 8.59% | top5 12.90% | 252.0 img/s | lr 6.56e-05
+[Train] loss 4.4824 | top1 3.64% | top3 9.26% | top5 13.85% | lr 7.69e-05
+[Val]   loss 4.1166 | top1 6.74% | top3 16.02% | top5 23.24%
+Best saved to best_model.pt (val top1 6.74%)
+Epoch time: 1.55 min
+
+=== Epoch 2/130 ===
+[train step 25/88] loss 4.2280 | top1 6.72% | top3 16.38% | top5 23.55% | 257.8 img/s | lr 9.88e-05
+[train step 50/88] loss 4.1768 | top1 7.66% | top3 17.80% | top5 25.23% | 258.6 img/s | lr 1.21e-04
+[train step 75/88] loss 4.1308 | top1 8.28% | top3 19.18% | top5 26.95% | 261.0 img/s | lr 1.42e-04
+[Train] loss 4.1105 | top1 8.80% | top3 19.97% | top5 27.73% | lr 1.54e-04
+[Val]   loss 3.7379 | top1 12.14% | top3 26.40% | top5 36.20%
+Best saved to best_model.pt (val top1 12.14%)
+Epoch time: 1.51 min
+
+=== Epoch 3/130 ===
+[train step 25/88] loss 3.9248 | top1 11.84% | top3 25.92% | top5 35.86% | 261.1 img/s | lr 1.76e-04
+[train step 50/88] loss 3.8937 | top1 12.47% | top3 27.05% | top5 36.80% | 261.9 img/s | lr 1.98e-04
+[train step 75/88] loss 3.8698 | top1 13.34% | top3 27.95% | top5 37.55% | 262.6 img/s | lr 2.19e-04
+[Train] loss 3.8498 | top1 13.69% | top3 28.43% | top5 38.04% | lr 2.31e-04
+[Val]   loss 3.4662 | top1 18.00% | top3 33.68% | top5 44.16%
+Best saved to best_model.pt (val top1 18.00%)
+Epoch time: 1.50 min
+
+=== Epoch 4/130 ===
+[train step 25/88] loss 3.6862 | top1 16.62% | top3 32.94% | top5 43.67% | 261.1 img/s | lr 2.53e-04
+[train step 50/88] loss 3.6772 | top1 17.12% | top3 33.48% | top5 43.97% | 261.8 img/s | lr 2.74e-04
+[train step 75/88] loss 3.6631 | top1 17.66% | top3 34.31% | top5 44.53% | 262.3 img/s | lr 2.96e-04
+[Train] loss 3.6441 | top1 18.12% | top3 35.05% | top5 45.11% | lr 3.08e-04
+[Val]   loss 3.2105 | top1 22.78% | top3 40.64% | top5 50.96%
+Best saved to best_model.pt (val top1 22.78%)
+Epoch time: 1.50 min
+
+=== Epoch 5/130 ===
+[train step 25/88] loss 3.4965 | top1 21.73% | top3 39.50% | top5 49.50% | 258.9 img/s | lr 3.30e-04
+[train step 50/88] loss 3.4682 | top1 22.56% | top3 40.35% | top5 50.67% | 259.1 img/s | lr 3.51e-04
+[train step 75/88] loss 3.4494 | top1 22.81% | top3 40.95% | top5 51.49% | 258.6 img/s | lr 3.73e-04
+[Train] loss 3.4431 | top1 22.59% | top3 41.04% | top5 51.53% | lr 3.85e-04
+[Val]   loss 2.8959 | top1 28.46% | top3 48.46% | top5 59.18%
+Best saved to best_model.pt (val top1 28.46%)
+Epoch time: 1.53 min
+
+=== Epoch 6/130 ===
+[train step 25/88] loss 3.3084 | top1 25.33% | top3 45.23% | top5 56.47% | 258.1 img/s | lr 4.06e-04
+[train step 50/88] loss 3.2981 | top1 25.91% | top3 45.92% | top5 56.59% | 259.2 img/s | lr 4.28e-04
+[train step 75/88] loss 3.2757 | top1 26.22% | top3 46.65% | top5 57.19% | 259.1 img/s | lr 4.50e-04
+[Train] loss 3.2690 | top1 26.36% | top3 46.60% | top5 57.28% | lr 4.62e-04
+[Val]   loss 2.7216 | top1 31.76% | top3 53.04% | top5 63.60%
+Best saved to best_model.pt (val top1 31.76%)
+Epoch time: 1.52 min
+
+=== Epoch 7/130 ===
+[train step 25/88] loss 3.1312 | top1 29.16% | top3 50.73% | top5 61.48% | 258.7 img/s | lr 4.83e-04
+[train step 50/88] loss 3.1299 | top1 29.27% | top3 50.54% | top5 61.34% | 260.7 img/s | lr 5.00e-04
+[train step 75/88] loss 3.1089 | top1 29.90% | top3 51.20% | top5 61.99% | 260.1 img/s | lr 5.00e-04
+[Train] loss 3.1112 | top1 30.02% | top3 51.14% | top5 61.93% | lr 5.00e-04
+[Val]   loss 2.6124 | top1 32.02% | top3 54.92% | top5 65.64%
+Best saved to best_model.pt (val top1 32.02%)
+Epoch time: 1.52 min
+
+=== Epoch 8/130 ===
+[train step 25/88] loss 2.9805 | top1 32.98% | top3 54.88% | top5 65.44% | 259.8 img/s | lr 5.00e-04
+[train step 50/88] loss 2.9735 | top1 33.47% | top3 55.10% | top5 65.73% | 260.0 img/s | lr 5.00e-04
+[train step 75/88] loss 2.9515 | top1 34.05% | top3 55.67% | top5 66.28% | 259.3 img/s | lr 5.00e-04
+[Train] loss 2.9558 | top1 33.87% | top3 55.85% | top5 66.09% | lr 5.00e-04
+[Val]   loss 2.4713 | top1 36.14% | top3 58.42% | top5 68.94%
+Best saved to best_model.pt (val top1 36.14%)
+Epoch time: 1.52 min
+
+=== Epoch 9/130 ===
+[train step 25/88] loss 2.8551 | top1 36.52% | top3 58.38% | top5 68.59% | 255.1 img/s | lr 5.00e-04
+[train step 50/88] loss 2.8319 | top1 36.86% | top3 59.05% | top5 69.49% | 256.4 img/s | lr 5.00e-04
+[train step 75/88] loss 2.8319 | top1 36.81% | top3 59.18% | top5 69.53% | 257.0 img/s | lr 5.00e-04
+[Train] loss 2.8225 | top1 37.20% | top3 59.46% | top5 69.68% | lr 4.99e-04
+[Val]   loss 2.2822 | top1 40.82% | top3 63.46% | top5 72.90%
+Best saved to best_model.pt (val top1 40.82%)
+Epoch time: 1.53 min
+
+=== Epoch 10/130 ===
+[train step 25/88] loss 2.7362 | top1 39.28% | top3 62.64% | top5 71.89% | 254.8 img/s | lr 4.99e-04
+[train step 50/88] loss 2.7301 | top1 39.77% | top3 62.52% | top5 71.98% | 256.3 img/s | lr 4.99e-04
+[train step 75/88] loss 2.7195 | top1 40.15% | top3 62.81% | top5 72.39% | 256.9 img/s | lr 4.99e-04
+[Train] loss 2.7113 | top1 40.20% | top3 62.91% | top5 72.47% | lr 4.99e-04
+[Val]   loss 2.1488 | top1 42.98% | top3 65.78% | top5 75.88%
+Best saved to best_model.pt (val top1 42.98%)
+Epoch time: 1.53 min
+
+=== Epoch 11/130 ===
+[train step 25/88] loss 2.6213 | top1 42.91% | top3 65.39% | top5 74.81% | 255.7 img/s | lr 4.99e-04
+[train step 50/88] loss 2.6165 | top1 42.88% | top3 65.67% | top5 75.09% | 257.2 img/s | lr 4.99e-04
+[train step 75/88] loss 2.6168 | top1 42.69% | top3 65.47% | top5 75.06% | 257.8 img/s | lr 4.98e-04
+[Train] loss 2.6171 | top1 42.72% | top3 65.49% | top5 75.06% | lr 4.98e-04
+[Val]   loss 2.0487 | top1 45.44% | top3 67.62% | top5 77.76%
+Best saved to best_model.pt (val top1 45.44%)
+Epoch time: 1.53 min
+
+=== Epoch 12/130 ===
+[train step 25/88] loss 2.4867 | top1 45.72% | top3 69.09% | top5 78.02% | 258.9 img/s | lr 4.98e-04
+[train step 50/88] loss 2.5112 | top1 45.21% | top3 68.59% | top5 77.41% | 260.1 img/s | lr 4.98e-04
+[train step 75/88] loss 2.5085 | top1 45.35% | top3 68.54% | top5 77.47% | 259.9 img/s | lr 4.98e-04
+[Train] loss 2.5295 | top1 45.09% | top3 67.86% | top5 76.92% | lr 4.98e-04
+[Val]   loss 1.9830 | top1 47.50% | top3 69.34% | top5 78.36%
+Best saved to best_model.pt (val top1 47.50%)
+Epoch time: 1.52 min
+
+=== Epoch 13/130 ===
+[train step 25/88] loss 2.4275 | top1 48.23% | top3 70.42% | top5 79.31% | 255.9 img/s | lr 4.97e-04
+[train step 50/88] loss 2.4497 | top1 47.74% | top3 69.80% | top5 78.84% | 257.5 img/s | lr 4.97e-04
+[train step 75/88] loss 2.4498 | top1 47.67% | top3 70.01% | top5 79.00% | 258.0 img/s | lr 4.97e-04
+[Train] loss 2.4526 | top1 47.63% | top3 70.05% | top5 78.83% | lr 4.97e-04
+[Val]   loss 1.8828 | top1 49.42% | top3 71.56% | top5 80.46%
+Best saved to best_model.pt (val top1 49.42%)
+Epoch time: 1.53 min
+
+=== Epoch 14/130 ===
+[train step 25/88] loss 2.3588 | top1 49.84% | top3 72.41% | top5 81.14% | 257.1 img/s | lr 4.96e-04
+[train step 50/88] loss 2.3742 | top1 49.62% | top3 71.82% | top5 80.45% | 258.3 img/s | lr 4.96e-04
+[train step 75/88] loss 2.3806 | top1 49.67% | top3 71.84% | top5 80.35% | 258.4 img/s | lr 4.96e-04
+[Train] loss 2.3782 | top1 49.65% | top3 72.04% | top5 80.45% | lr 4.95e-04
+[Val]   loss 1.8068 | top1 51.98% | top3 74.04% | top5 81.66%
+Best saved to best_model.pt (val top1 51.98%)
+Epoch time: 1.53 min
+
+=== Epoch 15/130 ===
+[train step 25/88] loss 2.2973 | top1 51.66% | top3 74.12% | top5 83.00% | 256.9 img/s | lr 4.95e-04
+[train step 50/88] loss 2.3121 | top1 51.43% | top3 73.78% | top5 82.47% | 258.1 img/s | lr 4.95e-04
+[train step 75/88] loss 2.2956 | top1 51.97% | top3 74.09% | top5 82.60% | 258.5 img/s | lr 4.94e-04
+[Train] loss 2.3124 | top1 51.44% | top3 73.69% | top5 82.00% | lr 4.94e-04
+[Val]   loss 1.8152 | top1 50.66% | top3 73.68% | top5 81.60%
+Epoch time: 1.52 min
+
+=== Epoch 16/130 ===
+[train step 25/88] loss 2.2387 | top1 52.83% | top3 75.66% | top5 83.95% | 257.0 img/s | lr 4.94e-04
+[train step 50/88] loss 2.2591 | top1 52.71% | top3 75.16% | top5 83.48% | 258.3 img/s | lr 4.93e-04
+[train step 75/88] loss 2.2632 | top1 52.58% | top3 75.09% | top5 83.40% | 258.6 img/s | lr 4.93e-04
+[Train] loss 2.2559 | top1 52.97% | top3 75.27% | top5 83.43% | lr 4.93e-04
+[Val]   loss 1.7109 | top1 53.38% | top3 75.68% | top5 84.14%
+Best saved to best_model.pt (val top1 53.38%)
+Epoch time: 1.53 min
+
+=== Epoch 17/130 ===
+[train step 25/88] loss 2.1867 | top1 55.12% | top3 76.91% | top5 84.70% | 256.3 img/s | lr 4.92e-04
+[train step 50/88] loss 2.1958 | top1 54.38% | top3 76.96% | top5 84.86% | 257.6 img/s | lr 4.92e-04
+[train step 75/88] loss 2.1925 | top1 54.83% | top3 76.81% | top5 84.59% | 258.8 img/s | lr 4.91e-04
+[Train] loss 2.1973 | top1 54.69% | top3 76.71% | top5 84.42% | lr 4.91e-04
+[Val]   loss 1.6739 | top1 55.32% | top3 75.70% | top5 83.70%
+Best saved to best_model.pt (val top1 55.32%)
+Epoch time: 1.52 min
+
+=== Epoch 18/130 ===
+[train step 25/88] loss 2.1184 | top1 57.47% | top3 78.66% | top5 85.92% | 257.8 img/s | lr 4.91e-04
+[train step 50/88] loss 2.1402 | top1 56.54% | top3 77.95% | top5 85.27% | 258.4 img/s | lr 4.90e-04
+[train step 75/88] loss 2.1488 | top1 56.36% | top3 77.71% | top5 85.14% | 259.0 img/s | lr 4.90e-04
+[Train] loss 2.1465 | top1 56.40% | top3 77.71% | top5 85.20% | lr 4.89e-04
+[Val]   loss 1.6486 | top1 55.90% | top3 76.62% | top5 83.84%
+Best saved to best_model.pt (val top1 55.90%)
+Epoch time: 1.52 min
+
+=== Epoch 19/130 ===
+[train step 25/88] loss 2.0880 | top1 58.28% | top3 79.12% | top5 86.16% | 257.8 img/s | lr 4.89e-04
+[train step 50/88] loss 2.0868 | top1 58.24% | top3 79.58% | top5 86.39% | 258.2 img/s | lr 4.88e-04
+[train step 75/88] loss 2.0989 | top1 57.61% | top3 79.35% | top5 86.48% | 259.1 img/s | lr 4.88e-04
+[Train] loss 2.0955 | top1 57.84% | top3 79.32% | top5 86.51% | lr 4.87e-04
+[Val]   loss 1.5988 | top1 56.42% | top3 77.74% | top5 85.10%
+Best saved to best_model.pt (val top1 56.42%)
+Epoch time: 1.52 min
+
+=== Epoch 20/130 ===
+[train step 25/88] loss 2.0296 | top1 60.52% | top3 80.69% | top5 87.52% | 259.9 img/s | lr 4.87e-04
+[train step 50/88] loss 2.0340 | top1 59.97% | top3 80.91% | top5 87.73% | 259.3 img/s | lr 4.86e-04
+[train step 75/88] loss 2.0467 | top1 59.39% | top3 80.66% | top5 87.53% | 259.2 img/s | lr 4.86e-04
+[Train] loss 2.0475 | top1 59.40% | top3 80.73% | top5 87.46% | lr 4.85e-04
+[Val]   loss 1.5955 | top1 57.46% | top3 78.58% | top5 84.94%
+Best saved to best_model.pt (val top1 57.46%)
+Epoch time: 1.52 min
+
+=== Epoch 21/130 ===
+[train step 25/88] loss 1.9795 | top1 61.16% | top3 82.31% | top5 88.83% | 259.5 img/s | lr 4.85e-04
+[train step 50/88] loss 1.9929 | top1 61.23% | top3 81.74% | top5 88.20% | 260.0 img/s | lr 4.84e-04
+[train step 75/88] loss 1.9969 | top1 60.76% | top3 81.82% | top5 88.24% | 259.6 img/s | lr 4.84e-04
+[Train] loss 2.0068 | top1 60.63% | top3 81.40% | top5 87.96% | lr 4.83e-04
+[Val]   loss 1.5524 | top1 58.20% | top3 78.54% | top5 85.70%
+Best saved to best_model.pt (val top1 58.20%)
+Epoch time: 1.52 min
+
+=== Epoch 22/130 ===
+[train step 25/88] loss 1.9314 | top1 63.25% | top3 83.31% | top5 89.41% | 256.9 img/s | lr 4.83e-04
+[train step 50/88] loss 1.9382 | top1 62.66% | top3 83.38% | top5 89.55% | 257.9 img/s | lr 4.82e-04
+[train step 75/88] loss 1.9507 | top1 62.15% | top3 83.17% | top5 89.40% | 258.2 img/s | lr 4.81e-04
+[Train] loss 1.9550 | top1 62.09% | top3 82.90% | top5 89.22% | lr 4.81e-04
+[Val]   loss 1.5021 | top1 59.68% | top3 79.62% | top5 86.12%
+Best saved to best_model.pt (val top1 59.68%)
+Epoch time: 1.53 min
+
+=== Epoch 23/130 ===
+[train step 25/88] loss 1.9018 | top1 64.62% | top3 84.03% | top5 90.50% | 257.3 img/s | lr 4.80e-04
+[train step 50/88] loss 1.9070 | top1 64.41% | top3 83.90% | top5 90.15% | 258.1 img/s | lr 4.79e-04
+[train step 75/88] loss 1.9137 | top1 63.96% | top3 83.95% | top5 90.10% | 258.3 img/s | lr 4.79e-04
+[Train] loss 1.9207 | top1 63.44% | top3 83.62% | top5 89.92% | lr 4.78e-04
+[Val]   loss 1.5417 | top1 59.14% | top3 78.88% | top5 85.86%
+Epoch time: 1.52 min
+
+=== Epoch 24/130 ===
+[train step 25/88] loss 1.8449 | top1 65.70% | top3 85.06% | top5 90.75% | 257.3 img/s | lr 4.78e-04
+[train step 50/88] loss 1.8616 | top1 65.05% | top3 84.81% | top5 90.90% | 258.8 img/s | lr 4.77e-04
+[train step 75/88] loss 1.8747 | top1 64.80% | top3 84.66% | top5 90.63% | 259.0 img/s | lr 4.76e-04
+[Train] loss 1.8805 | top1 64.50% | top3 84.45% | top5 90.51% | lr 4.76e-04
+[Val]   loss 1.4936 | top1 60.34% | top3 79.98% | top5 86.38%
+Best saved to best_model.pt (val top1 60.34%)
+Epoch time: 1.52 min
+
+=== Epoch 25/130 ===
+[train step 25/88] loss 1.7972 | top1 67.48% | top3 86.45% | top5 91.84% | 257.0 img/s | lr 4.75e-04
+[train step 50/88] loss 1.8269 | top1 66.61% | top3 85.84% | top5 91.21% | 258.4 img/s | lr 4.74e-04
+[train step 75/88] loss 1.8341 | top1 66.29% | top3 85.66% | top5 91.20% | 258.8 img/s | lr 4.73e-04
+[Train] loss 1.8423 | top1 66.00% | top3 85.43% | top5 91.08% | lr 4.73e-04
+[Val]   loss 1.4598 | top1 59.78% | top3 81.20% | top5 87.14%
+Epoch time: 1.52 min
+
+=== Epoch 26/130 ===
+[train step 25/88] loss 1.7887 | top1 67.56% | top3 86.88% | top5 92.06% | 256.1 img/s | lr 4.72e-04
+[train step 50/88] loss 1.7986 | top1 67.44% | top3 86.58% | top5 92.03% | 257.3 img/s | lr 4.71e-04
+[train step 75/88] loss 1.7994 | top1 67.55% | top3 86.41% | top5 91.94% | 258.0 img/s | lr 4.70e-04
+[Train] loss 1.7992 | top1 67.23% | top3 86.50% | top5 91.98% | lr 4.70e-04
+[Val]   loss 1.4839 | top1 60.26% | top3 80.10% | top5 86.60%
+Epoch time: 1.52 min
+
+=== Epoch 27/130 ===
+[train step 25/88] loss 1.7256 | top1 69.89% | top3 87.84% | top5 92.86% | 256.2 img/s | lr 4.69e-04
+[train step 50/88] loss 1.7501 | top1 68.98% | top3 87.61% | top5 92.83% | 257.2 img/s | lr 4.68e-04
+[train step 75/88] loss 1.7636 | top1 68.49% | top3 87.24% | top5 92.50% | 257.7 img/s | lr 4.67e-04
+[Train] loss 1.7712 | top1 68.16% | top3 87.24% | top5 92.37% | lr 4.67e-04
+[Val]   loss 1.4618 | top1 60.80% | top3 80.46% | top5 86.92%
+Best saved to best_model.pt (val top1 60.80%)
+Epoch time: 1.53 min
+
+=== Epoch 28/130 ===
+[train step 25/88] loss 1.6957 | top1 71.09% | top3 88.81% | top5 93.19% | 256.5 img/s | lr 4.66e-04
+[train step 50/88] loss 1.7178 | top1 70.12% | top3 88.23% | top5 92.95% | 257.4 img/s | lr 4.65e-04
+[train step 75/88] loss 1.7254 | top1 69.78% | top3 88.18% | top5 93.02% | 258.0 img/s | lr 4.64e-04
+[Train] loss 1.7318 | top1 69.54% | top3 88.14% | top5 92.98% | lr 4.64e-04
+[Val]   loss 1.4254 | top1 62.32% | top3 81.28% | top5 87.30%
+Best saved to best_model.pt (val top1 62.32%)
+Epoch time: 1.53 min
+
+=== Epoch 29/130 ===
+[train step 25/88] loss 1.6738 | top1 72.09% | top3 89.16% | top5 93.83% | 258.9 img/s | lr 4.63e-04
+[train step 50/88] loss 1.6798 | top1 71.58% | top3 89.05% | top5 93.83% | 259.3 img/s | lr 4.62e-04
+[train step 75/88] loss 1.6984 | top1 70.92% | top3 88.67% | top5 93.49% | 259.0 img/s | lr 4.61e-04
+[Train] loss 1.7064 | top1 70.53% | top3 88.46% | top5 93.33% | lr 4.60e-04
+[Val]   loss 1.4442 | top1 62.02% | top3 80.82% | top5 86.64%
+Epoch time: 1.52 min
+
+=== Epoch 30/130 ===
+[train step 25/88] loss 1.6251 | top1 73.22% | top3 90.14% | top5 94.67% | 256.1 img/s | lr 4.59e-04
+[train step 50/88] loss 1.6496 | top1 72.55% | top3 89.75% | top5 94.10% | 257.4 img/s | lr 4.58e-04
+[train step 75/88] loss 1.6711 | top1 71.92% | top3 89.16% | top5 93.82% | 258.2 img/s | lr 4.57e-04
+[Train] loss 1.6752 | top1 71.52% | top3 89.16% | top5 93.85% | lr 4.57e-04
+[Val]   loss 1.4337 | top1 62.22% | top3 81.30% | top5 87.10%
+Epoch time: 1.52 min
+
+=== Epoch 31/130 ===
+[train step 25/88] loss 1.6134 | top1 73.78% | top3 90.64% | top5 94.84% | 259.6 img/s | lr 4.56e-04
+[train step 50/88] loss 1.6342 | top1 72.99% | top3 90.28% | top5 94.58% | 260.3 img/s | lr 4.55e-04
+[train step 75/88] loss 1.6494 | top1 72.21% | top3 90.02% | top5 94.26% | 259.9 img/s | lr 4.54e-04
+[Train] loss 1.6458 | top1 72.48% | top3 90.04% | top5 94.28% | lr 4.53e-04
+[Val]   loss 1.4207 | top1 62.50% | top3 81.30% | top5 87.32%
+Best saved to best_model.pt (val top1 62.50%)
+Epoch time: 1.52 min
+
+=== Epoch 32/130 ===
+[train step 25/88] loss 1.5829 | top1 74.95% | top3 91.59% | top5 95.22% | 257.4 img/s | lr 4.52e-04
+[train step 50/88] loss 1.5886 | top1 74.79% | top3 91.55% | top5 95.26% | 258.1 img/s | lr 4.51e-04
+[train step 75/88] loss 1.6090 | top1 73.98% | top3 90.84% | top5 94.89% | 258.3 img/s | lr 4.50e-04
+[Train] loss 1.6156 | top1 73.61% | top3 90.62% | top5 94.77% | lr 4.49e-04
+[Val]   loss 1.4368 | top1 62.48% | top3 81.72% | top5 87.30%
+Epoch time: 1.52 min
+
+=== Epoch 33/130 ===
+[train step 25/88] loss 1.5592 | top1 75.45% | top3 91.78% | top5 95.59% | 256.7 img/s | lr 4.48e-04
+[train step 50/88] loss 1.5749 | top1 74.77% | top3 91.61% | top5 95.44% | 257.8 img/s | lr 4.47e-04
+[train step 75/88] loss 1.5905 | top1 74.26% | top3 91.05% | top5 95.09% | 258.1 img/s | lr 4.46e-04
+[Train] loss 1.5911 | top1 74.35% | top3 91.10% | top5 95.10% | lr 4.45e-04
+[Val]   loss 1.4072 | top1 62.58% | top3 82.04% | top5 87.60%
+Best saved to best_model.pt (val top1 62.58%)
+Epoch time: 1.53 min
+
+=== Epoch 34/130 ===
+[train step 25/88] loss 1.5335 | top1 77.06% | top3 92.41% | top5 95.62% | 257.5 img/s | lr 4.44e-04
+[train step 50/88] loss 1.5336 | top1 76.91% | top3 92.38% | top5 95.76% | 258.9 img/s | lr 4.43e-04
+[train step 75/88] loss 1.5536 | top1 76.18% | top3 91.93% | top5 95.46% | 259.0 img/s | lr 4.42e-04
+[Train] loss 1.5624 | top1 75.60% | top3 91.71% | top5 95.43% | lr 4.41e-04
+[Val]   loss 1.3817 | top1 63.68% | top3 81.52% | top5 87.86%
+Best saved to best_model.pt (val top1 63.68%)
+Epoch time: 1.53 min
+
+=== Epoch 35/130 ===
+[train step 25/88] loss 1.5218 | top1 76.56% | top3 92.25% | top5 96.06% | 257.5 img/s | lr 4.40e-04
+[train step 50/88] loss 1.5195 | top1 76.68% | top3 92.32% | top5 96.07% | 259.3 img/s | lr 4.39e-04
+[train step 75/88] loss 1.5302 | top1 76.36% | top3 92.07% | top5 95.90% | 260.0 img/s | lr 4.38e-04
+[Train] loss 1.5379 | top1 76.11% | top3 92.12% | top5 95.81% | lr 4.37e-04
+[Val]   loss 1.3966 | top1 63.50% | top3 81.70% | top5 87.64%
+Epoch time: 1.51 min
+
+=== Epoch 36/130 ===
+[train step 25/88] loss 1.4776 | top1 78.59% | top3 93.12% | top5 96.55% | 255.6 img/s | lr 4.36e-04
+[train step 50/88] loss 1.4910 | top1 78.11% | top3 92.88% | top5 96.35% | 257.5 img/s | lr 4.35e-04
+[train step 75/88] loss 1.5092 | top1 77.38% | top3 92.56% | top5 96.06% | 259.2 img/s | lr 4.33e-04
+[Train] loss 1.5127 | top1 77.24% | top3 92.55% | top5 96.00% | lr 4.33e-04
+[Val]   loss 1.3825 | top1 63.72% | top3 81.70% | top5 87.68%
+Best saved to best_model.pt (val top1 63.72%)
+Epoch time: 1.52 min
+
+=== Epoch 37/130 ===
+[train step 25/88] loss 1.4412 | top1 79.88% | top3 94.11% | top5 96.95% | 259.0 img/s | lr 4.32e-04
+[train step 50/88] loss 1.4533 | top1 79.34% | top3 93.99% | top5 96.93% | 258.8 img/s | lr 4.30e-04
+[train step 75/88] loss 1.4737 | top1 78.48% | top3 93.42% | top5 96.54% | 258.7 img/s | lr 4.29e-04
+[Train] loss 1.4814 | top1 78.22% | top3 93.23% | top5 96.42% | lr 4.28e-04
+[Val]   loss 1.4039 | top1 63.56% | top3 81.98% | top5 87.14%
+Epoch time: 1.52 min
+
+=== Epoch 38/130 ===
+[train step 25/88] loss 1.4460 | top1 79.70% | top3 94.06% | top5 96.45% | 256.1 img/s | lr 4.27e-04
+[train step 50/88] loss 1.4682 | top1 78.77% | top3 93.52% | top5 96.33% | 257.4 img/s | lr 4.26e-04
+[train step 75/88] loss 1.4704 | top1 78.67% | top3 93.62% | top5 96.36% | 258.2 img/s | lr 4.25e-04
+[Train] loss 1.4754 | top1 78.59% | top3 93.41% | top5 96.36% | lr 4.24e-04
+[Val]   loss 1.3772 | top1 63.86% | top3 82.14% | top5 87.70%
+Best saved to best_model.pt (val top1 63.86%)
+Epoch time: 1.53 min
+
+=== Epoch 39/130 ===
+[train step 25/88] loss 1.4089 | top1 81.14% | top3 94.69% | top5 97.31% | 258.4 img/s | lr 4.23e-04
+[train step 50/88] loss 1.4277 | top1 80.45% | top3 94.12% | top5 96.94% | 258.6 img/s | lr 4.21e-04
+[train step 75/88] loss 1.4338 | top1 80.20% | top3 93.98% | top5 96.83% | 258.4 img/s | lr 4.20e-04
+[Train] loss 1.4431 | top1 79.81% | top3 93.82% | top5 96.79% | lr 4.19e-04
+[Val]   loss 1.4032 | top1 63.96% | top3 82.24% | top5 87.70%
+Best saved to best_model.pt (val top1 63.96%)
+Epoch time: 1.53 min
+
+=== Epoch 40/130 ===
+[train step 25/88] loss 1.3972 | top1 81.70% | top3 94.70% | top5 97.11% | 258.2 img/s | lr 4.18e-04
+[train step 50/88] loss 1.4106 | top1 80.92% | top3 94.62% | top5 97.11% | 259.0 img/s | lr 4.17e-04
+[train step 75/88] loss 1.4158 | top1 80.76% | top3 94.56% | top5 97.20% | 259.2 img/s | lr 4.15e-04
+[Train] loss 1.4179 | top1 80.67% | top3 94.48% | top5 97.13% | lr 4.15e-04
+[Val]   loss 1.4218 | top1 63.72% | top3 81.72% | top5 87.42%
+Epoch time: 1.51 min
+
+=== Epoch 41/130 ===
+[train step 25/88] loss 1.3772 | top1 82.25% | top3 95.30% | top5 97.50% | 256.2 img/s | lr 4.13e-04
+[train step 50/88] loss 1.3857 | top1 81.87% | top3 94.93% | top5 97.23% | 257.3 img/s | lr 4.12e-04
+[train step 75/88] loss 1.3899 | top1 81.80% | top3 94.80% | top5 97.21% | 258.0 img/s | lr 4.10e-04
+[Train] loss 1.4006 | top1 81.39% | top3 94.72% | top5 97.24% | lr 4.10e-04
+[Val]   loss 1.3777 | top1 64.10% | top3 82.28% | top5 87.54%
+Best saved to best_model.pt (val top1 64.10%)
+Epoch time: 1.53 min
+
+=== Epoch 42/130 ===
+[train step 25/88] loss 1.3762 | top1 82.44% | top3 95.28% | top5 97.83% | 258.2 img/s | lr 4.08e-04
+[train step 50/88] loss 1.3693 | top1 82.60% | top3 95.27% | top5 97.68% | 259.0 img/s | lr 4.07e-04
+[train step 75/88] loss 1.3770 | top1 82.22% | top3 95.20% | top5 97.60% | 258.9 img/s | lr 4.06e-04
+[Train] loss 1.3824 | top1 82.05% | top3 95.07% | top5 97.40% | lr 4.05e-04
+[Val]   loss 1.3907 | top1 64.72% | top3 82.22% | top5 87.86%
+Best saved to best_model.pt (val top1 64.72%)
+Epoch time: 1.52 min
+
+=== Epoch 43/130 ===
+[train step 25/88] loss 1.3348 | top1 83.73% | top3 95.98% | top5 97.92% | 256.8 img/s | lr 4.03e-04
+[train step 50/88] loss 1.3528 | top1 82.86% | top3 95.60% | top5 97.70% | 257.7 img/s | lr 4.02e-04
+[train step 75/88] loss 1.3625 | top1 82.48% | top3 95.41% | top5 97.56% | 258.0 img/s | lr 4.01e-04
+[Train] loss 1.3620 | top1 82.61% | top3 95.45% | top5 97.55% | lr 4.00e-04
+[Val]   loss 1.3644 | top1 65.00% | top3 82.40% | top5 87.84%
+Best saved to best_model.pt (val top1 65.00%)
+Epoch time: 1.53 min
+
+=== Epoch 44/130 ===
+[train step 25/88] loss 1.3145 | top1 85.20% | top3 95.91% | top5 97.84% | 257.9 img/s | lr 3.98e-04
+[train step 50/88] loss 1.3233 | top1 84.52% | top3 95.98% | top5 97.88% | 259.0 img/s | lr 3.97e-04
+[train step 75/88] loss 1.3305 | top1 84.07% | top3 95.82% | top5 97.87% | 259.0 img/s | lr 3.95e-04
+[Train] loss 1.3423 | top1 83.65% | top3 95.59% | top5 97.62% | lr 3.95e-04
+[Val]   loss 1.3899 | top1 64.02% | top3 82.42% | top5 87.72%
+Epoch time: 1.51 min
+
+=== Epoch 45/130 ===
+[train step 25/88] loss 1.3164 | top1 85.02% | top3 95.95% | top5 97.78% | 256.4 img/s | lr 3.93e-04
+[train step 50/88] loss 1.3181 | top1 84.83% | top3 95.91% | top5 97.77% | 257.7 img/s | lr 3.92e-04
+[train step 75/88] loss 1.3223 | top1 84.44% | top3 95.76% | top5 97.76% | 258.0 img/s | lr 3.90e-04
+[Train] loss 1.3269 | top1 84.10% | top3 95.76% | top5 97.77% | lr 3.89e-04
+[Val]   loss 1.3685 | top1 65.08% | top3 82.46% | top5 87.84%
+Best saved to best_model.pt (val top1 65.08%)
+Epoch time: 1.53 min
+
+=== Epoch 46/130 ===
+[train step 25/88] loss 1.3019 | top1 85.20% | top3 96.27% | top5 98.06% | 257.0 img/s | lr 3.88e-04
+[train step 50/88] loss 1.2999 | top1 85.23% | top3 96.30% | top5 98.12% | 257.8 img/s | lr 3.86e-04
+[train step 75/88] loss 1.3103 | top1 84.77% | top3 96.14% | top5 98.02% | 258.2 img/s | lr 3.85e-04
+[Train] loss 1.3135 | top1 84.51% | top3 96.08% | top5 97.92% | lr 3.84e-04
+[Val]   loss 1.3820 | top1 65.20% | top3 82.48% | top5 87.88%
+Best saved to best_model.pt (val top1 65.20%)
+Epoch time: 1.53 min
+
+=== Epoch 47/130 ===
+[train step 25/88] loss 1.2815 | top1 86.14% | top3 96.61% | top5 98.16% | 256.7 img/s | lr 3.83e-04
+[train step 50/88] loss 1.2883 | top1 85.57% | top3 96.42% | top5 98.16% | 257.7 img/s | lr 3.81e-04
+[train step 75/88] loss 1.2986 | top1 85.06% | top3 96.17% | top5 98.02% | 258.6 img/s | lr 3.79e-04
+[Train] loss 1.2972 | top1 85.16% | top3 96.14% | top5 98.02% | lr 3.79e-04
+[Val]   loss 1.3654 | top1 65.34% | top3 82.48% | top5 88.08%
+Best saved to best_model.pt (val top1 65.34%)
+Epoch time: 1.52 min
+
+=== Epoch 48/130 ===
+[train step 25/88] loss 1.2682 | top1 85.97% | top3 96.45% | top5 98.14% | 259.1 img/s | lr 3.77e-04
+[train step 50/88] loss 1.2707 | top1 86.09% | top3 96.52% | top5 98.11% | 258.8 img/s | lr 3.76e-04
+[train step 75/88] loss 1.2802 | top1 85.58% | top3 96.33% | top5 98.02% | 258.8 img/s | lr 3.74e-04
+[Train] loss 1.2819 | top1 85.71% | top3 96.32% | top5 98.04% | lr 3.73e-04
+[Val]   loss 1.3867 | top1 65.64% | top3 82.38% | top5 87.68%
+Best saved to best_model.pt (val top1 65.64%)
+Epoch time: 1.52 min
+
+=== Epoch 49/130 ===
+[train step 25/88] loss 1.2663 | top1 86.47% | top3 96.47% | top5 98.08% | 257.0 img/s | lr 3.72e-04
+[train step 50/88] loss 1.2713 | top1 86.25% | top3 96.50% | top5 98.10% | 257.8 img/s | lr 3.70e-04
+[train step 75/88] loss 1.2711 | top1 86.25% | top3 96.60% | top5 98.17% | 258.4 img/s | lr 3.68e-04
+[Train] loss 1.2768 | top1 85.98% | top3 96.46% | top5 98.10% | lr 3.68e-04
+[Val]   loss 1.3483 | top1 65.28% | top3 83.46% | top5 88.50%
+Epoch time: 1.52 min
+
+=== Epoch 50/130 ===
+[train step 25/88] loss 1.2306 | top1 87.61% | top3 97.34% | top5 98.58% | 258.3 img/s | lr 3.66e-04
+[train step 50/88] loss 1.2438 | top1 87.16% | top3 97.05% | top5 98.47% | 258.7 img/s | lr 3.64e-04
+[train step 75/88] loss 1.2501 | top1 86.99% | top3 96.94% | top5 98.42% | 258.7 img/s | lr 3.63e-04
+[Train] loss 1.2538 | top1 86.83% | top3 96.88% | top5 98.35% | lr 3.62e-04
+[Val]   loss 1.3477 | top1 65.84% | top3 83.40% | top5 88.50%
+Best saved to best_model.pt (val top1 65.84%)
+Epoch time: 1.52 min
+
+=== Epoch 51/130 ===
+[train step 25/88] loss 1.2257 | top1 87.75% | top3 96.83% | top5 98.39% | 256.7 img/s | lr 3.60e-04
+[train step 50/88] loss 1.2364 | top1 87.30% | top3 96.86% | top5 98.32% | 257.7 img/s | lr 3.59e-04
+[train step 75/88] loss 1.2463 | top1 87.02% | top3 96.74% | top5 98.23% | 258.0 img/s | lr 3.57e-04
+[Train] loss 1.2471 | top1 86.96% | top3 96.83% | top5 98.29% | lr 3.56e-04
+[Val]   loss 1.3541 | top1 66.04% | top3 82.98% | top5 88.14%
+Best saved to best_model.pt (val top1 66.04%)
+Epoch time: 1.53 min
+
+=== Epoch 52/130 ===
+[train step 25/88] loss 1.2120 | top1 88.55% | top3 97.33% | top5 98.42% | 257.8 img/s | lr 3.55e-04
+[train step 50/88] loss 1.2156 | top1 88.39% | top3 97.23% | top5 98.48% | 258.1 img/s | lr 3.53e-04
+[train step 75/88] loss 1.2189 | top1 88.26% | top3 97.19% | top5 98.52% | 258.6 img/s | lr 3.51e-04
+[Train] loss 1.2330 | top1 87.62% | top3 96.86% | top5 98.34% | lr 3.50e-04
+[Val]   loss 1.3587 | top1 66.22% | top3 82.96% | top5 87.98%
+Best saved to best_model.pt (val top1 66.22%)
+Epoch time: 1.52 min
+
+=== Epoch 53/130 ===
+[train step 25/88] loss 1.1961 | top1 88.77% | top3 97.41% | top5 98.58% | 258.1 img/s | lr 3.49e-04
+[train step 50/88] loss 1.2083 | top1 88.38% | top3 97.29% | top5 98.62% | 258.4 img/s | lr 3.47e-04
+[train step 75/88] loss 1.2184 | top1 88.17% | top3 97.17% | top5 98.52% | 258.2 img/s | lr 3.45e-04
+[Train] loss 1.2184 | top1 88.17% | top3 97.19% | top5 98.47% | lr 3.45e-04
+[Val]   loss 1.3675 | top1 66.18% | top3 82.86% | top5 88.40%
+Epoch time: 1.52 min
+
+=== Epoch 54/130 ===
+[train step 25/88] loss 1.1981 | top1 89.00% | top3 97.31% | top5 98.52% | 258.8 img/s | lr 3.43e-04
+[train step 50/88] loss 1.1982 | top1 88.90% | top3 97.30% | top5 98.57% | 259.8 img/s | lr 3.41e-04
+[train step 75/88] loss 1.2059 | top1 88.58% | top3 97.27% | top5 98.54% | 259.6 img/s | lr 3.40e-04
+[Train] loss 1.2081 | top1 88.46% | top3 97.18% | top5 98.55% | lr 3.39e-04
+[Val]   loss 1.3637 | top1 65.94% | top3 83.02% | top5 87.96%
+Epoch time: 1.51 min
+
+=== Epoch 55/130 ===
+[train step 25/88] loss 1.1808 | top1 89.47% | top3 97.47% | top5 98.58% | 257.6 img/s | lr 3.37e-04
+[train step 50/88] loss 1.1950 | top1 89.04% | top3 97.27% | top5 98.40% | 258.6 img/s | lr 3.35e-04
+[train step 75/88] loss 1.2048 | top1 88.60% | top3 97.23% | top5 98.39% | 258.6 img/s | lr 3.34e-04
+[Train] loss 1.1968 | top1 88.83% | top3 97.30% | top5 98.52% | lr 3.33e-04
+[Val]   loss 1.3386 | top1 66.30% | top3 83.24% | top5 88.46%
+Best saved to best_model.pt (val top1 66.30%)
+Epoch time: 1.52 min
+
+=== Epoch 56/130 ===
+[train step 25/88] loss 1.1662 | top1 90.09% | top3 97.59% | top5 98.69% | 256.8 img/s | lr 3.31e-04
+[train step 50/88] loss 1.1783 | top1 89.49% | top3 97.57% | top5 98.68% | 257.9 img/s | lr 3.29e-04
+[train step 75/88] loss 1.1838 | top1 89.26% | top3 97.49% | top5 98.64% | 258.4 img/s | lr 3.28e-04
+[Train] loss 1.1880 | top1 89.05% | top3 97.38% | top5 98.62% | lr 3.27e-04
+[Val]   loss 1.3745 | top1 65.86% | top3 82.86% | top5 87.66%
+Epoch time: 1.52 min
+
+=== Epoch 57/130 ===
+[train step 25/88] loss 1.1644 | top1 90.05% | top3 97.83% | top5 98.77% | 258.2 img/s | lr 3.25e-04
+[train step 50/88] loss 1.1754 | top1 89.70% | top3 97.51% | top5 98.66% | 259.1 img/s | lr 3.23e-04
+[train step 75/88] loss 1.1750 | top1 89.59% | top3 97.55% | top5 98.71% | 259.0 img/s | lr 3.21e-04
+[Train] loss 1.1779 | top1 89.39% | top3 97.46% | top5 98.66% | lr 3.21e-04
+[Val]   loss 1.3157 | top1 67.08% | top3 83.66% | top5 88.36%
+Best saved to best_model.pt (val top1 67.08%)
+Epoch time: 1.52 min
+
+=== Epoch 58/130 ===
+[train step 25/88] loss 1.1356 | top1 91.12% | top3 98.14% | top5 99.06% | 256.5 img/s | lr 3.19e-04
+[train step 50/88] loss 1.1495 | top1 90.40% | top3 97.96% | top5 98.91% | 257.4 img/s | lr 3.17e-04
+[train step 75/88] loss 1.1535 | top1 90.25% | top3 97.89% | top5 98.92% | 258.0 img/s | lr 3.15e-04
+[Train] loss 1.1622 | top1 89.95% | top3 97.70% | top5 98.81% | lr 3.14e-04
+[Val]   loss 1.3304 | top1 67.38% | top3 83.54% | top5 88.44%
+Best saved to best_model.pt (val top1 67.38%)
+Epoch time: 1.53 min
+
+=== Epoch 59/130 ===
+[train step 25/88] loss 1.1494 | top1 90.67% | top3 97.70% | top5 98.59% | 257.5 img/s | lr 3.13e-04
+[train step 50/88] loss 1.1493 | top1 90.56% | top3 97.77% | top5 98.70% | 258.0 img/s | lr 3.11e-04
+[train step 75/88] loss 1.1558 | top1 90.28% | top3 97.69% | top5 98.68% | 258.4 img/s | lr 3.09e-04
+[Train] loss 1.1562 | top1 90.24% | top3 97.72% | top5 98.73% | lr 3.08e-04
+[Val]   loss 1.3392 | top1 66.96% | top3 83.62% | top5 88.30%
+Epoch time: 1.52 min
+
+=== Epoch 60/130 ===
+[train step 25/88] loss 1.1280 | top1 91.00% | top3 98.14% | top5 99.14% | 259.7 img/s | lr 3.07e-04
+[train step 50/88] loss 1.1395 | top1 90.88% | top3 97.99% | top5 98.95% | 260.4 img/s | lr 3.05e-04
+[train step 75/88] loss 1.1385 | top1 91.03% | top3 97.97% | top5 98.91% | 260.1 img/s | lr 3.03e-04
+[Train] loss 1.1406 | top1 90.79% | top3 97.87% | top5 98.89% | lr 3.02e-04
+[Val]   loss 1.3365 | top1 66.90% | top3 83.70% | top5 88.52%
+Epoch time: 1.51 min
+
+=== Epoch 61/130 ===
+[train step 25/88] loss 1.1277 | top1 91.30% | top3 97.73% | top5 98.81% | 255.7 img/s | lr 3.00e-04
+[train step 50/88] loss 1.1300 | top1 91.26% | top3 97.84% | top5 98.77% | 257.2 img/s | lr 2.99e-04
+[train step 75/88] loss 1.1314 | top1 90.96% | top3 97.94% | top5 98.89% | 258.2 img/s | lr 2.97e-04
+[Train] loss 1.1348 | top1 90.90% | top3 97.88% | top5 98.83% | lr 2.96e-04
+[Val]   loss 1.3513 | top1 66.88% | top3 83.30% | top5 88.06%
+Epoch time: 1.52 min
+
+=== Epoch 62/130 ===
+[train step 25/88] loss 1.1087 | top1 91.95% | top3 98.02% | top5 99.03% | 257.6 img/s | lr 2.94e-04
+[train step 50/88] loss 1.1096 | top1 91.80% | top3 98.12% | top5 99.12% | 258.7 img/s | lr 2.92e-04
+[train step 75/88] loss 1.1185 | top1 91.53% | top3 98.06% | top5 99.02% | 258.9 img/s | lr 2.91e-04
+[Train] loss 1.1222 | top1 91.43% | top3 97.97% | top5 98.95% | lr 2.90e-04
+[Val]   loss 1.3387 | top1 67.02% | top3 83.30% | top5 88.34%
+Epoch time: 1.51 min
+
+=== Epoch 63/130 ===
+[train step 25/88] loss 1.1137 | top1 91.70% | top3 98.03% | top5 98.97% | 256.1 img/s | lr 2.88e-04
+[train step 50/88] loss 1.1162 | top1 91.79% | top3 98.00% | top5 98.91% | 257.3 img/s | lr 2.86e-04
+[train step 75/88] loss 1.1157 | top1 91.74% | top3 98.03% | top5 98.95% | 257.9 img/s | lr 2.84e-04
+[Train] loss 1.1194 | top1 91.48% | top3 98.02% | top5 98.95% | lr 2.83e-04
+[Val]   loss 1.3082 | top1 67.90% | top3 83.76% | top5 88.78%
+Best saved to best_model.pt (val top1 67.90%)
+Epoch time: 1.53 min
+
+=== Epoch 64/130 ===
+[train step 25/88] loss 1.0862 | top1 92.86% | top3 98.45% | top5 99.14% | 256.3 img/s | lr 2.81e-04
+[train step 50/88] loss 1.0993 | top1 92.34% | top3 98.29% | top5 99.03% | 257.4 img/s | lr 2.80e-04
+[train step 75/88] loss 1.1021 | top1 92.28% | top3 98.15% | top5 98.96% | 257.9 img/s | lr 2.78e-04
+[Train] loss 1.1048 | top1 92.10% | top3 98.13% | top5 98.99% | lr 2.77e-04
+[Val]   loss 1.3598 | top1 67.14% | top3 83.40% | top5 88.18%
+Epoch time: 1.52 min
+
+=== Epoch 65/130 ===
+[train step 25/88] loss 1.1138 | top1 91.89% | top3 97.84% | top5 98.77% | 256.1 img/s | lr 2.75e-04
+[train step 50/88] loss 1.1053 | top1 92.16% | top3 98.19% | top5 98.99% | 257.4 img/s | lr 2.73e-04
+[train step 75/88] loss 1.1049 | top1 92.04% | top3 98.23% | top5 99.03% | 258.6 img/s | lr 2.72e-04
+[Train] loss 1.0993 | top1 92.23% | top3 98.26% | top5 99.06% | lr 2.71e-04
+[Val]   loss 1.3130 | top1 67.38% | top3 84.26% | top5 88.50%
+Epoch time: 1.51 min
+
+=== Epoch 66/130 ===
+[train step 25/88] loss 1.0821 | top1 92.69% | top3 98.45% | top5 99.22% | 258.3 img/s | lr 2.69e-04
+[train step 50/88] loss 1.0859 | top1 92.61% | top3 98.30% | top5 99.12% | 258.5 img/s | lr 2.67e-04
+[train step 75/88] loss 1.0940 | top1 92.30% | top3 98.21% | top5 99.05% | 258.5 img/s | lr 2.65e-04
+[Train] loss 1.0962 | top1 92.22% | top3 98.14% | top5 98.99% | lr 2.64e-04
+[Val]   loss 1.3114 | top1 67.40% | top3 84.10% | top5 89.10%
+Epoch time: 1.52 min
+
+=== Epoch 67/130 ===
+[train step 25/88] loss 1.0719 | top1 93.17% | top3 98.66% | top5 99.23% | 257.6 img/s | lr 2.62e-04
+[train step 50/88] loss 1.0817 | top1 92.47% | top3 98.49% | top5 99.20% | 258.5 img/s | lr 2.61e-04
+[train step 75/88] loss 1.0802 | top1 92.55% | top3 98.54% | top5 99.24% | 258.6 img/s | lr 2.59e-04
+[Train] loss 1.0817 | top1 92.63% | top3 98.49% | top5 99.23% | lr 2.58e-04
+[Val]   loss 1.3307 | top1 66.70% | top3 83.86% | top5 88.54%
+Epoch time: 1.51 min
+
+=== Epoch 68/130 ===
+[train step 25/88] loss 1.0770 | top1 93.52% | top3 98.19% | top5 98.84% | 258.5 img/s | lr 2.56e-04
+[train step 50/88] loss 1.0827 | top1 93.11% | top3 98.20% | top5 98.95% | 259.2 img/s | lr 2.54e-04
+[train step 75/88] loss 1.0801 | top1 93.03% | top3 98.35% | top5 99.07% | 258.8 img/s | lr 2.53e-04
+[Train] loss 1.0777 | top1 92.95% | top3 98.40% | top5 99.13% | lr 2.52e-04
+[Val]   loss 1.3304 | top1 67.72% | top3 83.94% | top5 88.66%
+Epoch time: 1.51 min
+
+=== Epoch 69/130 ===
+[train step 25/88] loss 1.0553 | top1 93.75% | top3 98.67% | top5 99.19% | 256.5 img/s | lr 2.50e-04
+[train step 50/88] loss 1.0594 | top1 93.52% | top3 98.61% | top5 99.17% | 257.9 img/s | lr 2.48e-04
+[train step 75/88] loss 1.0585 | top1 93.60% | top3 98.57% | top5 99.22% | 258.1 img/s | lr 2.46e-04
+[Train] loss 1.0623 | top1 93.37% | top3 98.51% | top5 99.18% | lr 2.45e-04
+[Val]   loss 1.3225 | top1 67.66% | top3 83.82% | top5 88.52%
+Epoch time: 1.52 min
+
+=== Epoch 70/130 ===
+[train step 25/88] loss 1.0464 | top1 94.23% | top3 98.47% | top5 99.17% | 257.5 img/s | lr 2.43e-04
+[train step 50/88] loss 1.0516 | top1 93.91% | top3 98.48% | top5 99.19% | 259.1 img/s | lr 2.42e-04
+[train step 75/88] loss 1.0573 | top1 93.53% | top3 98.50% | top5 99.20% | 259.3 img/s | lr 2.40e-04
+[Train] loss 1.0600 | top1 93.41% | top3 98.51% | top5 99.16% | lr 2.39e-04
+[Val]   loss 1.3205 | top1 68.30% | top3 83.86% | top5 88.70%
+Best saved to best_model.pt (val top1 68.30%)
+Epoch time: 1.52 min
+
+=== Epoch 71/130 ===
+[train step 25/88] loss 1.0544 | top1 93.69% | top3 98.64% | top5 99.11% | 255.9 img/s | lr 2.37e-04
+[train step 50/88] loss 1.0532 | top1 93.66% | top3 98.64% | top5 99.27% | 257.3 img/s | lr 2.35e-04
+[train step 75/88] loss 1.0541 | top1 93.51% | top3 98.58% | top5 99.26% | 257.7 img/s | lr 2.33e-04
+[Train] loss 1.0554 | top1 93.48% | top3 98.55% | top5 99.21% | lr 2.33e-04
+[Val]   loss 1.3262 | top1 67.62% | top3 83.92% | top5 88.74%
+Epoch time: 1.52 min
+
+=== Epoch 72/130 ===
+[train step 25/88] loss 1.0385 | top1 94.17% | top3 98.59% | top5 99.20% | 255.8 img/s | lr 2.31e-04
+[train step 50/88] loss 1.0393 | top1 94.17% | top3 98.67% | top5 99.28% | 257.3 img/s | lr 2.29e-04
+[train step 75/88] loss 1.0461 | top1 93.97% | top3 98.58% | top5 99.19% | 258.1 img/s | lr 2.27e-04
+[Train] loss 1.0486 | top1 93.83% | top3 98.57% | top5 99.19% | lr 2.26e-04
+[Val]   loss 1.3085 | top1 68.14% | top3 84.10% | top5 88.60%
+Epoch time: 1.52 min
+
+=== Epoch 73/130 ===
+[train step 25/88] loss 1.0351 | top1 94.17% | top3 98.77% | top5 99.27% | 255.9 img/s | lr 2.24e-04
+[train step 50/88] loss 1.0380 | top1 94.10% | top3 98.68% | top5 99.24% | 256.7 img/s | lr 2.23e-04
+[train step 75/88] loss 1.0426 | top1 93.80% | top3 98.66% | top5 99.23% | 257.5 img/s | lr 2.21e-04
+[Train] loss 1.0416 | top1 93.93% | top3 98.70% | top5 99.24% | lr 2.20e-04
+[Val]   loss 1.2951 | top1 68.20% | top3 84.34% | top5 88.68%
+Epoch time: 1.52 min
+
+=== Epoch 74/130 ===
+[train step 25/88] loss 1.0245 | top1 94.70% | top3 98.67% | top5 99.30% | 257.1 img/s | lr 2.18e-04
+[train step 50/88] loss 1.0306 | top1 94.39% | top3 98.70% | top5 99.34% | 257.7 img/s | lr 2.16e-04
+[train step 75/88] loss 1.0328 | top1 94.33% | top3 98.69% | top5 99.30% | 258.0 img/s | lr 2.14e-04
+[Train] loss 1.0371 | top1 94.05% | top3 98.63% | top5 99.26% | lr 2.14e-04
+[Val]   loss 1.3177 | top1 67.90% | top3 84.34% | top5 88.84%
+Epoch time: 1.52 min
+
+=== Epoch 75/130 ===
+[train step 25/88] loss 1.0176 | top1 94.64% | top3 98.95% | top5 99.38% | 256.3 img/s | lr 2.12e-04
+[train step 50/88] loss 1.0206 | top1 94.54% | top3 98.91% | top5 99.38% | 257.3 img/s | lr 2.10e-04
+[train step 75/88] loss 1.0261 | top1 94.32% | top3 98.82% | top5 99.33% | 257.7 img/s | lr 2.08e-04
