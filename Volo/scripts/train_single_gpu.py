@@ -1,6 +1,13 @@
 import argparse
+import sys
+from pathlib import Path
+
 import torch
 from torch.utils.data import DataLoader
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from model.VOLO import VOLOClassifier
 from data.load_data_ddp import get_cifar100_datasets
@@ -98,8 +105,7 @@ def main(args: argparse.Namespace | None = None) -> None:
         val_split=args.val_split,
         img_size=args.img_size,
         seed=7,
-        ddp_safe_download=False,
-    )
+        ddp_safe_download=False,)
 
     persistent_workers = args.persistent_workers and args.num_workers > 0
     train_kwargs = {}
@@ -112,8 +118,7 @@ def main(args: argparse.Namespace | None = None) -> None:
         num_workers=args.num_workers,
         pin_memory=args.pin_memory,
         persistent_workers=persistent_workers,
-        **train_kwargs,
-    )
+        **train_kwargs,)
 
     val_loader = None
     if val_ds is not None:
@@ -127,8 +132,7 @@ def main(args: argparse.Namespace | None = None) -> None:
             num_workers=args.num_workers,
             pin_memory=args.pin_memory,
             persistent_workers=persistent_workers,
-            **val_kwargs,
-        )
+            **val_kwargs,)
 
     if args.hierarchical:
         dims = _parse_int_tuple(args.dims)
@@ -163,8 +167,7 @@ def main(args: argparse.Namespace | None = None) -> None:
         pooling=args.pooling,
         cls_attn_depth=args.cls_attn_depth,
         use_pos_embed=args.use_pos_embed,
-        use_cls_pos=args.use_cls_pos,
-    ).to(device)
+        use_cls_pos=args.use_cls_pos,).to(device)
 
     train_model(
         model=model,
@@ -193,8 +196,7 @@ def main(args: argparse.Namespace | None = None) -> None:
         early_stop_metric=args.early_stop_metric,
         early_stop_patience=args.early_stop_patience,
         early_stop_min_delta=args.early_stop_min_delta,
-        early_stop_require_monotonic=args.early_stop_require_monotonic,
-    )
+        early_stop_require_monotonic=args.early_stop_require_monotonic,)
 
 
 if __name__ == "__main__":

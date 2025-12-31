@@ -15,8 +15,7 @@ def test_volo_classifier_flat_mean():
         outlooker_heads=4,
         transformer_depth=1,
         transformer_heads=4,
-        pooling="mean",
-    )
+        pooling="mean")
 
     x = torch.randn(2, 3, 32, 32)
     y = model(x)
@@ -36,8 +35,7 @@ def test_volo_classifier_flat_cli():
         transformer_depth=1,
         transformer_heads=4,
         pooling="cli",
-        cls_attn_depth=1,
-    )
+        cls_attn_depth=1)
 
     x = torch.randn(2, 3, 32, 32)
     y = model(x)
@@ -57,8 +55,7 @@ def test_volo_classifier_hierarchical_mean():
         outlooker_heads_list=(4, 4),
         transformer_depths=(0, 1),
         transformer_heads_list=(4, 4),
-        pooling="mean",
-    )
+        pooling="mean")
 
     x = torch.randn(2, 3, 32, 32)
     y = model(x)
