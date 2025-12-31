@@ -1,10 +1,6 @@
 import argparse
-import os
 import torch
-import torch.distributed as dist
-from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.utils.data import DataLoader
-from torch.utils.data.distributed import DistributedSampler
 
 from model.VOLO import VOLOClassifier
 from data.load_data_ddp import get_cifar100_datasets
@@ -16,15 +12,15 @@ def _parse_int_tuple(value: str) -> tuple[int, ...]:
     return tuple(int(v) for v in items)
 
 
-def _maybe_set_threads(num_threads: int | None, num_interop_threads: int | None) -> None:
-    if num_threads is not None:
-        torch.set_num_threads(num_threads)
-    if num_interop_threads is not None:
-        torch.set_num_interop_threads(num_interop_threads)
+def _select_device(device: str) -> str:
+    if device.startswith("cuda") and not torch.cuda.is_available():
+        print("CUDA not available, falling back to CPU.")
+        return "cpu"
+    return device
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="VOLO DDP training (torchrun compatible).")
+    parser = argparse.ArgumentParser(description="VOLO single-GPU training.")
 
     # data
     parser.add_argument("--data-dir", default="./data/cifar100")
@@ -35,7 +31,6 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--pin-memory", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--persistent-workers", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--prefetch-factor", type=int, default=2)
-    parser.add_argument("--ddp-safe-download", action=argparse.BooleanOptionalAction, default=True)
 
     # model
     parser.add_argument("--num-classes", type=int, default=100)
@@ -65,6 +60,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--transformer-heads-list", default="6,8,12")
 
     # training
+    parser.add_argument("--device", default="cuda")
     parser.add_argument("--epochs", type=int, default=130)
     parser.add_argument("--lr", type=float, default=5e-4)
     parser.add_argument("--weight-decay", type=float, default=0.05)
@@ -88,43 +84,23 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--early-stop-min-delta", type=float, default=0.0)
     parser.add_argument("--early-stop-require-monotonic", action=argparse.BooleanOptionalAction, default=False)
 
-    # ddp/runtime
-    parser.add_argument("--backend", default="nccl")
-    parser.add_argument("--find-unused-parameters", action=argparse.BooleanOptionalAction, default=True)
-    parser.add_argument("--num-threads", type=int, default=1)
-    parser.add_argument("--num-interop-threads", type=int, default=1)
     return parser
 
 
-def setup_ddp(backend: str):
-    dist.init_process_group(backend=backend)
-    local_rank = int(os.environ["LOCAL_RANK"])
-    torch.cuda.set_device(local_rank)
-    return local_rank
-
-
-def is_main():
-    return (not dist.is_available()) or (not dist.is_initialized()) or dist.get_rank() == 0
-
-
-def main(args: argparse.Namespace | None = None):
+def main(args: argparse.Namespace | None = None) -> None:
     if args is None:
         args = build_parser().parse_args()
 
-    _maybe_set_threads(args.num_threads, args.num_interop_threads)
-
-    local_rank = setup_ddp(args.backend)
-    device = torch.device(f"cuda:{local_rank}")
+    device = _select_device(args.device)
 
     train_ds, val_ds, _ = get_cifar100_datasets(
         data_dir=args.data_dir,
         val_split=args.val_split,
         img_size=args.img_size,
         seed=7,
-        ddp_safe_download=args.ddp_safe_download,
+        ddp_safe_download=False,
     )
 
-    train_sampler = DistributedSampler(train_ds, shuffle=True, drop_last=True)
     persistent_workers = args.persistent_workers and args.num_workers > 0
     train_kwargs = {}
     if args.num_workers > 0:
@@ -132,7 +108,7 @@ def main(args: argparse.Namespace | None = None):
     train_loader = DataLoader(
         train_ds,
         batch_size=args.batch_size,
-        sampler=train_sampler,
+        shuffle=True,
         num_workers=args.num_workers,
         pin_memory=args.pin_memory,
         persistent_workers=persistent_workers,
@@ -141,14 +117,13 @@ def main(args: argparse.Namespace | None = None):
 
     val_loader = None
     if val_ds is not None:
-        val_sampler = DistributedSampler(val_ds, shuffle=False, drop_last=False)
         val_kwargs = {}
         if args.num_workers > 0:
             val_kwargs["prefetch_factor"] = args.prefetch_factor
         val_loader = DataLoader(
             val_ds,
             batch_size=args.batch_size,
-            sampler=val_sampler,
+            shuffle=False,
             num_workers=args.num_workers,
             pin_memory=args.pin_memory,
             persistent_workers=persistent_workers,
@@ -191,13 +166,6 @@ def main(args: argparse.Namespace | None = None):
         use_cls_pos=args.use_cls_pos,
     ).to(device)
 
-    model = DDP(
-        model,
-        device_ids=[local_rank],
-        output_device=local_rank,
-        find_unused_parameters=args.find_unused_parameters,
-    )
-
     train_model(
         model=model,
         train_loader=train_loader,
@@ -227,8 +195,6 @@ def main(args: argparse.Namespace | None = None):
         early_stop_min_delta=args.early_stop_min_delta,
         early_stop_require_monotonic=args.early_stop_require_monotonic,
     )
-
-    dist.destroy_process_group()
 
 
 if __name__ == "__main__":
