@@ -12,7 +12,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from data.cifrar100 import get_cifar100_dataloaders
+from data.dataset_zoo import available_dataset_names, get_classification_dataloaders, get_dataset_info
 from model.swin_vision_transformer import SwinTransformer
 from training.one_epoch import evaluate_one_epoch
 from training.train_vit import train_swinvit
@@ -31,7 +31,7 @@ from validation.utils import resolve_class_names
 def add_model_args(parser: argparse.ArgumentParser):
     parser.add_argument("--img-size", type=int, default=32, help="Input image size used for the Swin config.")
     parser.add_argument("--patch-size", type=int, default=4, help="Patch size for the stem conv.")
-    parser.add_argument("--num-classes", type=int, default=100, help="Number of classification targets.")
+    parser.add_argument("--num-classes", type=int, default=None, help="Number of classification targets. Defaults to the selected dataset.")
     parser.add_argument("--embed-dim", type=int, default=96, help="Base embedding dimension.")
     parser.add_argument("--depths", nargs="+", type=int, help="Blocks per stage (4 values).")
     parser.add_argument("--num-heads", nargs="+", type=int, help="Attention heads per stage (4 values).")
@@ -74,15 +74,22 @@ def _load_checkpoint(model: torch.nn.Module, checkpoint_path: str, device: str):
     model.load_state_dict(state, strict=True)
 
 
+def resolve_num_classes(args) -> int:
+    return args.num_classes if args.num_classes is not None else get_dataset_info(args.dataset)["num_classes"]
+
+
 def run_train(args):
     device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
     torch.manual_seed(args.seed)
+    args.num_classes = resolve_num_classes(args)
 
-    train_loader, val_loader, test_loader = get_cifar100_dataloaders(
+    train_loader, val_loader, test_loader = get_classification_dataloaders(
+        dataset_name=args.dataset,
         batch_size=args.batch_size,
         data_dir=args.data_dir,
         num_workers=args.num_workers,
         val_split=args.val_split,
+        img_size=args.img_size,
         pin_memory=device.startswith("cuda"),)
 
     model = build_model(args)
@@ -135,12 +142,15 @@ def run_train(args):
 def run_eval(args):
     device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
     torch.manual_seed(args.seed)
+    args.num_classes = resolve_num_classes(args)
 
-    _, _, test_loader = get_cifar100_dataloaders(
+    _, _, test_loader = get_classification_dataloaders(
+        dataset_name=args.dataset,
         batch_size=args.batch_size,
         data_dir=args.data_dir,
         num_workers=args.num_workers,
         val_split=0.0,
+        img_size=args.img_size,
         pin_memory=device.startswith("cuda"),)
 
     model = build_model(args)
@@ -166,13 +176,16 @@ def run_eval(args):
 def run_validate(args):
     device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
     torch.manual_seed(args.seed)
+    args.num_classes = resolve_num_classes(args)
 
     def _get_test_loader():
-        _, _, test_loader = get_cifar100_dataloaders(
+        _, _, test_loader = get_classification_dataloaders(
+            dataset_name=args.dataset,
             batch_size=args.batch_size,
             data_dir=args.data_dir,
             num_workers=args.num_workers,
             val_split=0.0,
+            img_size=args.img_size,
             pin_memory=device.startswith("cuda"),)
         return test_loader
 
@@ -199,8 +212,8 @@ def run_validate(args):
         return test_loss, test_metrics
 
     if task in ("grid", "misclassified"):
-        test_loader = _get_test_loader()
-        class_names = resolve_class_names(test_loader, data_dir=args.data_dir)
+            test_loader = _get_test_loader()
+            class_names = resolve_class_names(test_loader, data_dir=args.data_dir, dataset_name=args.dataset)
         show_predictions_grid(
             model=model,
             dataloader=test_loader,
@@ -214,7 +227,7 @@ def run_validate(args):
 
     if task == "per-class":
         test_loader = _get_test_loader()
-        class_names = resolve_class_names(test_loader, data_dir=args.data_dir)
+        class_names = resolve_class_names(test_loader, data_dir=args.data_dir, dataset_name=args.dataset)
         _, targets, preds = collect_predictions(
             model=model,
             dataloader=test_loader,
@@ -227,7 +240,7 @@ def run_validate(args):
 
     if task == "tsne":
         test_loader = _get_test_loader()
-        class_names = resolve_class_names(test_loader, data_dir=args.data_dir)
+        class_names = resolve_class_names(test_loader, data_dir=args.data_dir, dataset_name=args.dataset)
         features, labels = collect_features(
             model=model,
             dataloader=test_loader,
@@ -249,7 +262,7 @@ def run_validate(args):
     if task == "url":
         if not args.url:
             raise ValueError("url task requires --url")
-        class_names = resolve_class_names(data_dir=args.data_dir)
+        class_names = resolve_class_names(data_dir=args.data_dir, dataset_name=args.dataset)
         topk_idxs, topk_vals, img_pil, x_tensor = predict_from_url(
             model=model,
             url=args.url,
@@ -272,11 +285,12 @@ def run_validate(args):
 
 def get_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Train or evaluate SwinViT on CIFAR-100.")
+        description="Train or evaluate SwinViT on image classification datasets.")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     train_parser = subparsers.add_parser("train", help="Train SwinTransformer.")
-    train_parser.add_argument("--data-dir", type=str, default="./data", help="Where CIFAR-100 is stored/downloaded.")
+    train_parser.add_argument("--dataset", type=str, default="cifar100", choices=available_dataset_names(), help="Dataset to train on.")
+    train_parser.add_argument("--data-dir", type=str, default="./data", help="Where datasets are stored/downloaded.")
     train_parser.add_argument("--batch-size", type=int, default=128, help="Batch size.")
     train_parser.add_argument("--epochs", type=int, default=10, help="Number of training epochs.")
     train_parser.add_argument("--lr", type=float, default=5e-4, help="Learning rate.")
@@ -300,7 +314,8 @@ def get_parser() -> argparse.ArgumentParser:
 
     eval_parser = subparsers.add_parser("eval", help="Evaluate a checkpoint on CIFAR-100 test set.")
     eval_parser.add_argument("--checkpoint", type=str, required=True, help="Checkpoint file to load.")
-    eval_parser.add_argument("--data-dir", type=str, default="./data", help="Where CIFAR-100 is stored/downloaded.")
+    eval_parser.add_argument("--dataset", type=str, default="cifar100", choices=available_dataset_names(), help="Dataset to evaluate on.")
+    eval_parser.add_argument("--data-dir", type=str, default="./data", help="Where datasets are stored/downloaded.")
     eval_parser.add_argument("--batch-size", type=int, default=256, help="Batch size for evaluation.")
     eval_parser.add_argument("--num-workers", type=int, default=4, help="DataLoader workers.")
     eval_parser.add_argument("--device", type=str, default=None, help="Device identifier (cuda or cpu).")
@@ -318,7 +333,8 @@ def get_parser() -> argparse.ArgumentParser:
         choices=("test", "grid", "misclassified", "per-class", "tsne", "url"),
         help="Validation task to run.")
     validate_parser.add_argument("--checkpoint", type=str, required=True, help="Checkpoint file to load.")
-    validate_parser.add_argument("--data-dir", type=str, default="./data", help="Where CIFAR-100 is stored/downloaded.")
+    validate_parser.add_argument("--dataset", type=str, default="cifar100", choices=available_dataset_names(), help="Dataset used by validation utilities.")
+    validate_parser.add_argument("--data-dir", type=str, default="./data", help="Where datasets are stored/downloaded.")
     validate_parser.add_argument("--batch-size", type=int, default=256, help="Batch size for evaluation.")
     validate_parser.add_argument("--num-workers", type=int, default=4, help="DataLoader workers.")
     validate_parser.add_argument("--device", type=str, default=None, help="Device identifier (cuda or cpu).")

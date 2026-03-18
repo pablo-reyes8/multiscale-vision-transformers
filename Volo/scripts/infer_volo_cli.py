@@ -11,7 +11,7 @@ if str(ROOT) not in sys.path:
 import torch
 import numpy as np
 
-from data.load_data_ddp import get_cifar100_datasets
+from data.dataset_zoo import available_dataset_names, get_classification_datasets, get_dataset_info
 from model.VOLO import VOLOClassifier
 from inference.evaluate_loader import evaluate_classifier
 from inference.confussion_matrix import confusion_matrix, plot_confusion_matrix, top_confusions
@@ -56,7 +56,7 @@ def _load_checkpoint(model: torch.nn.Module, checkpoint_path: str, device: str) 
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Run VOLO inference and analysis on CIFAR-100")
+    parser = argparse.ArgumentParser(description="Run VOLO inference and analysis on image classification datasets")
 
     parser.add_argument("--checkpoint", type=str, required=True, help="Checkpoint file to load.")
     parser.add_argument("--device", type=str, default=None)
@@ -64,11 +64,12 @@ def parse_args():
     # data
     parser.add_argument("--batch-size", type=int, default=256)
     parser.add_argument("--num-workers", type=int, default=2)
-    parser.add_argument("--data-dir", type=str, default="./data/cifar100")
+    parser.add_argument("--dataset", type=str, default="cifar100", choices=available_dataset_names())
+    parser.add_argument("--data-dir", type=str, default="./data")
     parser.add_argument("--img-size", type=int, default=32)
 
     # model
-    parser.add_argument("--num-classes", type=int, default=100)
+    parser.add_argument("--num-classes", type=int, default=None)
     parser.add_argument("--patch-size", type=int, default=4)
     parser.add_argument("--hierarchical", action="store_true")
     parser.add_argument("--downsample-kind", choices=["map", "token"], default="map")
@@ -121,6 +122,8 @@ def main():
     device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
     if args.use_amp is None:
         args.use_amp = device.startswith("cuda")
+    dataset_info = get_dataset_info(args.dataset)
+    num_classes = args.num_classes if args.num_classes is not None else dataset_info["num_classes"]
 
     if args.hierarchical:
         dims = _parse_int_tuple(args.dims)
@@ -132,7 +135,7 @@ def main():
         dims = outlooker_depths = outlooker_heads_list = transformer_depths = transformer_heads_list = None
 
     model = VOLOClassifier(
-        num_classes=args.num_classes,
+        num_classes=num_classes,
         img_size=args.img_size,
         patch_size=args.patch_size,
         hierarchical=args.hierarchical,
@@ -161,9 +164,11 @@ def main():
     _load_checkpoint(model, args.checkpoint, device=device)
     model.to(device)
 
-    _, _, test_ds = get_cifar100_datasets(
+    _, _, test_ds = get_classification_datasets(
+        dataset_name=args.dataset,
         data_dir=args.data_dir,
         val_split=0.0,
+        random_erasing_p=0.0,
         img_size=args.img_size,
         ddp_safe_download=False,
     )
@@ -186,7 +191,7 @@ def main():
             device=device,
             amp=args.use_amp,
             amp_dtype=args.amp_dtype,
-            num_classes=args.num_classes,
+            num_classes=num_classes,
             topk=tuple(args.topk),
         )
         metrics_fmt = " | ".join([f"top{k}: {metrics[f'top{k}']:.2f}%" for k in sorted(args.topk)])
@@ -194,7 +199,7 @@ def main():
         _save_json(output_dir / "eval_metrics.json", metrics)
 
     if "confusion" in args.analysis:
-        cm = confusion_matrix(model, test_loader, num_classes=args.num_classes, device=device)
+        cm = confusion_matrix(model, test_loader, num_classes=num_classes, device=device)
         np.save(output_dir / "confusion_matrix.npy", cm)
         top = top_confusions(cm, k=20)
         print("Top confusions (count, true, pred):")

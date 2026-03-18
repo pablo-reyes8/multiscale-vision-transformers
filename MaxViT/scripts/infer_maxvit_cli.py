@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import argparse
+from dataclasses import replace
 import json
 import sys
 from pathlib import Path
@@ -11,7 +12,7 @@ if str(ROOT) not in sys.path:
 import torch
 import numpy as np
 
-from data.load_cifrar100 import get_cifar100_dataloaders
+from data.dataset_zoo import available_dataset_names, get_classification_dataloaders, get_dataset_info
 from model.MaxViT import MaxViT
 from model_configurations import (
     maxvit_cifar100_tiny,
@@ -27,7 +28,7 @@ from inference.history_visual import show_predictions_grid
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Run MaxViT inference and analysis on CIFAR-100")
+    parser = argparse.ArgumentParser(description="Run MaxViT inference and analysis on image classification datasets")
 
     parser.add_argument("--checkpoint", type=str, required=True, help="Checkpoint file to load.")
     parser.add_argument("--use-ema", action="store_true", help="Use EMA weights if present in checkpoint.")
@@ -35,10 +36,13 @@ def parse_args():
     parser.add_argument("--variant", choices=["tiny", "small", "base"], default="tiny")
     parser.add_argument("--stem-type", choices=["A", "B"], default="A")
     parser.add_argument("--drop-path-rate", type=float, default=0.1)
+    parser.add_argument("--num-classes", type=int, default=None)
 
     parser.add_argument("--batch-size", type=int, default=256)
     parser.add_argument("--num-workers", type=int, default=2)
+    parser.add_argument("--dataset", type=str, default="cifar100", choices=available_dataset_names())
     parser.add_argument("--data-dir", type=str, default="./data")
+    parser.add_argument("--img-size", type=int, default=32)
     parser.add_argument("--device", type=str, default=None)
 
     parser.add_argument("--amp", dest="use_amp", action="store_true", default=None)
@@ -110,16 +114,21 @@ def main():
         args.use_amp = device.startswith("cuda")
 
     cfg = build_config(args.variant, args.stem_type, args.drop_path_rate)
+    num_classes = args.num_classes if args.num_classes is not None else get_dataset_info(args.dataset)["num_classes"]
+    cfg = replace(cfg, num_classes=num_classes)
     model = MaxViT(cfg)
 
     load_checkpoint(model, args.checkpoint, device=device, use_ema=args.use_ema)
     model.to(device)
 
-    _, _, test_loader = get_cifar100_dataloaders(
+    _, _, test_loader = get_classification_dataloaders(
+        dataset_name=args.dataset,
         batch_size=args.batch_size,
+        eval_batch_size=args.batch_size,
         data_dir=args.data_dir,
         num_workers=args.num_workers,
         val_split=0.0,
+        img_size=args.img_size,
         pin_memory=device.startswith("cuda"),
     )
 

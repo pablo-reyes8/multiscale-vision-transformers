@@ -10,7 +10,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from model.VOLO import VOLOClassifier
-from data.load_data_ddp import get_cifar100_datasets
+from data.dataset_zoo import available_dataset_names, get_classification_datasets, get_dataset_info
 from training.Train_VOLO import train_model
 
 
@@ -30,7 +30,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="VOLO single-GPU training.")
 
     # data
-    parser.add_argument("--data-dir", default="./data/cifar100")
+    parser.add_argument("--dataset", default="cifar100", choices=available_dataset_names())
+    parser.add_argument("--data-dir", default="./data")
     parser.add_argument("--img-size", type=int, default=32)
     parser.add_argument("--val-split", type=float, default=0.1)
     parser.add_argument("--batch-size", type=int, default=256)
@@ -40,7 +41,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--prefetch-factor", type=int, default=2)
 
     # model
-    parser.add_argument("--num-classes", type=int, default=100)
+    parser.add_argument("--num-classes", type=int, default=None)
     parser.add_argument("--patch-size", type=int, default=4)
     parser.add_argument("--hierarchical", action="store_true")
     parser.add_argument("--downsample-kind", choices=["map", "token"], default="map")
@@ -100,9 +101,16 @@ def main(args: argparse.Namespace | None = None) -> None:
 
     device = _select_device(args.device)
 
-    train_ds, val_ds, _ = get_cifar100_datasets(
+    dataset_info = get_dataset_info(args.dataset)
+    num_classes = args.num_classes if args.num_classes is not None else dataset_info["num_classes"]
+
+    train_ds, val_ds, _ = get_classification_datasets(
+        dataset_name=args.dataset,
         data_dir=args.data_dir,
         val_split=args.val_split,
+        ra_num_ops=2,
+        ra_magnitude=7,
+        random_erasing_p=0.25,
         img_size=args.img_size,
         seed=7,
         ddp_safe_download=False,)
@@ -144,7 +152,7 @@ def main(args: argparse.Namespace | None = None) -> None:
         dims = outlooker_depths = outlooker_heads_list = transformer_depths = transformer_heads_list = None
 
     model = VOLOClassifier(
-        num_classes=args.num_classes,
+        num_classes=num_classes,
         img_size=args.img_size,
         patch_size=args.patch_size,
         hierarchical=args.hierarchical,
@@ -190,7 +198,7 @@ def main(args: argparse.Namespace | None = None) -> None:
         mixup_alpha=args.mixup_alpha,
         cutmix_alpha=args.cutmix_alpha,
         mix_prob=args.mix_prob,
-        num_classes=args.num_classes,
+        num_classes=num_classes,
         channels_last=args.channels_last,
         early_stop=args.early_stop,
         early_stop_metric=args.early_stop_metric,

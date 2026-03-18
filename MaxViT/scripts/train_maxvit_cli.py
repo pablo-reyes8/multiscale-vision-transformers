@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import argparse
+from dataclasses import replace
 from pathlib import Path
 import sys
 
@@ -11,7 +12,7 @@ if str(ROOT) not in sys.path:
 import torch
 
 from data.data_utils import describe_loader
-from data.load_cifrar100 import get_cifar100_dataloaders
+from data.dataset_zoo import available_dataset_names, get_classification_dataloaders, get_dataset_info
 from model.MaxViT import MaxViT
 from model_configurations import (
     maxvit_cifar100_tiny,
@@ -23,7 +24,7 @@ from training.train_MaxViT import train_model
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Train MaxViT on CIFAR-100")
+    parser = argparse.ArgumentParser(description="Train MaxViT on image classification datasets")
 
     parser.add_argument("--variant", choices=["tiny", "small", "base"], default="tiny")
     parser.add_argument("--stem-type", choices=["A", "B"], default="A")
@@ -33,7 +34,9 @@ def parse_args():
     parser.add_argument("--batch-size", type=int, default=128)
     parser.add_argument("--num-workers", type=int, default=2)
     parser.add_argument("--val-split", type=float, default=0.1)
+    parser.add_argument("--dataset", type=str, default="cifar100", choices=available_dataset_names())
     parser.add_argument("--data-dir", type=str, default="./data")
+    parser.add_argument("--img-size", type=int, default=32)
     parser.add_argument("--pin-memory", dest="pin_memory", action="store_true", default=True)
     parser.add_argument("--no-pin-memory", dest="pin_memory", action="store_false")
 
@@ -65,6 +68,7 @@ def parse_args():
 
     parser.add_argument("--device", type=str, default=None)
     parser.add_argument("--seed", type=int, default=None)
+    parser.add_argument("--num-classes", type=int, default=None)
     parser.add_argument("--resume", type=str, default=None)
 
     parser.add_argument("--output-dir", type=str, default=None)
@@ -106,9 +110,13 @@ def main():
         seed_everything(args.seed)
 
     cfg = build_config(args.variant, args.stem_type, args.drop_path_rate)
+    num_classes = args.num_classes if args.num_classes is not None else get_dataset_info(args.dataset)["num_classes"]
+    cfg = replace(cfg, num_classes=num_classes)
 
-    train_loader, val_loader, test_loader = get_cifar100_dataloaders(
+    train_loader, val_loader, test_loader = get_classification_dataloaders(
+        dataset_name=args.dataset,
         batch_size=args.batch_size,
+        eval_batch_size=args.batch_size,
         data_dir=args.data_dir,
         num_workers=args.num_workers,
         val_split=args.val_split,
@@ -116,6 +124,7 @@ def main():
         ra_num_ops=args.ra_num_ops,
         ra_magnitude=args.ra_magnitude,
         random_erasing_p=args.random_erasing_p,
+        img_size=args.img_size,
     )
 
     if args.describe:

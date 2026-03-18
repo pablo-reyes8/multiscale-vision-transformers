@@ -13,7 +13,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from data.cifrar100 import get_cifar100_dataloaders
+from data.dataset_zoo import available_dataset_names, get_classification_dataloaders, get_dataset_info
 from model.vision_transformer import VisionTransformer
 from training.one_epoch import evaluate_one_epoch
 from training.train_vit import train_vit
@@ -22,7 +22,7 @@ from training.train_vit import train_vit
 def add_model_args(parser: argparse.ArgumentParser):
     parser.add_argument("--img-size", type=int, default=32, help="Input image size.")
     parser.add_argument("--patch-size", type=int, default=4, help="Patch size.")
-    parser.add_argument("--num-classes", type=int, default=100, help="Number of classification targets.")
+    parser.add_argument("--num-classes", type=int, default=None, help="Number of classification targets. Defaults to the selected dataset.")
     parser.add_argument("--embed-dim", type=int, default=192, help="Token embedding dimension.")
     parser.add_argument("--depth", type=int, default=6, help="Number of transformer encoder blocks.")
     parser.add_argument("--num-heads", type=int, default=3, help="Attention heads per block.")
@@ -56,6 +56,10 @@ def build_model(args) -> VisionTransformer:
     )
 
 
+def resolve_num_classes(args) -> int:
+    return args.num_classes if args.num_classes is not None else get_dataset_info(args.dataset)["num_classes"]
+
+
 def _load_checkpoint(model: torch.nn.Module, checkpoint_path: str, device: str):
     state = torch.load(checkpoint_path, map_location=device)
     if isinstance(state, dict) and "model" in state:
@@ -66,12 +70,15 @@ def _load_checkpoint(model: torch.nn.Module, checkpoint_path: str, device: str):
 def run_train(args):
     device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
     torch.manual_seed(args.seed)
+    args.num_classes = resolve_num_classes(args)
 
-    train_loader, val_loader, test_loader = get_cifar100_dataloaders(
+    train_loader, val_loader, test_loader = get_classification_dataloaders(
+        dataset_name=args.dataset,
         batch_size=args.batch_size,
         data_dir=args.data_dir,
         num_workers=args.num_workers,
         val_split=args.val_split,
+        img_size=args.img_size,
         pin_memory=device.startswith("cuda"),
     )
 
@@ -128,12 +135,15 @@ def run_train(args):
 def run_eval(args):
     device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
     torch.manual_seed(args.seed)
+    args.num_classes = resolve_num_classes(args)
 
-    _, _, test_loader = get_cifar100_dataloaders(
+    _, _, test_loader = get_classification_dataloaders(
+        dataset_name=args.dataset,
         batch_size=args.batch_size,
         data_dir=args.data_dir,
         num_workers=args.num_workers,
         val_split=0.0,
+        img_size=args.img_size,
         pin_memory=device.startswith("cuda"),
     )
 
@@ -160,11 +170,12 @@ def run_eval(args):
 
 
 def get_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Train or evaluate ViT on CIFAR-100.")
+    parser = argparse.ArgumentParser(description="Train or evaluate ViT on image classification datasets.")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     train_parser = subparsers.add_parser("train", help="Train VisionTransformer.")
-    train_parser.add_argument("--data-dir", type=str, default="./data", help="Where CIFAR-100 is stored/downloaded.")
+    train_parser.add_argument("--dataset", type=str, default="cifar100", choices=available_dataset_names(), help="Dataset to train on.")
+    train_parser.add_argument("--data-dir", type=str, default="./data", help="Where datasets are stored/downloaded.")
     train_parser.add_argument("--batch-size", type=int, default=128, help="Batch size.")
     train_parser.add_argument("--epochs", type=int, default=10, help="Number of training epochs.")
     train_parser.add_argument("--lr", type=float, default=5e-4, help="Learning rate.")
@@ -188,7 +199,8 @@ def get_parser() -> argparse.ArgumentParser:
 
     eval_parser = subparsers.add_parser("eval", help="Evaluate a checkpoint on CIFAR-100 test set.")
     eval_parser.add_argument("--checkpoint", type=str, required=True, help="Checkpoint file to load.")
-    eval_parser.add_argument("--data-dir", type=str, default="./data", help="Where CIFAR-100 is stored/downloaded.")
+    eval_parser.add_argument("--dataset", type=str, default="cifar100", choices=available_dataset_names(), help="Dataset to evaluate on.")
+    eval_parser.add_argument("--data-dir", type=str, default="./data", help="Where datasets are stored/downloaded.")
     eval_parser.add_argument("--batch-size", type=int, default=256, help="Batch size for evaluation.")
     eval_parser.add_argument("--num-workers", type=int, default=4, help="DataLoader workers.")
     eval_parser.add_argument("--device", type=str, default=None, help="Device identifier (cuda or cpu).")

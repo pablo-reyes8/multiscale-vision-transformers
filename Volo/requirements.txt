@@ -6,6 +6,8 @@ torchvision>=0.17.0
 numpy>=1.24.0
 matplotlib>=3.8.0
 pandas>=2.2.0
+scipy>=1.10.0
+datasets>=2.18.0
 
 # Utils
 tqdm>=4.66.0
