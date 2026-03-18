@@ -66,7 +66,7 @@ def show_predictions_grid(
         return
 
     imgs = torch.stack(images_list, dim=0)
-    imgs = unnormalize(imgs)
+    imgs = unnormalize(imgs, dataset=dataloader.dataset)
 
     grid = make_grid(imgs, nrow=n, padding=2)
     npimg = grid.permute(1, 2, 0).numpy()

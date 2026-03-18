@@ -12,13 +12,6 @@ import torch
 import numpy as np
 
 from data.dataset_zoo import available_dataset_names, get_classification_datasets, get_dataset_info
-from model.VOLO import VOLOClassifier
-from inference.evaluate_loader import evaluate_classifier
-from inference.confussion_matrix import confusion_matrix, plot_confusion_matrix, top_confusions
-from inference.calibration_stats import calibration_stats, plot_reliability
-from inference.grad_cam import GradCAM, find_last_conv2d, overlay_cam
-from inference.oclusion import occlusion_sensitivity, plot_occlusion_heatmap
-from inference.history_visual import show_predictions_grid
 
 
 def _parse_int_tuple(value: str) -> tuple[int, ...]:
@@ -53,6 +46,18 @@ def _load_checkpoint(model: torch.nn.Module, checkpoint_path: str, device: str) 
         state = {k.replace("module.", "", 1): v for k, v in state.items()}
 
     model.load_state_dict(state, strict=True)
+
+
+def _resolve_class_names(dataset, dataset_name: str):
+    if hasattr(dataset, "classes"):
+        return list(dataset.classes)
+    if hasattr(dataset, "dataset") and hasattr(dataset.dataset, "classes"):
+        return list(dataset.dataset.classes)
+
+    info = get_dataset_info(dataset_name)
+    if "classes" in info:
+        return list(info["classes"])
+    return [str(i) for i in range(info["num_classes"])]
 
 
 def parse_args():
@@ -117,6 +122,8 @@ def parse_args():
 
 
 def main():
+    from model.VOLO import VOLOClassifier
+
     args = parse_args()
 
     device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
@@ -180,11 +187,14 @@ def main():
         num_workers=args.num_workers,
         pin_memory=device.startswith("cuda"),
     )
+    class_names = _resolve_class_names(test_ds, args.dataset)
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     if "eval" in args.analysis:
+        from inference.evaluate_loader import evaluate_classifier
+
         metrics = evaluate_classifier(
             model=model,
             loader=test_loader,
@@ -199,6 +209,8 @@ def main():
         _save_json(output_dir / "eval_metrics.json", metrics)
 
     if "confusion" in args.analysis:
+        from inference.confussion_matrix import confusion_matrix, plot_confusion_matrix, top_confusions
+
         cm = confusion_matrix(model, test_loader, num_classes=num_classes, device=device)
         np.save(output_dir / "confusion_matrix.npy", cm)
         top = top_confusions(cm, k=20)
@@ -207,7 +219,7 @@ def main():
             print(f"  {count:4d} | {true_idx:3d} -> {pred_idx:3d}")
         plot_confusion_matrix(
             cm,
-            class_names=None,
+            class_names=class_names,
             normalize=True,
             max_classes=args.max_classes,
             save_path=output_dir / "confusion_matrix.png",
@@ -215,6 +227,8 @@ def main():
         )
 
     if "calibration" in args.analysis:
+        from inference.calibration_stats import calibration_stats, plot_reliability
+
         calib = calibration_stats(model, test_loader, device=device)
         print(f"Calibration ECE: {calib['ece']:.4f}")
         np.savez(
@@ -228,10 +242,12 @@ def main():
         plot_reliability(calib, save_prefix=str(output_dir / "calibration"), show=not args.no_show)
 
     if "predictions" in args.analysis:
+        from inference.history_visual import show_predictions_grid
+
         show_predictions_grid(
             model,
             test_loader,
-            class_names=None,
+            class_names=class_names,
             n=16,
             device=device,
             save_path=output_dir / "predictions_grid.png",
@@ -239,6 +255,8 @@ def main():
         )
 
     if "gradcam" in args.analysis:
+        from inference.grad_cam import GradCAM, find_last_conv2d, overlay_cam
+
         x, y = _get_sample(test_ds, args.sample_index)
         x = x.to(device)
         target_layer = find_last_conv2d(model)
@@ -257,6 +275,8 @@ def main():
         )
 
     if "occlusion" in args.analysis:
+        from inference.oclusion import occlusion_sensitivity, plot_occlusion_heatmap
+
         x, y = _get_sample(test_ds, args.sample_index)
         base_score, class_idx, heat = occlusion_sensitivity(
             model,

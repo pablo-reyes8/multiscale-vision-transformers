@@ -197,7 +197,7 @@ def get_parser() -> argparse.ArgumentParser:
     train_parser.add_argument("--seed", type=int, default=42, help="Random seed.")
     add_model_args(train_parser)
 
-    eval_parser = subparsers.add_parser("eval", help="Evaluate a checkpoint on CIFAR-100 test set.")
+    eval_parser = subparsers.add_parser("eval", help="Evaluate a checkpoint on the selected dataset.")
     eval_parser.add_argument("--checkpoint", type=str, required=True, help="Checkpoint file to load.")
     eval_parser.add_argument("--dataset", type=str, default="cifar100", choices=available_dataset_names(), help="Dataset to evaluate on.")
     eval_parser.add_argument("--data-dir", type=str, default="./data", help="Where datasets are stored/downloaded.")

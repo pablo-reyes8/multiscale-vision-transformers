@@ -16,16 +16,6 @@ from data.dataset_zoo import available_dataset_names, get_classification_dataloa
 from model.swin_vision_transformer import SwinTransformer
 from training.one_epoch import evaluate_one_epoch
 from training.train_vit import train_swinvit
-from validation.show_predictions import show_predictions_grid
-
-from validation.top_accuracy_classes import (
-    collect_predictions,
-    per_class_accuracy,
-    print_best_and_worst_classes)
-
-from validation.tsne_classes import collect_features, tsne_plot
-from validation.url_predict import predict_from_url, show_url_prediction_pair
-from validation.utils import resolve_class_names
 
 
 def add_model_args(parser: argparse.ArgumentParser):
@@ -174,6 +164,8 @@ def run_eval(args):
 
 
 def run_validate(args):
+    from validation.utils import resolve_class_names
+
     device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
     torch.manual_seed(args.seed)
     args.num_classes = resolve_num_classes(args)
@@ -212,8 +204,10 @@ def run_validate(args):
         return test_loss, test_metrics
 
     if task in ("grid", "misclassified"):
-            test_loader = _get_test_loader()
-            class_names = resolve_class_names(test_loader, data_dir=args.data_dir, dataset_name=args.dataset)
+        from validation.show_predictions import show_predictions_grid
+
+        test_loader = _get_test_loader()
+        class_names = resolve_class_names(test_loader, data_dir=args.data_dir, dataset_name=args.dataset)
         show_predictions_grid(
             model=model,
             dataloader=test_loader,
@@ -226,6 +220,12 @@ def run_validate(args):
         return None
 
     if task == "per-class":
+        from validation.top_accuracy_classes import (
+            collect_predictions,
+            per_class_accuracy,
+            print_best_and_worst_classes,
+        )
+
         test_loader = _get_test_loader()
         class_names = resolve_class_names(test_loader, data_dir=args.data_dir, dataset_name=args.dataset)
         _, targets, preds = collect_predictions(
@@ -239,6 +239,8 @@ def run_validate(args):
         return acc, counts
 
     if task == "tsne":
+        from validation.tsne_classes import collect_features, tsne_plot
+
         test_loader = _get_test_loader()
         class_names = resolve_class_names(test_loader, data_dir=args.data_dir, dataset_name=args.dataset)
         features, labels = collect_features(
@@ -260,6 +262,8 @@ def run_validate(args):
         return None
 
     if task == "url":
+        from validation.url_predict import predict_from_url, show_url_prediction_pair
+
         if not args.url:
             raise ValueError("url task requires --url")
         class_names = resolve_class_names(data_dir=args.data_dir, dataset_name=args.dataset)
@@ -267,6 +271,8 @@ def run_validate(args):
             model=model,
             url=args.url,
             class_names=class_names,
+            dataset_name=args.dataset,
+            img_size=args.img_size,
             device=device,
             autocast_dtype=args.autocast_dtype,
             use_amp=not args.no_amp,
@@ -277,7 +283,8 @@ def run_validate(args):
                 x_tensor_norm=x_tensor,
                 topk_idxs=topk_idxs,
                 topk_vals=topk_vals,
-                class_names=class_names)
+                class_names=class_names,
+                dataset_name=args.dataset)
         return None
 
     raise ValueError(f"Unknown validation task: {task}")
@@ -312,7 +319,7 @@ def get_parser() -> argparse.ArgumentParser:
     train_parser.add_argument("--seed", type=int, default=42, help="Random seed.")
     add_model_args(train_parser)
 
-    eval_parser = subparsers.add_parser("eval", help="Evaluate a checkpoint on CIFAR-100 test set.")
+    eval_parser = subparsers.add_parser("eval", help="Evaluate a checkpoint on the selected dataset.")
     eval_parser.add_argument("--checkpoint", type=str, required=True, help="Checkpoint file to load.")
     eval_parser.add_argument("--dataset", type=str, default="cifar100", choices=available_dataset_names(), help="Dataset to evaluate on.")
     eval_parser.add_argument("--data-dir", type=str, default="./data", help="Where datasets are stored/downloaded.")

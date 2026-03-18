@@ -1,6 +1,6 @@
 # MaxViT (Multi-Axis Vision Transformer)
 
-MaxViT combines local windowed attention and global grid attention inside every block, paired with MBConv-style convolutions. This design balances locality and long-range context while keeping compute manageable for small images like CIFAR-100. This subproject provides a clean, modular implementation of MaxViT along with training and inference CLIs and analysis utilities.
+MaxViT combines local windowed attention and global grid attention inside every block, paired with MBConv-style convolutions. This design balances locality and long-range context while keeping compute manageable for compact benchmarks such as CIFAR-100, SVHN, Oxford Pets, Food-101, and Tiny ImageNet. This subproject provides a clean, modular implementation of MaxViT along with training and inference CLIs and analysis utilities.
 
 ## Architecture
 - **Stem:** Light convolutional stem (A or B) to map inputs into the initial feature space.
@@ -11,7 +11,7 @@ MaxViT combines local windowed attention and global grid attention inside every 
 ## Repository Structure
 - `model/`: MaxViT building blocks (stem, MBConv, attention, blocks, stages).
 - `model_configurations.py`: Predefined CIFAR-100 presets (tiny/small/base).
-- `data/`: CIFAR-100 dataloaders and dataset utilities.
+- `data/`: dataset utilities plus `dataset_zoo.py` for shared multi-dataset support.
 - `training/`: Training loop, scheduler, EMA, AMP, and mixup/cutmix.
 - `inference/`: Evaluation and analysis utilities (confusion matrix, calibration, Grad-CAM, occlusion, etc.).
 - `scripts/`: CLI entrypoints for training and inference.
@@ -30,13 +30,21 @@ MaxViT combines local windowed attention and global grid attention inside every 
 ## Training from the CLI
 Run training on CIFAR-100:
 ```bash
- scripts/train_maxvit_cli.py \
+python scripts/train_maxvit_cli.py \
   --variant tiny \
+  --dataset cifar100 \
   --data-dir ./data \
   --epochs 50 \
   --val-split 0.1 \
   --batch-size 128
 ```
+
+Supported datasets:
+- `cifar100`
+- `svhn`
+- `oxford_pets`
+- `food101`
+- `tiny_imagenet`
 
 Useful flags:
 - `--variant tiny|small|base` selects a preset from `model_configurations.py`.
@@ -50,6 +58,7 @@ Run evaluation on CIFAR-100 test set:
 ```bash
 python scripts/infer_maxvit_cli.py \
   --checkpoint experiments/maxvit_tiny/best_model.pt \
+  --dataset cifar100 \
   --analysis eval
 ```
 

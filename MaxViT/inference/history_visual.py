@@ -4,6 +4,25 @@ import torch.nn.functional as F
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+def _resolve_norm_stats(loader):
+    dataset = loader.dataset
+    if hasattr(dataset, "normalization_mean") and hasattr(dataset, "normalization_std"):
+        return dataset.normalization_mean, dataset.normalization_std
+    if hasattr(dataset, "dataset"):
+        base = dataset.dataset
+        if hasattr(base, "normalization_mean") and hasattr(base, "normalization_std"):
+            return base.normalization_mean, base.normalization_std
+    return None, None
+
+
+def _unnormalize_batch(images, mean, std):
+    if mean is None or std is None:
+        return images
+    mean_t = torch.tensor(mean, dtype=images.dtype).view(1, -1, 1, 1)
+    std_t = torch.tensor(std, dtype=images.dtype).view(1, -1, 1, 1)
+    return images * std_t + mean_t
+
 def plot_history(history, smooth: int = 0):
     """
     history: dict con keys tipo train_loss, val_loss, train_top1, val_top1, etc.
@@ -62,7 +81,9 @@ def show_predictions_grid(model, loader, class_names=None, n=16, device="cuda"):
     probs = logits.softmax(dim=1)
     conf, pred = probs.max(dim=1)
 
-    xs_cpu = xs.detach().cpu().permute(0, 2, 3, 1).numpy()  # [B,H,W,C]
+    mean, std = _resolve_norm_stats(loader)
+    xs_vis = _unnormalize_batch(xs.detach().cpu(), mean, std)
+    xs_cpu = xs_vis.permute(0, 2, 3, 1).numpy()  # [B,H,W,C]
     ys_cpu = ys.detach().cpu().numpy()
     pred_cpu = pred.detach().cpu().numpy()
     conf_cpu = conf.detach().cpu().numpy()

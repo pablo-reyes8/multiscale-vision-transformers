@@ -4,16 +4,10 @@ import matplotlib.pyplot as plt
 import requests
 import torch
 from PIL import Image
-from torchvision import transforms
 
+from data.dataset_zoo import build_transforms
 from training.autocast import autocast_ctx
-from validation.utils import CIFAR100_MEAN, CIFAR100_STD, unnormalize
-
-
-cifar100_test_transform = transforms.Compose([
-    transforms.Resize((32, 32)),
-    transforms.ToTensor(),
-    transforms.Normalize(CIFAR100_MEAN, CIFAR100_STD)])
+from validation.utils import unnormalize
 
 
 def load_image_from_url(url: str) -> Image.Image:
@@ -28,16 +22,25 @@ def predict_from_url(
     model,
     url: str,
     class_names,
+    dataset_name: str = "cifar100",
+    img_size: int = 32,
     device: str = "cuda",
     autocast_dtype: str = "fp16",
     use_amp: bool = True,
-    transform=cifar100_test_transform,
+    transform=None,
     topk: int = 5):
     """
     Download an image, preprocess, and run a top-k prediction.
     """
     model.eval()
     model.to(device)
+
+    if transform is None:
+        _, transform = build_transforms(
+            dataset_name=dataset_name,
+            img_size=img_size,
+            random_erasing_p=0.0,
+        )
 
     img_pil = load_image_from_url(url)
     x = transform(img_pil)
@@ -74,14 +77,15 @@ def show_url_prediction_pair(
     x_tensor_norm,
     topk_idxs,
     topk_vals,
-    class_names):
+    class_names,
+    dataset_name: str = "cifar100"):
     """
     Show original and preprocessed image, plus top-k predictions.
     """
     if x_tensor_norm.dim() == 3:
         x_tensor_norm = x_tensor_norm.unsqueeze(0)
 
-    x_vis_batch = unnormalize(x_tensor_norm)
+    x_vis_batch = unnormalize(x_tensor_norm, dataset_name=dataset_name)
     x_vis = x_vis_batch[0]
     x_vis_np = tensor_to_img(x_vis)
 

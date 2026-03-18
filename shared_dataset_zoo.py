@@ -128,6 +128,15 @@ def _attach_dataset_metadata(dataset, dataset_name: str, num_classes: int, mean,
     return dataset
 
 
+def _copy_dataset_metadata(source, target):
+    for attr in ("dataset_name", "num_classes", "normalization_mean", "normalization_std"):
+        if hasattr(source, attr):
+            setattr(target, attr, getattr(source, attr))
+    if hasattr(source, "classes"):
+        target.classes = list(getattr(source, "classes"))
+    return target
+
+
 class HFDatasetWrapper(Dataset):
     def __init__(
         self,
@@ -257,7 +266,11 @@ def _split_train_val(train_aug, train_eval, val_split: float, seed: int):
     train_indices = permutation[:num_train]
     val_indices = permutation[num_train:]
 
-    return Subset(train_aug, train_indices), Subset(train_eval, val_indices)
+    train_subset = Subset(train_aug, train_indices)
+    val_subset = Subset(train_eval, val_indices)
+    _copy_dataset_metadata(train_aug, train_subset)
+    _copy_dataset_metadata(train_eval, val_subset)
+    return train_subset, val_subset
 
 
 def _build_torchvision_dataset(dataset_name: str, split: str, data_dir: str, transform, download: bool):

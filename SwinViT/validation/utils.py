@@ -34,7 +34,22 @@ def resolve_class_names(dataloader=None, data_dir: str = "./data", dataset_name:
     return [str(i) for i in range(info["num_classes"])]
 
 
-def unnormalize(images: torch.Tensor, mean=CIFAR100_MEAN, std=CIFAR100_STD):
+def resolve_normalization_stats(dataset=None, dataset_name: str = "cifar100"):
+    if dataset is not None:
+        if hasattr(dataset, "normalization_mean") and hasattr(dataset, "normalization_std"):
+            return dataset.normalization_mean, dataset.normalization_std
+        if hasattr(dataset, "dataset"):
+            base = dataset.dataset
+            if hasattr(base, "normalization_mean") and hasattr(base, "normalization_std"):
+                return base.normalization_mean, base.normalization_std
+
+    info = get_dataset_info(dataset_name)
+    return info["mean"], info["std"]
+
+
+def unnormalize(images: torch.Tensor, mean=None, std=None, dataset=None, dataset_name: str = "cifar100"):
+    if mean is None or std is None:
+        mean, std = resolve_normalization_stats(dataset=dataset, dataset_name=dataset_name)
     mean = torch.tensor(mean, device=images.device).view(1, -1, 1, 1)
     std = torch.tensor(std, device=images.device).view(1, -1, 1, 1)
     return images * std + mean

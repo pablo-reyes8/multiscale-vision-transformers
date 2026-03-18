@@ -1,6 +1,6 @@
 # VOLO (Vision Outlooker)
 
-This subproject implements VOLO for CIFAR-100, focused on the Outlook Attention family (local dynamic aggregation) and a light global transformer stack. It provides both a flat VOLO variant (Outlooker + Transformer blocks) and a hierarchical variant with pyramid downsampling, plus training and inference CLIs and analysis utilities.
+This subproject implements VOLO for compact image classification benchmarks, focused on the Outlook Attention family (local dynamic aggregation) and a light global transformer stack. It provides both a flat VOLO variant (Outlooker + Transformer blocks) and a hierarchical variant with pyramid downsampling, plus training and inference CLIs and analysis utilities.
 
 ## Architecture
 - **Patch embedding:** `PatchEmbeddingConv` converts images into a grid of patches via strided Conv2d, with optional padding for non-divisible sizes.
@@ -12,7 +12,7 @@ This subproject implements VOLO for CIFAR-100, focused on the Outlook Attention 
 
 ## Repository Structure
 - `model/`: VOLO building blocks (`VOLO.py`, outlook, attention, embeddings, pyramid).
-- `data/`: CIFAR-100 loaders with DDP-safe download and deterministic splits.
+- `data/`: dataset loaders with DDP-safe download, deterministic splits, and `dataset_zoo.py` for shared multi-dataset support.
 - `training/`: Training loop, metrics, AMP helpers, mixup/cutmix, and checkpointing.
 - `inference/`: Evaluation and analysis utilities (confusion matrix, calibration, Grad-CAM, occlusion, prediction grids).
 - `scripts/`: Training and inference CLIs.
@@ -31,7 +31,8 @@ This subproject implements VOLO for CIFAR-100, focused on the Outlook Attention 
 Single GPU (default config matches the DDP script defaults):
 ```bash
 python Volo/scripts/train_single_gpu.py \
-  --data-dir ./data/cifar100 \
+  --dataset cifar100 \
+  --data-dir ./data \
   --epochs 130 \
   --batch-size 256
 ```
@@ -39,10 +40,18 @@ python Volo/scripts/train_single_gpu.py \
 DDP (torchrun):
 ```bash
 torchrun --nproc_per_node=2 Volo/main_training_ddp.py \
-  --data-dir ./data/cifar100 \
+  --dataset cifar100 \
+  --data-dir ./data \
   --epochs 130 \
   --batch-size 256
 ```
+
+Supported datasets:
+- `cifar100`
+- `svhn`
+- `oxford_pets`
+- `food101`
+- `tiny_imagenet`
 
 Useful flags:
 - `--pooling mean|cls|cli` selects the flat VOLO pooling strategy.
@@ -56,6 +65,7 @@ Run evaluation and analysis on a trained checkpoint:
 ```bash
 python Volo/scripts/infer_volo_cli.py \
   --checkpoint /path/to/best_model.pt \
+  --dataset tiny_imagenet \
   --analysis eval confusion calibration gradcam occlusion predictions
 ```
 

@@ -9,7 +9,6 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from model.VOLO import VOLOClassifier
 from data.dataset_zoo import available_dataset_names, get_classification_datasets, get_dataset_info
 from training.Train_VOLO import train_model
 
@@ -96,6 +95,8 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(args: argparse.Namespace | None = None) -> None:
+    from model.VOLO import VOLOClassifier
+
     if args is None:
         args = build_parser().parse_args()
 

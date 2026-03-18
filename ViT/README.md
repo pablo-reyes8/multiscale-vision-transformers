@@ -1,6 +1,6 @@
 # Vision Transformer (ViT)
 
-This subproject implements the original Vision Transformer baseline for CIFAR-100: non-overlapping patch embedding, a prepended class token, learnable absolute positional embeddings, and full global self-attention in every encoder block. The goal is to provide a clean baseline that matches the overall training setup used by the other transformer families in this repository.
+This subproject implements the original Vision Transformer baseline for compact image classification benchmarks: non-overlapping patch embedding, a prepended class token, learnable absolute positional embeddings, and full global self-attention in every encoder block. The goal is to provide a clean baseline that matches the overall training setup used by the other transformer families in this repository.
 
 ## Architecture
 - **Patch embedding:** `PatchEmbedding` slices the image into non-overlapping patches and projects them into the token dimension.
@@ -10,7 +10,7 @@ This subproject implements the original Vision Transformer baseline for CIFAR-10
 
 ## Repository Structure
 - `model/`: ViT modules (`patch_embedding.py`, attention blocks, backbone).
-- `data/`: CIFAR-100 dataloaders and normalization helpers.
+- `data/`: dataset loader helpers plus `dataset_zoo.py` for shared multi-dataset support.
 - `training/`: Training loop, warmup+cosine LR scheduler, AMP helpers, checkpoints.
 - `validation/`: Lightweight checkpoint-loading evaluation helper.
 - `scripts/`: CLI entrypoints (`python -m scripts.main ...`).
@@ -30,6 +30,7 @@ This subproject implements the original Vision Transformer baseline for CIFAR-10
 Train the baseline on CIFAR-100:
 ```bash
 python -m scripts.main train \
+  --dataset cifar100 \
   --data-dir ./data \
   --epochs 20 \
   --val-split 0.1 \
@@ -41,7 +42,26 @@ Evaluate an existing checkpoint:
 ```bash
 python -m scripts.main eval \
   --checkpoint checkpoints/best_vit_cifar100.pt \
+  --dataset cifar100 \
   --data-dir ./data
+```
+
+Supported datasets:
+- `cifar100`
+- `svhn`
+- `oxford_pets`
+- `food101`
+- `tiny_imagenet`
+
+Example with another dataset at 32x32:
+```bash
+python -m scripts.main train \
+  --dataset oxford_pets \
+  --img-size 32 \
+  --data-dir ./data \
+  --epochs 20 \
+  --val-split 0.1 \
+  --checkpoint-path checkpoints/best_vit_oxford_pets.pt
 ```
 
 Useful flags:

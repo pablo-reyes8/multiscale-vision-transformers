@@ -1,6 +1,6 @@
 # Hierarchical Vision Transformer (HierarchicalViT)
 
-A hierarchical Vision Transformer tailored for CIFAR-100 that blends convolutional patch embedding with progressive pooling (PiT-lite style) to reduce token count while deepening representations. The model uses lightweight transformer blocks per stage, depthwise + pointwise pooling between stages, and a simple classifier head on globally averaged tokens.
+A hierarchical Vision Transformer tailored for compact image classification benchmarks that blends convolutional patch embedding with progressive pooling (PiT-lite style) to reduce token count while deepening representations. The model uses lightweight transformer blocks per stage, depthwise + pointwise pooling between stages, and a simple classifier head on globally averaged tokens.
 
 ## Architecture
 - **Conv patch stem:** `PatchEmbeddingConv` slices the image into non-overlapping patches via a strided convolution and normalizes the resulting tokens.
@@ -10,7 +10,7 @@ A hierarchical Vision Transformer tailored for CIFAR-100 that blends convolution
 
 ## Repository Structure
 - `model/`: Core building blocks (`hierarchical_vit.py`, attention, patch embedding, pooling).
-- `data/`: CIFAR-100 dataloaders and visualization helpers.
+- `data/`: dataset loaders plus `dataset_zoo.py` for shared multi-dataset support.
 - `training/`: Training loop, evaluation utilities, and AMP helpers.
 - `validation/`: Lightweight evaluation helpers and visualization scripts.
 - `scripts/`: CLI entrypoints for training/evaluation (`python -m scripts.main ...`).
@@ -31,6 +31,7 @@ A hierarchical Vision Transformer tailored for CIFAR-100 that blends convolution
 Run a full train/val loop (defaults target CIFAR-100):
 ```bash
 python -m scripts.main train \
+  --dataset cifar100 \
   --data-dir ./data \
   --epochs 20 \
   --val-split 0.1 \
@@ -42,8 +43,16 @@ Evaluate an existing checkpoint:
 ```bash
 python -m scripts.main eval \
   --checkpoint checkpoints/best_hvit.pth \
+  --dataset cifar100 \
   --data-dir ./data
 ```
+
+Supported datasets:
+- `cifar100`
+- `svhn`
+- `oxford_pets`
+- `food101`
+- `tiny_imagenet`
 
 Useful flags:
 - `--embed-dims`, `--depths`, `--num-heads` let you override the default 3-stage configuration.

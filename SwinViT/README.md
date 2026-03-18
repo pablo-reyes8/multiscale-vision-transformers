@@ -1,6 +1,6 @@
 # Swin Vision Transformer (SwinViT)
 
-This subproject implements a Swin Transformer backbone tailored for CIFAR-100, including window-based self-attention, shifted windows, and hierarchical patch merging. The codebase includes training utilities, scripts for command-line execution, and pytest coverage for key model components.
+This subproject implements a Swin Transformer backbone for compact image classification benchmarks, including window-based self-attention, shifted windows, and hierarchical patch merging. The codebase includes training utilities, scripts for command-line execution, and pytest coverage for key model components.
 
 ## Architecture
 - **Patch embedding:** `PatchEmbeddingConv` converts images into a patch grid using a strided convolution.
@@ -10,7 +10,7 @@ This subproject implements a Swin Transformer backbone tailored for CIFAR-100, i
 
 ## Repository Structure
 - `model/`: Swin modules (attention, blocks, window utilities, patch merging).
-- `data/`: CIFAR-100 dataloaders and visualization helpers.
+- `data/`: dataset loaders plus `dataset_zoo.py` for shared multi-dataset support.
 - `training/`: Training loop, evaluation utilities, AMP helpers, schedulers.
 - `scripts/`: CLI entrypoints (`python -m scripts.main ...`).
 - `test/`: Pytest-based unit tests for the Swin model and components.
@@ -29,6 +29,7 @@ This subproject implements a Swin Transformer backbone tailored for CIFAR-100, i
 Train with CIFAR-100 defaults:
 ```bash
 python -m scripts.main train \
+  --dataset cifar100 \
   --data-dir ./data \
   --epochs 20 \
   --val-split 0.1 \
@@ -40,8 +41,16 @@ Evaluate an existing checkpoint:
 ```bash
 python -m scripts.main eval \
   --checkpoint checkpoints/best_swinvit.pth \
+  --dataset cifar100 \
   --data-dir ./data
 ```
+
+Supported datasets:
+- `cifar100`
+- `svhn`
+- `oxford_pets`
+- `food101`
+- `tiny_imagenet`
 
 Useful flags:
 - `--depths` and `--num-heads` override the 4-stage Swin layout.
@@ -74,11 +83,11 @@ pytest
 Run evaluation and analysis helpers from the CLI:
 ```bash
 python -m scripts.main validate --task test --checkpoint checkpoints/best_swinvit.pth
-python -m scripts.main validate --task grid --checkpoint checkpoints/best_swinvit.pth --num-images 8
-python -m scripts.main validate --task misclassified --checkpoint checkpoints/best_swinvit.pth --num-images 8
-python -m scripts.main validate --task per-class --checkpoint checkpoints/best_swinvit.pth --topk-classes 10
-python -m scripts.main validate --task tsne --checkpoint checkpoints/best_swinvit.pth --tsne-max-samples 1000
-python -m scripts.main validate --task url --checkpoint checkpoints/best_swinvit.pth --url https://example.com/image.jpg --show
+python -m scripts.main validate --task grid --checkpoint checkpoints/best_swinvit.pth --dataset oxford_pets --num-images 8
+python -m scripts.main validate --task misclassified --checkpoint checkpoints/best_swinvit.pth --dataset svhn --num-images 8
+python -m scripts.main validate --task per-class --checkpoint checkpoints/best_swinvit.pth --dataset food101 --topk-classes 10
+python -m scripts.main validate --task tsne --checkpoint checkpoints/best_swinvit.pth --dataset tiny_imagenet --tsne-max-samples 1000
+python -m scripts.main validate --task url --checkpoint checkpoints/best_swinvit.pth --dataset oxford_pets --url https://example.com/image.jpg --show
 ```
 
 ## References

@@ -39,8 +39,9 @@ A focused research sandbox for comparing modern Vision Transformer families unde
 
 ## Highlights
 - **Five model families**: original ViT, HierarchicalViT, SwinViT, MaxViT, and **VOLO (Vision Outlooker)**.
-- Consistent CIFAR-100 data pipeline shared across subprojects (loaders, transforms, evaluation utilities).
+- Consistent data pipeline shared across subprojects (same loader API, same transform conventions, same evaluation entrypoints).
 - A root-level comparison arena with one shared split, one shared training loop, and selectable augmentation presets for direct cross-architecture experiments.
+- Subproject CLIs now support multiple easy-to-fetch academic datasets via `--dataset`, including `cifar100`, `svhn`, `oxford_pets`, `food101`, and `tiny_imagenet`.
 - CLI entrypoints for training, evaluation, and (where implemented) analysis.
 - Model-specific Dockerfiles plus a root Dockerfile for the full workspace.
 - Pytest coverage for core components and critical training utilities.
@@ -82,22 +83,27 @@ pip install -r requirements.txt
 2) Train a model (examples):
 ```bash
 cd ViT
-python -m scripts.main train --data-dir ./data --epochs 20 --checkpoint-path ./checkpoints/best_vit_cifar100.pt
+python -m scripts.main train --dataset cifar100 --data-dir ./data --epochs 20 --checkpoint-path ./checkpoints/best_vit_cifar100.pt
 ```
 
 ```bash
 cd HierarchicalViT
-python -m scripts.main train --data-dir ./data --epochs 20 --checkpoint-path ./checkpoints/best_hvit.pth
+python -m scripts.main train --dataset oxford_pets --img-size 32 --data-dir ./data --epochs 20 --checkpoint-path ./checkpoints/best_hvit_oxford_pets.pth
 ```
 
 ```bash
 cd SwinViT
-python -m scripts.main train --data-dir ./data --epochs 20 --checkpoint-path ./checkpoints/best_swinvit.pth
+python -m scripts.main train --dataset tiny_imagenet --img-size 32 --data-dir ./data --epochs 20 --checkpoint-path ./checkpoints/best_swinvit_tiny_imagenet.pth
 ```
 
 ```bash
 cd MaxViT
-python scripts/train_maxvit_cli.py --variant tiny --data-dir ./data --epochs 20 --val-split 0.1
+python scripts/train_maxvit_cli.py --variant tiny --dataset food101 --img-size 32 --data-dir ./data --epochs 20 --val-split 0.1
+```
+
+```bash
+cd Volo
+python scripts/train_single_gpu.py --dataset svhn --img-size 32 --data-dir ./data --epochs 20 --batch-size 256
 ```
 
 3) Inspect the shared comparison arena:
