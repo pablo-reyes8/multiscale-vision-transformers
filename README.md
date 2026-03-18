@@ -24,6 +24,7 @@ A focused research sandbox for comparing modern Vision Transformer families unde
   - [Subprojects](#subprojects)
   - [Model Families: Key Differences](#model-families-key-differences)
   - [Quickstart](#quickstart)
+  - [Comparison Arena](#comparison-arena)
   - [Inference and Analysis](#inference-and-analysis)
   - [Repository Structure](#repository-structure)
   - [Docker](#docker)
@@ -39,6 +40,7 @@ A focused research sandbox for comparing modern Vision Transformer families unde
 ## Highlights
 - **Five model families**: original ViT, HierarchicalViT, SwinViT, MaxViT, and **VOLO (Vision Outlooker)**.
 - Consistent CIFAR-100 data pipeline shared across subprojects (loaders, transforms, evaluation utilities).
+- A root-level comparison arena with one shared split, one shared training loop, and selectable augmentation presets for direct cross-architecture experiments.
 - CLI entrypoints for training, evaluation, and (where implemented) analysis.
 - Model-specific Dockerfiles plus a root Dockerfile for the full workspace.
 - Pytest coverage for core components and critical training utilities.
@@ -98,6 +100,47 @@ cd MaxViT
 python scripts/train_maxvit_cli.py --variant tiny --data-dir ./data --epochs 20 --val-split 0.1
 ```
 
+3) Inspect the shared comparison arena:
+```bash
+python3 vit_arena_cli.py --list-models
+python3 vit_arena_cli.py --show-tips
+python3 vit_arena_cli.py --dry-run --models vit hierarchical_vit swin maxvit_tiny volo
+```
+
+## Comparison Arena
+At the repository root there is now a reproducible arena for comparing multiple architectures under the same CIFAR-100 split, the same optimizer/scheduler recipe, and the same preprocessing choice:
+
+- `vit_arena.py`: shared experiment engine (data split, training loop, evaluation, summaries).
+- `vit_arena_cli.py`: CLI entrypoint to launch comparisons or dry-run model construction.
+- `vit_arena_presets.py`: default model presets plus compatibility tips and recommended constraints.
+
+Available augmentation presets:
+- `matched`: `RandomCrop + HorizontalFlip + RandAugment + CIFAR-100 normalization`
+- `basic`: `RandomCrop + HorizontalFlip + CIFAR-100 normalization`
+- `none`: no augmentation, only CIFAR-100 normalization
+- `raw`: no augmentation, only normalization to approximately `[-1, 1]`
+
+Example: compare several models with the same recipe
+```bash
+python3 vit_arena_cli.py \
+  --models vit hierarchical_vit swin maxvit_tiny volo \
+  --augment matched \
+  --epochs 20 \
+  --batch-size 128 \
+  --output-dir arena_runs/cifar100_matched
+```
+
+Example: compare with a raw pipeline (no augment, only `[-1, 1]` normalization)
+```bash
+python3 vit_arena_cli.py \
+  --models vit hierarchical_vit swin \
+  --augment raw \
+  --epochs 10 \
+  --output-dir arena_runs/cifar100_raw
+```
+
+The arena writes a manifest, resolved model configs, per-model histories, checkpoints, and CSV/JSON summaries to the output directory so the comparison remains reproducible.
+
 ## Inference and Analysis
 MaxViT provides a dedicated inference CLI with analysis utilities (confusion matrix, calibration, Grad-CAM, occlusion, prediction grids):
 ```bash
@@ -115,6 +158,9 @@ Repository Structure
 ├── SwinViT/                # Swin Transformer implementation + validation utilities + tests + Dockerfile
 ├── MaxViT/                 # MaxViT implementation + training/inference CLIs + analysis suite + tests
 ├── Volo/                   # VOLO implementation + training logs/scripts/tests (see subproject README)
+├── vit_arena.py            # Shared arena to train/evaluate multiple architectures under one recipe
+├── vit_arena_cli.py        # CLI for cross-model comparison runs and dry-runs
+├── vit_arena_presets.py    # Default presets plus compatibility/config tips
 ├── training logs/          # Training histories (.txt) for all runs (HViT / Swin / MaxViT / VOLO)
 ├── requirements.txt        # Shared dependency set for the workspace
 └── Dockerfile              # Root container for the whole repository
