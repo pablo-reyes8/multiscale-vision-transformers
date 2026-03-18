@@ -37,7 +37,7 @@ A focused research sandbox for comparing modern Vision Transformer families unde
 
 
 ## Highlights
-- **Four complete families**: HierarchicalViT, SwinViT, MaxViT, and **VOLO (Vision Outlooker)**.
+- **Five model families**: original ViT, HierarchicalViT, SwinViT, MaxViT, and **VOLO (Vision Outlooker)**.
 - Consistent CIFAR-100 data pipeline shared across subprojects (loaders, transforms, evaluation utilities).
 - CLI entrypoints for training, evaluation, and (where implemented) analysis.
 - Model-specific Dockerfiles plus a root Dockerfile for the full workspace.
@@ -51,6 +51,7 @@ A focused research sandbox for comparing modern Vision Transformer families unde
   
 | Folder | Model Family | Key Idea | Status |
 | --- | --- | --- | --- |
+| [`ViT/`](./ViT) | Original Vision Transformer | Flat patch sequence + CLS token + global attention | Complete |
 | [`HierarchicalViT/`](./HierarchicalViT) | PiT-style hierarchical ViT | Token pooling between stages | Complete |
 | [`SwinViT/`](./SwinViT) | Swin Transformer | Shifted windows + patch merging | Complete |
 | [`MaxViT/`](./MaxViT) | MaxViT | Window + grid attention per block | Complete |
@@ -61,6 +62,7 @@ Each subproject has its own `README.md`, `requirements.txt`, scripts, tests, and
 
 
 ## Model Families: Key Differences
+- **ViT**: The original baseline with a flat patch sequence, learnable absolute positional embeddings, a CLS token, and global attention in every block.
 - **HierarchicalViT**: Global attention per stage, explicit pooling between stages (PiT-style). Emphasizes structured downsampling and stable token reduction.
 - **SwinViT**: Local attention in windows with shifted windowing for cross-window context; patch merging downsampling. Optimizes for efficiency at higher resolutions.
 - **MaxViT**: Combines local window attention and global grid attention within each block, paired with MBConv-style convolutions. Balances locality and global context in every block.
@@ -76,6 +78,11 @@ pip install -r requirements.txt
 ```
 
 2) Train a model (examples):
+```bash
+cd ViT
+python -m scripts.main train --data-dir ./data --epochs 20 --checkpoint-path ./checkpoints/best_vit_cifar100.pt
+```
+
 ```bash
 cd HierarchicalViT
 python -m scripts.main train --data-dir ./data --epochs 20 --checkpoint-path ./checkpoints/best_hvit.pth
@@ -103,6 +110,7 @@ SwinViT and HierarchicalViT include validation helpers accessible through their 
 ## Repository Structure
 ```
 Repository Structure
+├── ViT/                    # Original Vision Transformer baseline + tests + Dockerfile
 ├── HierarchicalViT/        # Hierarchical ViT implementation + tests + Dockerfile
 ├── SwinViT/                # Swin Transformer implementation + validation utilities + tests + Dockerfile
 ├── MaxViT/                 # MaxViT implementation + training/inference CLIs + analysis suite + tests
@@ -128,6 +136,7 @@ docker build -t maxvit .
 ## Testing
 From the repo root:
 ```bash
+pytest ViT/test
 pytest HierarchicalViT/test
 pytest SwinViT/test
 pytest MaxViT/tests
