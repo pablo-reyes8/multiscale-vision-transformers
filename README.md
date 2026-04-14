@@ -253,12 +253,42 @@ HViT shows a large train–val gap in this setup, suggesting clear headroom via 
 
 
 ## References
-- Dosovitskiy et al., “An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale,” ICLR 2021.
-- Liu et al., “Swin Transformer: Hierarchical Vision Transformer using Shifted Windows,” ICCV 2021.
-- Tu et al., “MaxViT: Multi-Axis Vision Transformer,” ECCV 2022.
-- Vaswani et al., “Attention is All You Need,” NeurIPS 2017.
-- Yuan et al., “VOLO: Vision Outlooker for Visual Recognition,” arXiv:2106.13112, 2021.
+```bibtex
+@inproceedings{dosovitskiy2021vit,
+  author    = {Alexey Dosovitskiy and Lucas Beyer and Alexander Kolesnikov and Dirk Weissenborn and Xiaohua Zhai and Thomas Unterthiner and Mostafa Dehghani and Matthias Minderer and Georg Heigold and Sylvain Gelly and Jakob Uszkoreit and Neil Houlsby},
+  title     = {An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2021}
+}
 
+@inproceedings{liu2021swin,
+  author    = {Ze Liu and Yutong Lin and Yue Cao and Han Hu and Yixuan Wei and Zheng Zhang and Stephen Lin and Baining Guo},
+  title     = {Swin Transformer: Hierarchical Vision Transformer using Shifted Windows},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2021}
+}
+
+@inproceedings{tu2022maxvit,
+  author    = {Zhengzhong Tu and Hossein Talebi and Han Zhang and Feng Yang and Peyman Milanfar and Alan Bovik and Yinxiao Li},
+  title     = {MaxViT: Multi-Axis Vision Transformer},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2022}
+}
+
+@inproceedings{vaswani2017attention,
+  author    = {Ashish Vaswani and Noam Shazeer and Niki Parmar and Jakob Uszkoreit and Llion Jones and Aidan N. Gomez and {\L}ukasz Kaiser and Illia Polosukhin},
+  title     = {Attention Is All You Need},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2017}
+}
+
+@article{yuan2021volo,
+  author  = {Li Yuan and Yuchen Chen and Tao Wang and Weihao Yu and Yujun Shi and Zihang Jiang and Francis E. H. Tay and Jiashi Feng and Shuicheng Yan},
+  title   = {VOLO: Vision Outlooker for Visual Recognition},
+  journal = {arXiv preprint arXiv:2106.13112},
+  year    = {2021}
+}
+```
 
 ## License
 Unless stated otherwise, the project is distributed under the MIT License. Individual submodules may ship with their own notices if required. I recomend to reference the original papers.
