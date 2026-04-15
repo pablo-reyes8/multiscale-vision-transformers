@@ -291,4 +291,7 @@ HViT shows a large train–val gap in this setup, suggesting clear headroom via 
 ```
 
 ## License
-Unless stated otherwise, the project is distributed under the MIT License. Individual submodules may ship with their own notices if required. I recomend to reference the original papers.
+
+This project is licensed under the **MIT License**.  Individual submodules may ship with their own notices if required. I recomend to reference the original papers.
+See the [LICENSE](LICENSE) file for the full legal text.
+
