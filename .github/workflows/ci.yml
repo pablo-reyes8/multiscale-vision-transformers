@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  library:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install package and development tools
+        run: python -m pip install --upgrade pip && python -m pip install ".[dev]"
+
+      - name: Lint
+        run: ruff check famous_vits tests vit_arena.py vit_arena_cli.py vit_arena_presets.py shared_dataset_zoo.py
+
+      - name: Test unified library
+        run: pytest tests
+
+      - name: Build wheel
+        run: python -m build
+
+      - name: CLI smoke check
+        run: |
+          famous-vits list
+          vit-arena --dry-run --models vit --num-classes 7 --in-chans 4
+

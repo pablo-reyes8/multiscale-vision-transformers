@@ -5,6 +5,9 @@ import torch
 import torch.nn as nn
 
 from model.MaxViT_block import *
+from model.MaxViTStage import MaxViTStage, linspace_drop_path
+from model.downsample import Downsample, DownsampleConfig
+from model.max_vit_stem import MaxViTStem, StemConfig
 
 
 @dataclass(frozen=True)
@@ -78,7 +81,7 @@ class MaxViT(nn.Module):
 
         # DropPath schedule across all blocks
         total_blocks = int(sum(cfg.depths))
-        dprs = _linspace_drop_path(total_blocks, cfg.drop_path_rate)
+        dprs = linspace_drop_path(total_blocks, cfg.drop_path_rate)
 
         # Build stages + downsamples
         stages = []
