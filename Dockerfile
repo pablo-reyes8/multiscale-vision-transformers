@@ -6,7 +6,7 @@ FROM ${PYTORCH_IMAGE} AS builder
 
 WORKDIR /build
 
-RUN python -m pip install --no-cache-dir --upgrade pip build
+RUN python -m pip install --no-cache-dir "build==1.2.2"
 
 COPY pyproject.toml README.md LICENSE ./
 COPY famous_vits ./famous_vits

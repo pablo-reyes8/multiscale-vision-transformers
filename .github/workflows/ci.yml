@@ -43,15 +43,15 @@ jobs:
       - name: Install package
         run: python -m pip install --upgrade pip && python -m pip install -e ".[dev]"
       - name: Test public API
-        run: pytest tests --cov=famous_vits --cov-report=term-missing --cov-report=xml
+        run: python -m pytest tests --cov=famous_vits --cov-report=term-missing --cov-report=xml
       - name: Test architecture projects
         if: matrix.python-version == '3.12'
         run: |
-          (cd model_zoo/ViT && pytest test)
-          (cd model_zoo/HierarchicalViT && pytest test)
-          (cd model_zoo/SwinViT && pytest test)
-          (cd model_zoo/MaxViT && pytest tests)
-          (cd model_zoo/Volo && pytest test)
+          (cd model_zoo/ViT && python -m pytest test)
+          (cd model_zoo/HierarchicalViT && python -m pytest test)
+          (cd model_zoo/SwinViT && python -m pytest test)
+          (cd model_zoo/MaxViT && python -m pytest tests)
+          (cd model_zoo/Volo && python -m pytest test)
       - name: Validate example pipelines
         run: |
           famous-vits validate-config --config configs/train_cifar100.yaml

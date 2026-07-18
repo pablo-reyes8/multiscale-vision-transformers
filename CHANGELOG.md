@@ -11,6 +11,11 @@ follow [Semantic Versioning](https://semver.org/).
 - Publish curated pretrained checkpoints with reproducible training metadata.
 - Add benchmark baselines for additional image resolutions.
 
+### Fixed
+
+- Made every model-zoo test suite resolve its local modules consistently in GitHub Actions.
+- Pinned the Docker builder dependency for reproducible container builds.
+
 ## [0.1.0] - 2026-07-16
 
 ### Added
@@ -37,4 +42,3 @@ follow [Semantic Versioning](https://semver.org/).
 
 [Unreleased]: https://github.com/pablo-reyes8/multiscale-vision-transformers/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/pablo-reyes8/multiscale-vision-transformers/releases/tag/v0.1.0
-
