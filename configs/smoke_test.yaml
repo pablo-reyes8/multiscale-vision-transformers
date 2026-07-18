@@ -1,0 +1,26 @@
+version: 1
+task: train
+
+model:
+  name: vit
+  num_classes: 2
+  in_chans: 1
+  img_size: 32
+  kwargs:
+    embed_dim: 24
+    depth: 1
+    num_heads: 3
+
+training:
+  epochs: 1
+  optimizer: adam
+  lr: 0.001
+
+runtime:
+  device: cpu
+  seed: 7
+  smoke_test: true
+
+output:
+  checkpoint: outputs/smoke_vit.pt
+

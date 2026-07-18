@@ -10,6 +10,13 @@ def test_cli_lists_models(capsys):
     assert "maxvit_tiny" in output
 
 
+def test_cli_validates_yaml_config(capsys):
+    assert main(["validate-config", "--config", "configs/smoke_test.yaml"]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["task"] == "train"
+    assert payload["runtime"]["smoke_test"] is True
+
+
 def test_cli_smoke_train_and_infer(tmp_path, capsys):
     checkpoint = tmp_path / "vit.pt"
     kwargs = json.dumps({"embed_dim": 24, "depth": 1, "num_heads": 3})

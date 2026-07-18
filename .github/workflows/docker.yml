@@ -1,0 +1,44 @@
+name: Docker
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    paths:
+      - Dockerfile
+      - .dockerignore
+      - pyproject.toml
+      - configs/**
+      - famous_vits/**
+      - model_zoo/**/model/**
+      - .github/workflows/docker.yml
+
+concurrency:
+  group: docker-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: docker/setup-buildx-action@v3
+      - name: Build image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          push: false
+          tags: famous-vits:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: CLI smoke tests
+        run: |
+          docker run --rm famous-vits:ci list
+          docker run --rm famous-vits:ci validate-config --config configs/smoke_test.yaml
+          docker run --rm famous-vits:ci run --config configs/smoke_test.yaml
+

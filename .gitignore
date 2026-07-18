@@ -1,41 +1,44 @@
-# Byte-compiled / cache
+# Python
 __pycache__/
 *.py[cod]
-*.pyo
-.pytest_cache/
-.cache/
-
-# Environments
-.env
-.venv/
-env/
-venv/
-
-# Packaging / build
+*.so
 *.egg-info/
-dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Environments and local configuration
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+
+# Packaging
 build/
+dist/
 pip-wheel-metadata/
 
-# Notebooks
-.ipynb_checkpoints
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Project artifacts
+# Runtime data and generated outputs
 data/
-checkpoints/
-runs/
 outputs/
-logs/
+arena_runs/
+checkpoints/
+artifacts/generated/
+*.pt
+*.pth
+*.ckpt
 
-# Keep source code inside subproject data/ folders tracked
-!*/data/
-*/data/*
-!*/data/*.py
-
-# Editors
+# Notebooks and editors
+.ipynb_checkpoints/
 .vscode/
 .idea/
+
+# Operating systems
+.DS_Store
+Thumbs.db
+desktop.ini

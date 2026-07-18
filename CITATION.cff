@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software in research, please cite it using the metadata below."
+title: "Famous Vision Transformers: a unified from-scratch PyTorch model zoo"
+type: software
+version: 0.1.0
+date-released: 2026-07-16
+authors:
+  - family-names: Reyes
+    given-names: Pablo
+    email: alejogranados229@gmail.com
+repository-code: "https://github.com/pablo-reyes8/multiscale-vision-transformers"
+url: "https://github.com/pablo-reyes8/multiscale-vision-transformers"
+license: MIT
+keywords:
+  - computer vision
+  - deep learning
+  - pytorch
+  - vision transformer
+  - model zoo
+

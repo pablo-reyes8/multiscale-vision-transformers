@@ -12,9 +12,11 @@ import torch
 from PIL import Image
 from torch.utils.data import DataLoader, TensorDataset
 
+from .config import load_pipeline_config
 from .data import available_dataset_names, get_classification_dataloaders, get_dataset_info
 from .factory import list_models, model_info
 from .orchestrator import ViTOrchestrator
+from .pipeline import run_pipeline
 
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".bmp", ".webp", ".tif", ".tiff"}
 
@@ -85,6 +87,15 @@ def build_parser() -> argparse.ArgumentParser:
     analyze_parser.add_argument("--device", default=None)
     analyze_parser.add_argument("--num-bins", type=int, default=15)
     analyze_parser.add_argument("--output-dir", type=Path, default=Path("outputs/analysis"))
+
+    run_parser = subparsers.add_parser("run", help="Run a train, arena or analysis YAML pipeline")
+    run_parser.add_argument("--config", type=Path, required=True)
+
+    validate_parser = subparsers.add_parser(
+        "validate-config",
+        help="Validate a YAML pipeline and print its resolved defaults",
+    )
+    validate_parser.add_argument("--config", type=Path, required=True)
     return parser
 
 
@@ -257,4 +268,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         return train_command(args)
     if args.command == "infer":
         return infer_command(args)
+    if args.command == "run":
+        print(json.dumps(run_pipeline(args.config), indent=2))
+        return 0
+    if args.command == "validate-config":
+        print(json.dumps(load_pipeline_config(args.config), indent=2))
+        return 0
     return analyze_command(args)

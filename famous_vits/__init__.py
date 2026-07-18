@@ -3,6 +3,7 @@
 from .factory import ModelInfo, create_model, list_models, model_info
 from .optimizers import create_optimizer
 from .orchestrator import ViTOrchestrator
+from .pipeline import run_pipeline
 
 __all__ = [
     "ModelInfo",
@@ -11,6 +12,7 @@ __all__ = [
     "create_optimizer",
     "list_models",
     "model_info",
+    "run_pipeline",
 ]
 
 __version__ = "0.1.0"

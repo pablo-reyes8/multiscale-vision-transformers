@@ -7,9 +7,10 @@ The repository now has two distinct roles:
 - `famous_vits.arena` is the comparison application. It consumes the public library API
   and applies one recipe to multiple registered presets.
 
-The original `ViT/`, `HierarchicalViT/`, `SwinViT/`, `MaxViT/` and `Volo/` directories
-remain the source implementations and keep their historical notebooks and scripts working.
-Root modules such as `vit_arena.py` and `shared_dataset_zoo.py` are compatibility shims.
+The original implementations now live together under `model_zoo/`: `ViT/`,
+`HierarchicalViT/`, `SwinViT/`, `MaxViT/` and `Volo/`. Their historical notebooks,
+scripts and architecture tests remain available there. Root modules such as
+`vit_arena.py` and `shared_dataset_zoo.py` are compatibility shims.
 
 ## Python API
 
@@ -139,3 +140,16 @@ vit-arena \
 
 The old `python3 vit_arena_cli.py ...` command remains supported.
 
+## YAML pipelines
+
+Training, arena comparisons and checkpoint analysis can also be declared in a
+versioned YAML file:
+
+```bash
+famous-vits validate-config --config configs/train_cifar100.yaml
+famous-vits run --config configs/train_cifar100.yaml
+```
+
+The loader rejects unknown keys, applies documented defaults and expands environment
+variables before execution. Start from the examples in `configs/`, including the CPU-only
+`smoke_test.yaml` used by CI and Docker validation.

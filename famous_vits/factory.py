@@ -32,11 +32,11 @@ class ModelInfo:
 
 
 _PROJECTS = {
-    "vit": "ViT",
-    "hierarchical_vit": "HierarchicalViT",
-    "swin": "SwinViT",
-    "maxvit": "MaxViT",
-    "volo": "Volo",
+    "vit": "model_zoo/ViT",
+    "hierarchical_vit": "model_zoo/HierarchicalViT",
+    "swin": "model_zoo/SwinViT",
+    "maxvit": "model_zoo/MaxViT",
+    "volo": "model_zoo/Volo",
 }
 
 _ALIASES = {

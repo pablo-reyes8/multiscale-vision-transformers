@@ -1,0 +1,39 @@
+version: 1
+task: train
+
+model:
+  name: vit
+  num_classes: 100
+  in_chans: 3
+  img_size: 32
+  kwargs:
+    embed_dim: 192
+    depth: 6
+    num_heads: 3
+
+data:
+  dataset: cifar100
+  data_dir: ./data
+  batch_size: 128
+  eval_batch_size: 256
+  num_workers: 2
+  val_split: 0.1
+  augment: matched
+
+training:
+  epochs: 20
+  optimizer: adamw
+  lr: 0.0005
+  optimizer_kwargs:
+    weight_decay: 0.05
+  grad_clip_norm: 1.0
+
+runtime:
+  device: null
+  seed: 42
+  smoke_test: false
+
+output:
+  dir: outputs
+  checkpoint: outputs/vit_cifar100.pt
+

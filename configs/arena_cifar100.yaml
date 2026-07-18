@@ -1,0 +1,29 @@
+version: 1
+task: arena
+
+arena:
+  models: [vit, hierarchical_vit, swin, maxvit_tiny, volo]
+  dataset: cifar100
+  data_dir: ./data
+  output_dir: arena_runs/cifar100
+  augment: matched
+  img_size: 32
+  in_chans: 3
+  batch_size: 128
+  eval_batch_size: 256
+  epochs: 20
+  lr: 0.0005
+  weight_decay: 0.05
+  val_split: 0.1
+  num_workers: 2
+  use_amp: true
+  autocast_dtype: fp16
+  grad_clip_norm: 1.0
+  warmup_ratio: 0.05
+  label_smoothing: 0.1
+
+runtime:
+  device: null
+  seed: 42
+  smoke_test: false
+

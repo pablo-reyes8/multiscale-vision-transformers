@@ -1,0 +1,20 @@
+[best_primary] (val_top1) epoch=17
+  metrics: train_loss=1.6743, val_loss=1.2132, train_top1=64.12, val_top1=66.68, train_top3=81.29, val_top3=84.58, train_top5=86.60, val_top5=89.92
+  gaps:    gap_loss(val-train)=-0.4612, gap_top1(train-val)=-2.56, gap_top3(train-val)=-3.29, gap_top5(train-val)=-3.32
+
+[best_secondary] (val_loss) epoch=17
+  metrics: train_loss=1.6743, val_loss=1.2132, train_top1=64.12, val_top1=66.68, train_top3=81.29, val_top3=84.58, train_top5=86.60, val_top5=89.92
+  gaps:    gap_loss(val-train)=-0.4612, gap_top1(train-val)=-2.56, gap_top3(train-val)=-3.29, gap_top5(train-val)=-3.32
+
+[final] epoch=20
+  metrics: train_loss=1.7135, val_loss=1.2181, train_top1=63.85, val_top1=66.50, train_top3=80.52, val_top3=84.54, train_top5=86.14, val_top5=89.80
+  gaps:    gap_loss(val-train)=-0.4954, gap_top1(train-val)=-2.65, gap_top3(train-val)=-4.02, gap_top5(train-val)=-3.66
+ epoch  train_loss  val_loss  train_top1  val_top1  train_top3  val_top3  train_top5  val_top5  gap_loss(val-train)  gap_top1(train-val)  gap_top3(train-val)  gap_top5(train-val)
+    17    1.674327  1.213174   64.120000     66.68   81.288889     84.58   86.602222     89.92            -0.461154            -2.560000            -3.291111            -3.317778
+    18    1.683977  1.223190   65.086667     66.68   81.835556     84.10   87.255556     89.70            -0.460787            -1.593333            -2.264444            -2.444444
+    20    1.713514  1.218077   63.846667     66.50   80.515556     84.54   86.135556     89.80            -0.495437            -2.653333            -4.024444            -3.664444
+    19    1.666063  1.219061   64.837778     65.94   81.273333     84.82   86.782222     90.54            -0.447003            -1.102222            -3.546667            -3.757778
+    16    1.729188  1.260933   63.035556     64.78   80.435556     83.46   86.000000     89.36            -0.468255            -1.744444            -3.024444            -3.360000
+    15    1.806221  1.306452   60.962222     64.62   79.117778     83.52   84.960000     89.02            -0.499769            -3.657778            -4.402222            -4.060000
+    14    1.908096  1.319825   57.702222     63.36   76.300000     82.66   82.833333     88.66            -0.588271            -5.657778            -6.360000            -5.826667
+    13    1.931849  1.341919   57.260000     62.84   76.155556     81.60   82.788889     88.28            -0.589930            -5.580000            -5.444444            -5.491111

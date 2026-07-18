@@ -1,0 +1,16 @@
+version: 1
+task: analyze
+
+analysis:
+  checkpoint: outputs/vit_cifar100.pt
+  dataset: cifar100
+  data_dir: ./data
+  batch_size: 256
+  num_workers: 2
+  num_bins: 15
+  output_dir: outputs/vit_cifar100_analysis
+
+runtime:
+  device: null
+  seed: 42
+  smoke_test: false

@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: https://github.com/pablo-reyes8/multiscale-vision-transformers/security/advisories/new
+    about: Report vulnerabilities privately. Do not open a public issue.
+  - name: Usage support
+    url: https://github.com/pablo-reyes8/multiscale-vision-transformers/discussions
+    about: Ask usage and research questions in Discussions.
+
