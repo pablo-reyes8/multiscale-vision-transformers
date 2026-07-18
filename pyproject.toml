@@ -21,7 +21,7 @@ classifiers = [
 ]
 dependencies = [
     "torch>=2.2,<3.0",
-    "torchvision>=0.17,<1.0",
+    "torchvision>=0.28.0,<1.0",
     "numpy>=1.24,<3.0",
     "pillow>=10,<13",
     "matplotlib>=3.8,<4.0",
