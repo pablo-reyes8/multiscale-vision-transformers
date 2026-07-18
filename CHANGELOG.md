@@ -14,6 +14,7 @@ follow [Semantic Versioning](https://semver.org/).
 ### Fixed
 
 - Made every model-zoo test suite resolve its local modules consistently in GitHub Actions.
+- Restored architecture-local data modules that were unintentionally matched by the root data ignore rule.
 - Pinned the Docker builder dependency for reproducible container builds.
 
 ## [0.1.0] - 2026-07-16

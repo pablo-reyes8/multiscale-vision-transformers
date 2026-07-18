@@ -24,11 +24,11 @@ dist/
 pip-wheel-metadata/
 
 # Runtime data and generated outputs
-data/
-outputs/
-arena_runs/
-checkpoints/
-artifacts/generated/
+/data/
+/outputs/
+/arena_runs/
+/checkpoints/
+/artifacts/generated/
 *.pt
 *.pth
 *.ckpt
