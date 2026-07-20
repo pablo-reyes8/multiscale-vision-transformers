@@ -43,7 +43,7 @@ research = [
     "tqdm>=4.66,<5.0",
 ]
 dev = [
-    "build>=1.2,<2.0",
+    "build>=1.5.0,<2.0",
     "pre-commit>=4.0,<5.0",
     "pytest>=7.4,<10.0",
     "pytest-cov>=5,<8.0",
