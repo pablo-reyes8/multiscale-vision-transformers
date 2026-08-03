@@ -29,7 +29,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-datasets = ["datasets>=2.18,<5.0"]
+datasets = ["datasets>=5.0.1,<6.0"]
 analysis = [
     "pandas>=2.2,<3.0",
     "scikit-learn>=1.7.2,<2.0",
